@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "chinese-plan-output": {
+      "source": "MeiShe-Skills/meishe-skills",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "8c77ba28a7007d4fe34c87677358a99d82898c2be5557caeed0ff19940e5baff"
+    }
+  }
+}

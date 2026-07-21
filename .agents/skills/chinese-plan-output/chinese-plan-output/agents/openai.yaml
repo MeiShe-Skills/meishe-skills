@@ -1,0 +1,4 @@
+interface:
+  display_name: "中文计划输出"
+  short_description: "让 Codex 的计划与 proposed_plan 内容使用中文。"
+  default_prompt: "Use $chinese-plan-output to make all plan and proposed_plan content display in Chinese."
