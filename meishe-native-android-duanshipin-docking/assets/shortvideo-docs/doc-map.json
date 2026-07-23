@@ -1,0 +1,3372 @@
+{
+  "schema": "meishe-shortvideo-doc-map-v1",
+  "source": "ShortVideo/doc/markdown",
+  "tracks": [
+    "native",
+    "flutter",
+    "react-native",
+    "shared"
+  ],
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "route_groups": {
+      "native-android": {
+        "track": "native",
+        "platforms": ["android"],
+        "references": {
+          "route": "references/native-android.md",
+          "package": "references/packages/native-android.md",
+          "verified": "references/verified/native-android.md",
+          "troubleshooting": "references/native-android-troubleshooting.md"
+        }
+      },
+      "native-ios": {
+        "track": "native",
+        "platforms": ["ios"],
+        "references": {
+          "route": "references/native-ios.md",
+          "package": "references/packages/native-ios.md",
+          "verified": "references/verified/native-ios.md",
+          "troubleshooting": "references/native-ios-troubleshooting.md"
+        }
+      },
+      "flutter": {
+        "track": "flutter",
+        "platforms": ["android", "ios"],
+        "references": {
+          "route": "references/flutter.md",
+          "common": "references/flutter/common.md",
+          "android": "references/flutter/android.md",
+          "ios": "references/flutter/ios.md",
+          "android_troubleshooting": "references/flutter/android-troubleshooting.md",
+          "ios_troubleshooting": "references/flutter/ios-troubleshooting.md",
+          "package": "references/packages/flutter.md",
+          "verified": "references/verified/flutter.md"
+        }
+      },
+      "react-native": {
+        "track": "react-native",
+        "platforms": ["android", "ios"],
+        "references": {
+          "route": "references/react-native.md",
+          "common": "references/react-native/common.md",
+          "android": "references/react-native/android.md",
+          "ios": "references/react-native/ios.md",
+          "android_troubleshooting": "references/react-native/android-troubleshooting.md",
+          "ios_troubleshooting": "references/react-native/ios-troubleshooting.md",
+          "package": "references/packages/react-native.md",
+          "verified": "references/verified/react-native.md"
+        }
+      }
+    },
+  "docs": [
+    {
+      "doc_id": "flutter-quickstart-doc-ch-quickstart-ch",
+      "source_path": "flutter_quickstart/doc_ch/quickstart_ch.md",
+      "asset_path": "markdown/flutter_quickstart/doc_ch/quickstart_ch.md",
+      "title": "美摄Flutter短视频模块接入指引",
+      "language": "zh",
+      "track": "flutter",
+      "platforms": [
+        "android",
+        "ios"
+      ],
+      "tags": [
+        "quickstart",
+        "integration",
+        "flutter",
+        "android",
+        "ios",
+        "local-plugin",
+        "permission",
+        "license",
+        "server-config"
+      ],
+      "headings": [
+        {
+          "line": 9,
+          "level": 1,
+          "title": "美摄Flutter短视频模块接入指引",
+          "tags": [
+            "integration"
+          ]
+        },
+        {
+          "line": 24,
+          "level": 2,
+          "title": "接入大致流程",
+          "tags": [
+            "integration"
+          ]
+        },
+        {
+          "line": 35,
+          "level": 2,
+          "title": "开发环境要求",
+          "tags": []
+        },
+        {
+          "line": 47,
+          "level": 2,
+          "title": "升级短视频注意事项",
+          "tags": []
+        },
+        {
+          "line": 48,
+          "level": 3,
+          "title": "2.0.0版本升级:",
+          "tags": []
+        },
+        {
+          "line": 50,
+          "level": 3,
+          "title": "1.5.1版本升级:",
+          "tags": []
+        },
+        {
+          "line": 52,
+          "level": 3,
+          "title": "1.5.0版本升级:",
+          "tags": []
+        },
+        {
+          "line": 54,
+          "level": 3,
+          "title": "1.4.0版本升级:",
+          "tags": []
+        },
+        {
+          "line": 97,
+          "level": 3,
+          "title": "1.2.8版本升级：",
+          "tags": []
+        },
+        {
+          "line": 102,
+          "level": 3,
+          "title": "1.2.7版本升级：",
+          "tags": []
+        },
+        {
+          "line": 117,
+          "level": 2,
+          "title": "支持媒体格式",
+          "tags": []
+        },
+        {
+          "line": 121,
+          "level": 2,
+          "title": "短视频模块集成",
+          "tags": [
+            "integration"
+          ]
+        },
+        {
+          "line": 162,
+          "level": 2,
+          "title": "系统授权",
+          "tags": [
+            "license"
+          ]
+        },
+        {
+          "line": 169,
+          "level": 3,
+          "title": "iOS",
+          "tags": []
+        },
+        {
+          "line": 182,
+          "level": 3,
+          "title": "Android",
+          "tags": []
+        },
+        {
+          "line": 205,
+          "level": 2,
+          "title": "美摄SDK授权",
+          "tags": [
+            "license"
+          ]
+        },
+        {
+          "line": 223,
+          "level": 2,
+          "title": "网络接口配置",
+          "tags": [
+            "server-config"
+          ]
+        },
+        {
+          "line": 267,
+          "level": 2,
+          "title": "预制素材",
+          "tags": [
+            "prefabricated-material"
+          ]
+        },
+        {
+          "line": 280,
+          "level": 2,
+          "title": "短视频模块主要方法",
+          "tags": []
+        },
+        {
+          "line": 293,
+          "level": 3,
+          "title": "视频录制",
+          "tags": []
+        },
+        {
+          "line": 312,
+          "level": 3,
+          "title": "合拍",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 348,
+          "level": 3,
+          "title": "视频编辑",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 370,
+          "level": 3,
+          "title": "视频编辑完成回调",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 388,
+          "level": 3,
+          "title": "选择封面",
+          "tags": []
+        },
+        {
+          "line": 401,
+          "level": 3,
+          "title": "保存草稿",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 419,
+          "level": 3,
+          "title": "合成视频",
+          "tags": []
+        },
+        {
+          "line": 432,
+          "level": 3,
+          "title": "视频合成回调",
+          "tags": []
+        },
+        {
+          "line": 446,
+          "level": 3,
+          "title": "保存封面图片",
+          "tags": []
+        },
+        {
+          "line": 458,
+          "level": 3,
+          "title": "退出短视频模块",
+          "tags": []
+        },
+        {
+          "line": 479,
+          "level": 3,
+          "title": "获取草稿列表",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 496,
+          "level": 3,
+          "title": "删除草稿",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 513,
+          "level": 3,
+          "title": "打开草稿",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 537,
+          "level": 2,
+          "title": "模块设置",
+          "tags": []
+        },
+        {
+          "line": 541,
+          "level": 2,
+          "title": "隐私协议",
+          "tags": [
+            "permission"
+          ]
+        },
+        {
+          "line": 551,
+          "level": 2,
+          "title": "Agent 图片索引",
+          "tags": []
+        }
+      ],
+      "images": [
+        {
+          "path": "../assets/image.png",
+          "asset_path": "markdown/flutter_quickstart/doc_ch/../assets/image.png",
+          "exists": true,
+          "width": 491,
+          "height": 305,
+          "inferred_use": "step screenshot; inspect near the preceding heading before editing"
+        },
+        {
+          "path": "../assets/image-20240523192520742.png",
+          "asset_path": "markdown/flutter_quickstart/doc_ch/../assets/image-20240523192520742.png",
+          "exists": true,
+          "width": 644,
+          "height": 282,
+          "inferred_use": "configuration screenshot used by quickstart"
+        },
+        {
+          "path": "../assets/image-20240523191815764.png",
+          "asset_path": "markdown/flutter_quickstart/doc_ch/../assets/image-20240523191815764.png",
+          "exists": true,
+          "width": 1415,
+          "height": 512,
+          "inferred_use": "configuration screenshot used by Flutter quickstart"
+        },
+        {
+          "path": "../assets/image_lic.png",
+          "asset_path": "markdown/flutter_quickstart/doc_ch/../assets/image_lic.png",
+          "exists": true,
+          "width": 968,
+          "height": 297,
+          "inferred_use": "license file placement or authorization UI reference"
+        },
+        {
+          "path": "../assets/image_lic_android.png",
+          "asset_path": "markdown/flutter_quickstart/doc_ch/../assets/image_lic_android.png",
+          "exists": true,
+          "width": 1572,
+          "height": 283,
+          "inferred_use": "license file placement or authorization UI reference"
+        }
+      ]
+    },
+    {
+      "doc_id": "flutter-quickstart-doc-en-quickstart-en",
+      "source_path": "flutter_quickstart/doc_en/quickstart_en.md",
+      "asset_path": "markdown/flutter_quickstart/doc_en/quickstart_en.md",
+      "title": "Meishe Flutter short video module access guide",
+      "language": "en",
+      "track": "flutter",
+      "platforms": [
+        "android",
+        "ios"
+      ],
+      "tags": [
+        "quickstart",
+        "integration",
+        "flutter",
+        "android",
+        "ios",
+        "local-plugin",
+        "permission",
+        "license",
+        "server-config"
+      ],
+      "headings": [
+        {
+          "line": 9,
+          "level": 1,
+          "title": "Meishe Flutter short video module access guide",
+          "tags": []
+        },
+        {
+          "line": 24,
+          "level": 2,
+          "title": "General Integration Process",
+          "tags": [
+            "integration"
+          ]
+        },
+        {
+          "line": 35,
+          "level": 2,
+          "title": "Development environment requirements",
+          "tags": []
+        },
+        {
+          "line": 47,
+          "level": 2,
+          "title": "Upgrade short video notes",
+          "tags": []
+        },
+        {
+          "line": 48,
+          "level": 3,
+          "title": "Version 2.0.0 Updates:",
+          "tags": []
+        },
+        {
+          "line": 50,
+          "level": 3,
+          "title": "Version 1.5.1 Updates:",
+          "tags": []
+        },
+        {
+          "line": 52,
+          "level": 3,
+          "title": "Version 1.5.0 Updates:",
+          "tags": []
+        },
+        {
+          "line": 54,
+          "level": 3,
+          "title": "1.4.0Version upgrade：",
+          "tags": []
+        },
+        {
+          "line": 97,
+          "level": 3,
+          "title": "1.2.8Version upgrade：",
+          "tags": []
+        },
+        {
+          "line": 102,
+          "level": 3,
+          "title": "1.2.7 Version upgrade：",
+          "tags": []
+        },
+        {
+          "line": 117,
+          "level": 2,
+          "title": "Support media formats",
+          "tags": []
+        },
+        {
+          "line": 121,
+          "level": 2,
+          "title": "Short video module integration",
+          "tags": [
+            "integration"
+          ]
+        },
+        {
+          "line": 158,
+          "level": 2,
+          "title": "System authorization",
+          "tags": []
+        },
+        {
+          "line": 160,
+          "level": 3,
+          "title": "iOS",
+          "tags": []
+        },
+        {
+          "line": 173,
+          "level": 3,
+          "title": "Android",
+          "tags": []
+        },
+        {
+          "line": 196,
+          "level": 2,
+          "title": "Meishe SDK authorization",
+          "tags": []
+        },
+        {
+          "line": 209,
+          "level": 2,
+          "title": "Network interface configuration",
+          "tags": [
+            "server-config"
+          ]
+        },
+        {
+          "line": 253,
+          "level": 2,
+          "title": "Preset material",
+          "tags": [
+            "prefabricated-material"
+          ]
+        },
+        {
+          "line": 266,
+          "level": 2,
+          "title": "Main methods of short video module",
+          "tags": []
+        },
+        {
+          "line": 279,
+          "level": 3,
+          "title": "Video recording",
+          "tags": []
+        },
+        {
+          "line": 298,
+          "level": 3,
+          "title": "Picture in Picture",
+          "tags": []
+        },
+        {
+          "line": 329,
+          "level": 3,
+          "title": "Video editing",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 351,
+          "level": 3,
+          "title": "Video editing complete callback",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 369,
+          "level": 3,
+          "title": "Select cover",
+          "tags": []
+        },
+        {
+          "line": 382,
+          "level": 3,
+          "title": "Save draft",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 400,
+          "level": 3,
+          "title": "Synthetic video",
+          "tags": []
+        },
+        {
+          "line": 413,
+          "level": 3,
+          "title": "Video synthesis callback",
+          "tags": []
+        },
+        {
+          "line": 427,
+          "level": 3,
+          "title": "Save cover image",
+          "tags": []
+        },
+        {
+          "line": 439,
+          "level": 3,
+          "title": "Exit short video module",
+          "tags": []
+        },
+        {
+          "line": 460,
+          "level": 3,
+          "title": "Get draft list",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 477,
+          "level": 3,
+          "title": "Delete draft",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 494,
+          "level": 3,
+          "title": "Open draft",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 518,
+          "level": 2,
+          "title": "Module settings",
+          "tags": []
+        },
+        {
+          "line": 523,
+          "level": 2,
+          "title": "Agent Image Index",
+          "tags": []
+        }
+      ],
+      "images": [
+        {
+          "path": "../assets/image.png",
+          "asset_path": "markdown/flutter_quickstart/doc_en/../assets/image.png",
+          "exists": true,
+          "width": 491,
+          "height": 305,
+          "inferred_use": "step screenshot; inspect near the preceding heading before editing"
+        },
+        {
+          "path": "../assets/image-20240523192520742.png",
+          "asset_path": "markdown/flutter_quickstart/doc_en/../assets/image-20240523192520742.png",
+          "exists": true,
+          "width": 644,
+          "height": 282,
+          "inferred_use": "configuration screenshot used by quickstart"
+        },
+        {
+          "path": "../assets/image-20240523191815764.png",
+          "asset_path": "markdown/flutter_quickstart/doc_en/../assets/image-20240523191815764.png",
+          "exists": true,
+          "width": 1415,
+          "height": 512,
+          "inferred_use": "configuration screenshot used by Flutter quickstart"
+        },
+        {
+          "path": "../assets/image_lic.png",
+          "asset_path": "markdown/flutter_quickstart/doc_en/../assets/image_lic.png",
+          "exists": true,
+          "width": 968,
+          "height": 297,
+          "inferred_use": "license file placement or authorization UI reference"
+        },
+        {
+          "path": "../assets/image_lic_android.png",
+          "asset_path": "markdown/flutter_quickstart/doc_en/../assets/image_lic_android.png",
+          "exists": true,
+          "width": 1572,
+          "height": 283,
+          "inferred_use": "license file placement or authorization UI reference"
+        }
+      ]
+    },
+    {
+      "doc_id": "native-quickstart-doc-ch-prefabricatedmaterial-ch",
+      "source_path": "native_quickstart/doc_ch/PrefabricatedMaterial_ch.md",
+      "asset_path": "markdown/native_quickstart/doc_ch/PrefabricatedMaterial_ch.md",
+      "title": "预制素材配置",
+      "language": "zh",
+      "track": "shared",
+      "platforms": [
+        "android",
+        "ios"
+      ],
+      "tags": [
+        "prefabricated-material",
+        "download",
+        "server-config",
+        "native",
+        "flutter",
+        "react-native"
+      ],
+      "headings": [
+        {
+          "line": 9,
+          "level": 1,
+          "title": "预制素材配置",
+          "tags": [
+            "prefabricated-material"
+          ]
+        },
+        {
+          "line": 23,
+          "level": 2,
+          "title": "前言",
+          "tags": []
+        },
+        {
+          "line": 32,
+          "level": 2,
+          "title": "具体操作流程",
+          "tags": []
+        },
+        {
+          "line": 34,
+          "level": 3,
+          "title": "第一步",
+          "tags": []
+        },
+        {
+          "line": 77,
+          "level": 3,
+          "title": "第二步",
+          "tags": []
+        },
+        {
+          "line": 106,
+          "level": 3,
+          "title": "第三步",
+          "tags": []
+        },
+        {
+          "line": 112,
+          "level": 3,
+          "title": "第四步",
+          "tags": []
+        },
+        {
+          "line": 119,
+          "level": 3,
+          "title": "第五步",
+          "tags": []
+        },
+        {
+          "line": 123,
+          "level": 2,
+          "title": "json字段含义",
+          "tags": []
+        },
+        {
+          "line": 135,
+          "level": 1,
+          "title": "模型配置",
+          "tags": []
+        },
+        {
+          "line": 136,
+          "level": 2,
+          "title": "说明",
+          "tags": []
+        },
+        {
+          "line": 138,
+          "level": 2,
+          "title": "具体操作流程",
+          "tags": []
+        },
+        {
+          "line": 140,
+          "level": 3,
+          "title": "第一步",
+          "tags": []
+        },
+        {
+          "line": 153,
+          "level": 3,
+          "title": "第二步",
+          "tags": []
+        },
+        {
+          "line": 157,
+          "level": 3,
+          "title": "第三步",
+          "tags": []
+        },
+        {
+          "line": 161,
+          "level": 2,
+          "title": "Agent 图片索引",
+          "tags": []
+        }
+      ],
+      "images": [
+        {
+          "path": "../assets/image-7.png",
+          "asset_path": "markdown/native_quickstart/doc_ch/../assets/image-7.png",
+          "exists": true,
+          "width": 2658,
+          "height": 114,
+          "inferred_use": "step screenshot; inspect near the preceding heading before editing"
+        },
+        {
+          "path": "../assets/image-1.png",
+          "asset_path": "markdown/native_quickstart/doc_ch/../assets/image-1.png",
+          "exists": true,
+          "width": 1552,
+          "height": 798,
+          "inferred_use": "step screenshot; inspect near the preceding heading before editing"
+        },
+        {
+          "path": "../assets/image-2.png",
+          "asset_path": "markdown/native_quickstart/doc_ch/../assets/image-2.png",
+          "exists": true,
+          "width": 1622,
+          "height": 806,
+          "inferred_use": "step screenshot; inspect near the preceding heading before editing"
+        },
+        {
+          "path": "../assets/image-3.png",
+          "asset_path": "markdown/native_quickstart/doc_ch/../assets/image-3.png",
+          "exists": true,
+          "width": 1372,
+          "height": 370,
+          "inferred_use": "step screenshot; inspect near the preceding heading before editing"
+        },
+        {
+          "path": "../assets/image-4.png",
+          "asset_path": "markdown/native_quickstart/doc_ch/../assets/image-4.png",
+          "exists": true,
+          "width": 1230,
+          "height": 448,
+          "inferred_use": "step screenshot; inspect near the preceding heading before editing"
+        },
+        {
+          "path": "../assets/image-5.png",
+          "asset_path": "markdown/native_quickstart/doc_ch/../assets/image-5.png",
+          "exists": true,
+          "width": 1172,
+          "height": 438,
+          "inferred_use": "step screenshot; inspect near the preceding heading before editing"
+        },
+        {
+          "path": "../assets/image-6.png",
+          "asset_path": "markdown/native_quickstart/doc_ch/../assets/image-6.png",
+          "exists": true,
+          "width": 504,
+          "height": 178,
+          "inferred_use": "step screenshot; inspect near the preceding heading before editing"
+        },
+        {
+          "path": "../assets/image-8.png",
+          "asset_path": "markdown/native_quickstart/doc_ch/../assets/image-8.png",
+          "exists": true,
+          "width": 2468,
+          "height": 144,
+          "inferred_use": "step screenshot; inspect near the preceding heading before editing"
+        },
+        {
+          "path": "../assets/image-9.png",
+          "asset_path": "markdown/native_quickstart/doc_ch/../assets/image-9.png",
+          "exists": true,
+          "width": 978,
+          "height": 532,
+          "inferred_use": "step screenshot; inspect near the preceding heading before editing"
+        }
+      ]
+    },
+    {
+      "doc_id": "native-quickstart-doc-ch-functionconfiguration-ch",
+      "source_path": "native_quickstart/doc_ch/functionConfiguration_ch.md",
+      "asset_path": "markdown/native_quickstart/doc_ch/functionConfiguration_ch.md",
+      "title": "短视频功能配置项",
+      "language": "zh",
+      "track": "shared",
+      "platforms": [
+        "android",
+        "ios"
+      ],
+      "tags": [
+        "function-config",
+        "capture",
+        "edit",
+        "compile",
+        "publish",
+        "ui-config",
+        "native",
+        "flutter",
+        "react-native"
+      ],
+      "headings": [
+        {
+          "line": 9,
+          "level": 1,
+          "title": "短视频功能配置项",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 24,
+          "level": 2,
+          "title": "工程配置项",
+          "tags": [
+            "integration"
+          ]
+        },
+        {
+          "line": 47,
+          "level": 3,
+          "title": "ios",
+          "tags": []
+        },
+        {
+          "line": 61,
+          "level": 3,
+          "title": "Android",
+          "tags": []
+        },
+        {
+          "line": 77,
+          "level": 3,
+          "title": "flutter",
+          "tags": []
+        },
+        {
+          "line": 88,
+          "level": 3,
+          "title": "react-native",
+          "tags": []
+        },
+        {
+          "line": 100,
+          "level": 2,
+          "title": "相册配置项",
+          "tags": []
+        },
+        {
+          "line": 110,
+          "level": 3,
+          "title": "ios",
+          "tags": []
+        },
+        {
+          "line": 119,
+          "level": 3,
+          "title": "Android",
+          "tags": []
+        },
+        {
+          "line": 130,
+          "level": 3,
+          "title": "flutter",
+          "tags": []
+        },
+        {
+          "line": 138,
+          "level": 3,
+          "title": "react-native",
+          "tags": []
+        },
+        {
+          "line": 146,
+          "level": 2,
+          "title": "拍摄配置项",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 172,
+          "level": 3,
+          "title": "ios",
+          "tags": []
+        },
+        {
+          "line": 250,
+          "level": 3,
+          "title": "Android",
+          "tags": []
+        },
+        {
+          "line": 327,
+          "level": 3,
+          "title": "flutter",
+          "tags": []
+        },
+        {
+          "line": 385,
+          "level": 3,
+          "title": "react-native",
+          "tags": []
+        },
+        {
+          "line": 442,
+          "level": 2,
+          "title": "编辑配置项",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 468,
+          "level": 3,
+          "title": "ios",
+          "tags": []
+        },
+        {
+          "line": 510,
+          "level": 3,
+          "title": "Android",
+          "tags": []
+        },
+        {
+          "line": 557,
+          "level": 3,
+          "title": "flutter",
+          "tags": []
+        },
+        {
+          "line": 604,
+          "level": 3,
+          "title": "react-native",
+          "tags": []
+        },
+        {
+          "line": 649,
+          "level": 2,
+          "title": "导出配置项",
+          "tags": []
+        },
+        {
+          "line": 660,
+          "level": 3,
+          "title": "ios",
+          "tags": []
+        },
+        {
+          "line": 676,
+          "level": 3,
+          "title": "Android",
+          "tags": []
+        },
+        {
+          "line": 688,
+          "level": 3,
+          "title": "flutter",
+          "tags": []
+        },
+        {
+          "line": 700,
+          "level": 3,
+          "title": "react-native",
+          "tags": []
+        },
+        {
+          "line": 710,
+          "level": 2,
+          "title": "水印配置项",
+          "tags": []
+        },
+        {
+          "line": 717,
+          "level": 3,
+          "title": "ios",
+          "tags": []
+        },
+        {
+          "line": 740,
+          "level": 3,
+          "title": "android",
+          "tags": []
+        },
+        {
+          "line": 767,
+          "level": 3,
+          "title": "flutter",
+          "tags": []
+        },
+        {
+          "line": 813,
+          "level": 3,
+          "title": "ReactNative",
+          "tags": []
+        },
+        {
+          "line": 839,
+          "level": 2,
+          "title": "模版配置项",
+          "tags": []
+        },
+        {
+          "line": 846,
+          "level": 3,
+          "title": "ios",
+          "tags": []
+        },
+        {
+          "line": 853,
+          "level": 3,
+          "title": "Android",
+          "tags": []
+        },
+        {
+          "line": 862,
+          "level": 3,
+          "title": "flutter",
+          "tags": []
+        },
+        {
+          "line": 869,
+          "level": 3,
+          "title": "react-native",
+          "tags": []
+        },
+        {
+          "line": 876,
+          "level": 2,
+          "title": "模型配置项",
+          "tags": []
+        },
+        {
+          "line": 882,
+          "level": 3,
+          "title": "ios",
+          "tags": []
+        },
+        {
+          "line": 889,
+          "level": 3,
+          "title": "Android",
+          "tags": []
+        },
+        {
+          "line": 898,
+          "level": 3,
+          "title": "flutter",
+          "tags": []
+        },
+        {
+          "line": 905,
+          "level": 3,
+          "title": "react-native",
+          "tags": []
+        },
+        {
+          "line": 912,
+          "level": 2,
+          "title": "短视频回调",
+          "tags": []
+        },
+        {
+          "line": 914,
+          "level": 3,
+          "title": "ios",
+          "tags": []
+        }
+      ],
+      "images": []
+    },
+    {
+      "doc_id": "native-quickstart-doc-ch-quickstart-android-ch",
+      "source_path": "native_quickstart/doc_ch/quickstart_android_ch.md",
+      "asset_path": "markdown/native_quickstart/doc_ch/quickstart_android_ch.md",
+      "title": "美摄短视频模块接入指引",
+      "language": "zh",
+      "track": "native",
+      "platforms": [
+        "android"
+      ],
+      "tags": [
+        "quickstart",
+        "integration",
+        "native-android",
+        "aar",
+        "gradle",
+        "manifest",
+        "permission",
+        "license",
+        "server-config"
+      ],
+      "headings": [
+        {
+          "line": 2,
+          "level": 1,
+          "title": "美摄短视频模块接入指引",
+          "tags": [
+            "integration"
+          ]
+        },
+        {
+          "line": 17,
+          "level": 2,
+          "title": "开发环境要求",
+          "tags": []
+        },
+        {
+          "line": 23,
+          "level": 2,
+          "title": "升级短视频注意事项",
+          "tags": []
+        },
+        {
+          "line": 24,
+          "level": 3,
+          "title": "1.5.2版本升级:",
+          "tags": []
+        },
+        {
+          "line": 26,
+          "level": 3,
+          "title": "1.5.1版本升级:",
+          "tags": []
+        },
+        {
+          "line": 28,
+          "level": 3,
+          "title": "1.5.0版本升级:",
+          "tags": []
+        },
+        {
+          "line": 30,
+          "level": 3,
+          "title": "1.4.0版本升级:",
+          "tags": []
+        },
+        {
+          "line": 32,
+          "level": 3,
+          "title": "1.3.0版本升级:",
+          "tags": []
+        },
+        {
+          "line": 110,
+          "level": 3,
+          "title": "1.2.9版本升级：",
+          "tags": []
+        },
+        {
+          "line": 112,
+          "level": 3,
+          "title": "1.2.8版本升级：",
+          "tags": []
+        },
+        {
+          "line": 117,
+          "level": 3,
+          "title": "1.2.7版本升级：",
+          "tags": []
+        },
+        {
+          "line": 130,
+          "level": 2,
+          "title": "支持媒体格式",
+          "tags": []
+        },
+        {
+          "line": 134,
+          "level": 1,
+          "title": "工程构建",
+          "tags": [
+            "integration"
+          ]
+        },
+        {
+          "line": 196,
+          "level": 2,
+          "title": "系统权限说明",
+          "tags": [
+            "permission"
+          ]
+        },
+        {
+          "line": 224,
+          "level": 2,
+          "title": "美摄SDK授权",
+          "tags": [
+            "license"
+          ]
+        },
+        {
+          "line": 243,
+          "level": 2,
+          "title": "网络接口配置",
+          "tags": [
+            "server-config"
+          ]
+        },
+        {
+          "line": 326,
+          "level": 2,
+          "title": "预制素材",
+          "tags": [
+            "prefabricated-material"
+          ]
+        },
+        {
+          "line": 335,
+          "level": 2,
+          "title": "短视频模块主要方法",
+          "tags": []
+        },
+        {
+          "line": 339,
+          "level": 3,
+          "title": "初始化sdk",
+          "tags": []
+        },
+        {
+          "line": 355,
+          "level": 3,
+          "title": "视频录制",
+          "tags": []
+        },
+        {
+          "line": 375,
+          "level": 3,
+          "title": "合拍",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 418,
+          "level": 3,
+          "title": "视频编辑",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 441,
+          "level": 3,
+          "title": "跳转发布页回调",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 471,
+          "level": 3,
+          "title": "编辑封面",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 515,
+          "level": 3,
+          "title": "保存草稿",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 540,
+          "level": 3,
+          "title": "合成视频",
+          "tags": []
+        },
+        {
+          "line": 556,
+          "level": 3,
+          "title": "视频合成回调",
+          "tags": []
+        },
+        {
+          "line": 646,
+          "level": 3,
+          "title": "保存封面图片",
+          "tags": []
+        },
+        {
+          "line": 672,
+          "level": 3,
+          "title": "退出短视频模块",
+          "tags": []
+        },
+        {
+          "line": 692,
+          "level": 3,
+          "title": "获取草稿列表",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 715,
+          "level": 3,
+          "title": "删除草稿",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 738,
+          "level": 3,
+          "title": "打开草稿",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 761,
+          "level": 2,
+          "title": "模块设置",
+          "tags": []
+        },
+        {
+          "line": 765,
+          "level": 2,
+          "title": "开发者合规指南",
+          "tags": []
+        },
+        {
+          "line": 770,
+          "level": 2,
+          "title": "Agent 图片索引",
+          "tags": []
+        }
+      ],
+      "images": [
+        {
+          "path": "../assets/android_image/image-20240516153236811.png",
+          "asset_path": "markdown/native_quickstart/doc_ch/../assets/android_image/image-20240516153236811.png",
+          "exists": true,
+          "width": 904,
+          "height": 655,
+          "inferred_use": "Native Android project setup or Android resource location"
+        },
+        {
+          "path": "../assets/android_image/image-20240516185729759.png",
+          "asset_path": "markdown/native_quickstart/doc_ch/../assets/android_image/image-20240516185729759.png",
+          "exists": true,
+          "width": 455,
+          "height": 607,
+          "inferred_use": "Native Android project setup or Android resource location"
+        }
+      ]
+    },
+    {
+      "doc_id": "native-quickstart-doc-ch-quickstart-ch",
+      "source_path": "native_quickstart/doc_ch/quickstart_ch.md",
+      "asset_path": "markdown/native_quickstart/doc_ch/quickstart_ch.md",
+      "title": "美摄短视频模块接入指引",
+      "language": "zh",
+      "track": "native",
+      "platforms": [
+        "ios"
+      ],
+      "tags": [
+        "quickstart",
+        "integration",
+        "native-ios",
+        "cocoapods",
+        "podfile",
+        "info.plist",
+        "permission",
+        "license",
+        "server-config"
+      ],
+      "headings": [
+        {
+          "line": 2,
+          "level": 1,
+          "title": "美摄短视频模块接入指引",
+          "tags": [
+            "integration"
+          ]
+        },
+        {
+          "line": 17,
+          "level": 2,
+          "title": "接入必须流程",
+          "tags": [
+            "integration"
+          ]
+        },
+        {
+          "line": 28,
+          "level": 2,
+          "title": "开发环境要求",
+          "tags": []
+        },
+        {
+          "line": 36,
+          "level": 2,
+          "title": "升级短视频注意事项",
+          "tags": []
+        },
+        {
+          "line": 37,
+          "level": 3,
+          "title": "2.0.0版本升级:",
+          "tags": []
+        },
+        {
+          "line": 39,
+          "level": 3,
+          "title": "1.5.1版本升级:",
+          "tags": []
+        },
+        {
+          "line": 41,
+          "level": 3,
+          "title": "1.5.0版本升级:",
+          "tags": []
+        },
+        {
+          "line": 43,
+          "level": 3,
+          "title": "1.4.0版本升级:",
+          "tags": []
+        },
+        {
+          "line": 63,
+          "level": 3,
+          "title": "1.3.0版本升级:",
+          "tags": []
+        },
+        {
+          "line": 65,
+          "level": 3,
+          "title": "1.2.9版本升级：",
+          "tags": []
+        },
+        {
+          "line": 67,
+          "level": 3,
+          "title": "1.2.8版本升级：",
+          "tags": []
+        },
+        {
+          "line": 72,
+          "level": 3,
+          "title": "1.2.7版本升级：",
+          "tags": []
+        },
+        {
+          "line": 88,
+          "level": 2,
+          "title": "支持媒体格式",
+          "tags": []
+        },
+        {
+          "line": 92,
+          "level": 2,
+          "title": "短视频模块集成",
+          "tags": [
+            "integration"
+          ]
+        },
+        {
+          "line": 202,
+          "level": 2,
+          "title": "系统授权",
+          "tags": [
+            "license"
+          ]
+        },
+        {
+          "line": 222,
+          "level": 2,
+          "title": "美摄SDK授权",
+          "tags": [
+            "license"
+          ]
+        },
+        {
+          "line": 269,
+          "level": 2,
+          "title": "网络接口配置",
+          "tags": [
+            "server-config"
+          ]
+        },
+        {
+          "line": 284,
+          "level": 2,
+          "title": "预制素材",
+          "tags": [
+            "prefabricated-material"
+          ]
+        },
+        {
+          "line": 308,
+          "level": 2,
+          "title": "短视频模块主要方法",
+          "tags": []
+        },
+        {
+          "line": 339,
+          "level": 3,
+          "title": "视频录制",
+          "tags": []
+        },
+        {
+          "line": 364,
+          "level": 3,
+          "title": "合拍",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 412,
+          "level": 3,
+          "title": "视频编辑",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 439,
+          "level": 3,
+          "title": "视频编辑完成回调",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 488,
+          "level": 3,
+          "title": "选择封面",
+          "tags": []
+        },
+        {
+          "line": 508,
+          "level": 3,
+          "title": "保存草稿",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 531,
+          "level": 3,
+          "title": "合成视频",
+          "tags": []
+        },
+        {
+          "line": 549,
+          "level": 3,
+          "title": "视频合成回调",
+          "tags": []
+        },
+        {
+          "line": 591,
+          "level": 3,
+          "title": "保存视频",
+          "tags": []
+        },
+        {
+          "line": 609,
+          "level": 3,
+          "title": "保存封面图片",
+          "tags": []
+        },
+        {
+          "line": 629,
+          "level": 3,
+          "title": "获取当前选择的素材路径",
+          "tags": [
+            "prefabricated-material",
+            "server-config"
+          ]
+        },
+        {
+          "line": 647,
+          "level": 3,
+          "title": "获取素材的信息",
+          "tags": [
+            "prefabricated-material"
+          ]
+        },
+        {
+          "line": 667,
+          "level": 3,
+          "title": "退出短视频模块",
+          "tags": []
+        },
+        {
+          "line": 687,
+          "level": 3,
+          "title": "获取草稿列表",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 710,
+          "level": 3,
+          "title": "删除草稿",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 733,
+          "level": 3,
+          "title": "打开草稿",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 761,
+          "level": 2,
+          "title": "模块设置",
+          "tags": []
+        },
+        {
+          "line": 765,
+          "level": 2,
+          "title": "开发者合规指南",
+          "tags": []
+        },
+        {
+          "line": 770,
+          "level": 2,
+          "title": "Agent 图片索引",
+          "tags": []
+        }
+      ],
+      "images": [
+        {
+          "path": "../assets/image.png",
+          "asset_path": "markdown/native_quickstart/doc_ch/../assets/image.png",
+          "exists": true,
+          "width": 494,
+          "height": 180,
+          "inferred_use": "step screenshot; inspect near the preceding heading before editing"
+        }
+      ]
+    },
+    {
+      "doc_id": "native-quickstart-doc-en-prefabricatedmaterial-en",
+      "source_path": "native_quickstart/doc_en/PrefabricatedMaterial_en.md",
+      "asset_path": "markdown/native_quickstart/doc_en/PrefabricatedMaterial_en.md",
+      "title": "Preset material configuration",
+      "language": "en",
+      "track": "shared",
+      "platforms": [
+        "android",
+        "ios"
+      ],
+      "tags": [
+        "prefabricated-material",
+        "download",
+        "server-config",
+        "native",
+        "flutter",
+        "react-native"
+      ],
+      "headings": [
+        {
+          "line": 9,
+          "level": 1,
+          "title": "Preset material configuration",
+          "tags": [
+            "prefabricated-material",
+            "server-config"
+          ]
+        },
+        {
+          "line": 23,
+          "level": 2,
+          "title": "Preface",
+          "tags": []
+        },
+        {
+          "line": 32,
+          "level": 2,
+          "title": "Specific operation process",
+          "tags": []
+        },
+        {
+          "line": 34,
+          "level": 3,
+          "title": "Step 1",
+          "tags": []
+        },
+        {
+          "line": 77,
+          "level": 3,
+          "title": "Step 2",
+          "tags": []
+        },
+        {
+          "line": 106,
+          "level": 3,
+          "title": "Step 3",
+          "tags": []
+        },
+        {
+          "line": 112,
+          "level": 3,
+          "title": "Step 4",
+          "tags": []
+        },
+        {
+          "line": 119,
+          "level": 3,
+          "title": "Step 5",
+          "tags": []
+        },
+        {
+          "line": 123,
+          "level": 2,
+          "title": "json field meaning",
+          "tags": []
+        },
+        {
+          "line": 135,
+          "level": 1,
+          "title": "Model configuration",
+          "tags": [
+            "server-config"
+          ]
+        },
+        {
+          "line": 136,
+          "level": 2,
+          "title": "Explanation",
+          "tags": []
+        },
+        {
+          "line": 138,
+          "level": 2,
+          "title": "Specific operation process",
+          "tags": []
+        },
+        {
+          "line": 140,
+          "level": 3,
+          "title": "Step 1",
+          "tags": []
+        },
+        {
+          "line": 153,
+          "level": 3,
+          "title": "Step 2",
+          "tags": []
+        },
+        {
+          "line": 156,
+          "level": 3,
+          "title": "Step 3",
+          "tags": []
+        },
+        {
+          "line": 160,
+          "level": 2,
+          "title": "Agent Image Index",
+          "tags": []
+        }
+      ],
+      "images": [
+        {
+          "path": "../assets/image-7.png",
+          "asset_path": "markdown/native_quickstart/doc_en/../assets/image-7.png",
+          "exists": true,
+          "width": 2658,
+          "height": 114,
+          "inferred_use": "step screenshot; inspect near the preceding heading before editing"
+        },
+        {
+          "path": "../assets/image-1.png",
+          "asset_path": "markdown/native_quickstart/doc_en/../assets/image-1.png",
+          "exists": true,
+          "width": 1552,
+          "height": 798,
+          "inferred_use": "step screenshot; inspect near the preceding heading before editing"
+        },
+        {
+          "path": "../assets/image-2.png",
+          "asset_path": "markdown/native_quickstart/doc_en/../assets/image-2.png",
+          "exists": true,
+          "width": 1622,
+          "height": 806,
+          "inferred_use": "step screenshot; inspect near the preceding heading before editing"
+        },
+        {
+          "path": "../assets/image-3.png",
+          "asset_path": "markdown/native_quickstart/doc_en/../assets/image-3.png",
+          "exists": true,
+          "width": 1372,
+          "height": 370,
+          "inferred_use": "step screenshot; inspect near the preceding heading before editing"
+        },
+        {
+          "path": "../assets/image-4.png",
+          "asset_path": "markdown/native_quickstart/doc_en/../assets/image-4.png",
+          "exists": true,
+          "width": 1230,
+          "height": 448,
+          "inferred_use": "step screenshot; inspect near the preceding heading before editing"
+        },
+        {
+          "path": "../assets/image-5.png",
+          "asset_path": "markdown/native_quickstart/doc_en/../assets/image-5.png",
+          "exists": true,
+          "width": 1172,
+          "height": 438,
+          "inferred_use": "step screenshot; inspect near the preceding heading before editing"
+        },
+        {
+          "path": "../assets/image-6.png",
+          "asset_path": "markdown/native_quickstart/doc_en/../assets/image-6.png",
+          "exists": true,
+          "width": 504,
+          "height": 178,
+          "inferred_use": "step screenshot; inspect near the preceding heading before editing"
+        },
+        {
+          "path": "../assets/image-8.png",
+          "asset_path": "markdown/native_quickstart/doc_en/../assets/image-8.png",
+          "exists": true,
+          "width": 2468,
+          "height": 144,
+          "inferred_use": "step screenshot; inspect near the preceding heading before editing"
+        },
+        {
+          "path": "../assets/image-9.png",
+          "asset_path": "markdown/native_quickstart/doc_en/../assets/image-9.png",
+          "exists": true,
+          "width": 978,
+          "height": 532,
+          "inferred_use": "step screenshot; inspect near the preceding heading before editing"
+        }
+      ]
+    },
+    {
+      "doc_id": "native-quickstart-doc-en-functionconfiguration-en",
+      "source_path": "native_quickstart/doc_en/functionConfiguration_en.md",
+      "asset_path": "markdown/native_quickstart/doc_en/functionConfiguration_en.md",
+      "title": "Short video function module settings",
+      "language": "en",
+      "track": "shared",
+      "platforms": [
+        "android",
+        "ios"
+      ],
+      "tags": [
+        "function-config",
+        "capture",
+        "edit",
+        "compile",
+        "publish",
+        "ui-config",
+        "native",
+        "flutter",
+        "react-native"
+      ],
+      "headings": [
+        {
+          "line": 9,
+          "level": 1,
+          "title": "Short video function module settings",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 24,
+          "level": 2,
+          "title": "Project configuration items",
+          "tags": [
+            "integration",
+            "server-config"
+          ]
+        },
+        {
+          "line": 47,
+          "level": 3,
+          "title": "ios",
+          "tags": []
+        },
+        {
+          "line": 61,
+          "level": 3,
+          "title": "Android",
+          "tags": []
+        },
+        {
+          "line": 76,
+          "level": 3,
+          "title": "flutter",
+          "tags": []
+        },
+        {
+          "line": 87,
+          "level": 3,
+          "title": "react-native",
+          "tags": []
+        },
+        {
+          "line": 99,
+          "level": 2,
+          "title": "Album configuration items",
+          "tags": [
+            "server-config"
+          ]
+        },
+        {
+          "line": 114,
+          "level": 3,
+          "title": "ios",
+          "tags": []
+        },
+        {
+          "line": 123,
+          "level": 3,
+          "title": "Android",
+          "tags": []
+        },
+        {
+          "line": 133,
+          "level": 3,
+          "title": "flutter",
+          "tags": []
+        },
+        {
+          "line": 141,
+          "level": 3,
+          "title": "react-native",
+          "tags": []
+        },
+        {
+          "line": 149,
+          "level": 2,
+          "title": "Shooting configuration items",
+          "tags": [
+            "server-config"
+          ]
+        },
+        {
+          "line": 175,
+          "level": 3,
+          "title": "ios",
+          "tags": []
+        },
+        {
+          "line": 253,
+          "level": 3,
+          "title": "Android",
+          "tags": []
+        },
+        {
+          "line": 330,
+          "level": 3,
+          "title": "flutter",
+          "tags": []
+        },
+        {
+          "line": 388,
+          "level": 3,
+          "title": "react-native",
+          "tags": []
+        },
+        {
+          "line": 445,
+          "level": 2,
+          "title": "Edit configuration items",
+          "tags": [
+            "function-config",
+            "server-config"
+          ]
+        },
+        {
+          "line": 471,
+          "level": 3,
+          "title": "ios",
+          "tags": []
+        },
+        {
+          "line": 513,
+          "level": 3,
+          "title": "Android",
+          "tags": []
+        },
+        {
+          "line": 563,
+          "level": 3,
+          "title": "flutter",
+          "tags": []
+        },
+        {
+          "line": 610,
+          "level": 3,
+          "title": "react-native",
+          "tags": []
+        },
+        {
+          "line": 655,
+          "level": 2,
+          "title": "Export configuration items",
+          "tags": [
+            "server-config"
+          ]
+        },
+        {
+          "line": 671,
+          "level": 3,
+          "title": "ios",
+          "tags": []
+        },
+        {
+          "line": 687,
+          "level": 3,
+          "title": "Android",
+          "tags": []
+        },
+        {
+          "line": 701,
+          "level": 3,
+          "title": "flutter",
+          "tags": []
+        },
+        {
+          "line": 713,
+          "level": 3,
+          "title": "react-native",
+          "tags": []
+        },
+        {
+          "line": 723,
+          "level": 2,
+          "title": "watermark configuration",
+          "tags": [
+            "server-config"
+          ]
+        },
+        {
+          "line": 735,
+          "level": 3,
+          "title": "ios",
+          "tags": []
+        },
+        {
+          "line": 758,
+          "level": 3,
+          "title": "android",
+          "tags": []
+        },
+        {
+          "line": 785,
+          "level": 3,
+          "title": "flutter",
+          "tags": []
+        },
+        {
+          "line": 831,
+          "level": 3,
+          "title": "ReactNative",
+          "tags": []
+        },
+        {
+          "line": 857,
+          "level": 2,
+          "title": "Template configuration items",
+          "tags": [
+            "server-config"
+          ]
+        },
+        {
+          "line": 869,
+          "level": 3,
+          "title": "ios",
+          "tags": []
+        },
+        {
+          "line": 876,
+          "level": 3,
+          "title": "Android",
+          "tags": []
+        },
+        {
+          "line": 885,
+          "level": 3,
+          "title": "flutter",
+          "tags": []
+        },
+        {
+          "line": 892,
+          "level": 3,
+          "title": "react-native",
+          "tags": []
+        },
+        {
+          "line": 899,
+          "level": 2,
+          "title": "Model configuration items",
+          "tags": [
+            "server-config"
+          ]
+        },
+        {
+          "line": 910,
+          "level": 3,
+          "title": "ios",
+          "tags": []
+        },
+        {
+          "line": 917,
+          "level": 3,
+          "title": "Android",
+          "tags": []
+        },
+        {
+          "line": 928,
+          "level": 3,
+          "title": "flutter",
+          "tags": []
+        },
+        {
+          "line": 935,
+          "level": 3,
+          "title": "react-native",
+          "tags": []
+        },
+        {
+          "line": 942,
+          "level": 2,
+          "title": "ShortVideo Callback",
+          "tags": []
+        },
+        {
+          "line": 944,
+          "level": 3,
+          "title": "ios",
+          "tags": []
+        }
+      ],
+      "images": []
+    },
+    {
+      "doc_id": "native-quickstart-doc-en-quickstart-android-en",
+      "source_path": "native_quickstart/doc_en/quickstart_android_en.md",
+      "asset_path": "markdown/native_quickstart/doc_en/quickstart_android_en.md",
+      "title": "Meishe short video module access guide",
+      "language": "en",
+      "track": "native",
+      "platforms": [
+        "android"
+      ],
+      "tags": [
+        "quickstart",
+        "integration",
+        "native-android",
+        "aar",
+        "gradle",
+        "manifest",
+        "permission",
+        "license",
+        "server-config"
+      ],
+      "headings": [
+        {
+          "line": 2,
+          "level": 1,
+          "title": "Meishe short video module access guide",
+          "tags": []
+        },
+        {
+          "line": 17,
+          "level": 2,
+          "title": "Development environment requirements",
+          "tags": []
+        },
+        {
+          "line": 23,
+          "level": 2,
+          "title": "Upgrade short video notes",
+          "tags": []
+        },
+        {
+          "line": 24,
+          "level": 3,
+          "title": "Version 1.5.2 Updates:",
+          "tags": []
+        },
+        {
+          "line": 26,
+          "level": 3,
+          "title": "Version 1.5.1 Updates:",
+          "tags": []
+        },
+        {
+          "line": 28,
+          "level": 3,
+          "title": "Version 1.5.0 Updates:",
+          "tags": []
+        },
+        {
+          "line": 30,
+          "level": 3,
+          "title": "1.4.0 Version upgrade:",
+          "tags": []
+        },
+        {
+          "line": 32,
+          "level": 3,
+          "title": "1.3.0 Version upgrade:",
+          "tags": []
+        },
+        {
+          "line": 116,
+          "level": 3,
+          "title": "1.2.9 Version upgrade:",
+          "tags": []
+        },
+        {
+          "line": 118,
+          "level": 3,
+          "title": "1.2.8 Version upgrade：",
+          "tags": []
+        },
+        {
+          "line": 123,
+          "level": 3,
+          "title": "1.2.7 Version upgrade：",
+          "tags": []
+        },
+        {
+          "line": 134,
+          "level": 2,
+          "title": "Support media formats",
+          "tags": []
+        },
+        {
+          "line": 138,
+          "level": 1,
+          "title": "Project construction",
+          "tags": [
+            "integration"
+          ]
+        },
+        {
+          "line": 200,
+          "level": 2,
+          "title": "Permission description",
+          "tags": [
+            "permission"
+          ]
+        },
+        {
+          "line": 228,
+          "level": 2,
+          "title": "Meishe SDK authorization",
+          "tags": []
+        },
+        {
+          "line": 242,
+          "level": 2,
+          "title": "Network interface configuration",
+          "tags": [
+            "server-config"
+          ]
+        },
+        {
+          "line": 325,
+          "level": 2,
+          "title": "Preset material",
+          "tags": [
+            "prefabricated-material"
+          ]
+        },
+        {
+          "line": 334,
+          "level": 2,
+          "title": "Main methods of short video module",
+          "tags": []
+        },
+        {
+          "line": 338,
+          "level": 3,
+          "title": "Initialize SDK",
+          "tags": []
+        },
+        {
+          "line": 354,
+          "level": 3,
+          "title": "Video recording",
+          "tags": []
+        },
+        {
+          "line": 374,
+          "level": 3,
+          "title": "Picture in Picture",
+          "tags": []
+        },
+        {
+          "line": 412,
+          "level": 3,
+          "title": "Video editing",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 437,
+          "level": 3,
+          "title": "Video editing complete callback",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 467,
+          "level": 3,
+          "title": "Select cover",
+          "tags": []
+        },
+        {
+          "line": 507,
+          "level": 3,
+          "title": "Save draft",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 532,
+          "level": 3,
+          "title": "Synthetic video",
+          "tags": []
+        },
+        {
+          "line": 548,
+          "level": 3,
+          "title": "Video synthesis callback",
+          "tags": []
+        },
+        {
+          "line": 638,
+          "level": 3,
+          "title": "Save cover image",
+          "tags": []
+        },
+        {
+          "line": 664,
+          "level": 3,
+          "title": "Exit short video module",
+          "tags": []
+        },
+        {
+          "line": 686,
+          "level": 3,
+          "title": "Get draft list",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 709,
+          "level": 3,
+          "title": "Delete draft",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 732,
+          "level": 3,
+          "title": "Open draft",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 755,
+          "level": 2,
+          "title": "Module settings",
+          "tags": []
+        },
+        {
+          "line": 760,
+          "level": 2,
+          "title": "Agent Image Index",
+          "tags": []
+        }
+      ],
+      "images": [
+        {
+          "path": "../assets/android_image/image-20240516153236811.png",
+          "asset_path": "markdown/native_quickstart/doc_en/../assets/android_image/image-20240516153236811.png",
+          "exists": true,
+          "width": 904,
+          "height": 655,
+          "inferred_use": "Native Android project setup or Android resource location"
+        },
+        {
+          "path": "../assets/android_image/image-20240516185729759.png",
+          "asset_path": "markdown/native_quickstart/doc_en/../assets/android_image/image-20240516185729759.png",
+          "exists": true,
+          "width": 455,
+          "height": 607,
+          "inferred_use": "Native Android project setup or Android resource location"
+        }
+      ]
+    },
+    {
+      "doc_id": "native-quickstart-doc-en-quickstart-en",
+      "source_path": "native_quickstart/doc_en/quickstart_en.md",
+      "asset_path": "markdown/native_quickstart/doc_en/quickstart_en.md",
+      "title": "Meishe short video module access guide",
+      "language": "en",
+      "track": "native",
+      "platforms": [
+        "ios"
+      ],
+      "tags": [
+        "quickstart",
+        "integration",
+        "native-ios",
+        "cocoapods",
+        "podfile",
+        "info.plist",
+        "permission",
+        "license",
+        "server-config"
+      ],
+      "headings": [
+        {
+          "line": 2,
+          "level": 1,
+          "title": "Meishe short video module access guide",
+          "tags": []
+        },
+        {
+          "line": 17,
+          "level": 2,
+          "title": "General Integration Process",
+          "tags": [
+            "integration"
+          ]
+        },
+        {
+          "line": 28,
+          "level": 2,
+          "title": "Development environment requirements",
+          "tags": []
+        },
+        {
+          "line": 36,
+          "level": 2,
+          "title": "Upgrade short video notes",
+          "tags": []
+        },
+        {
+          "line": 37,
+          "level": 3,
+          "title": "Version 2.0.0 Updates:",
+          "tags": []
+        },
+        {
+          "line": 39,
+          "level": 3,
+          "title": "Version 1.5.1 Updates:",
+          "tags": []
+        },
+        {
+          "line": 41,
+          "level": 3,
+          "title": "Version 1.5.0 Updates:",
+          "tags": []
+        },
+        {
+          "line": 43,
+          "level": 3,
+          "title": "Version 1.4.0 Updates:",
+          "tags": []
+        },
+        {
+          "line": 63,
+          "level": 3,
+          "title": "Version 1.3.0 Updates:",
+          "tags": []
+        },
+        {
+          "line": 65,
+          "level": 3,
+          "title": "1.2.9 Version upgrade:",
+          "tags": []
+        },
+        {
+          "line": 67,
+          "level": 3,
+          "title": "1.2.8 Version upgrade：",
+          "tags": []
+        },
+        {
+          "line": 72,
+          "level": 3,
+          "title": "1.2.7 Version upgrade：",
+          "tags": []
+        },
+        {
+          "line": 88,
+          "level": 2,
+          "title": "Support media formats",
+          "tags": []
+        },
+        {
+          "line": 92,
+          "level": 2,
+          "title": "Short video module integration",
+          "tags": [
+            "integration"
+          ]
+        },
+        {
+          "line": 200,
+          "level": 2,
+          "title": "System authorization",
+          "tags": []
+        },
+        {
+          "line": 216,
+          "level": 2,
+          "title": "Meishe SDK authorization",
+          "tags": []
+        },
+        {
+          "line": 246,
+          "level": 2,
+          "title": "Network interface configuration",
+          "tags": [
+            "server-config"
+          ]
+        },
+        {
+          "line": 261,
+          "level": 2,
+          "title": "Preset material",
+          "tags": [
+            "prefabricated-material"
+          ]
+        },
+        {
+          "line": 281,
+          "level": 2,
+          "title": "Main methods of short video module",
+          "tags": []
+        },
+        {
+          "line": 312,
+          "level": 3,
+          "title": "Video recording",
+          "tags": []
+        },
+        {
+          "line": 337,
+          "level": 3,
+          "title": "Picture in Picture",
+          "tags": []
+        },
+        {
+          "line": 380,
+          "level": 3,
+          "title": "Video editing",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 407,
+          "level": 3,
+          "title": "Video editing complete callback",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 455,
+          "level": 3,
+          "title": "Select cover",
+          "tags": []
+        },
+        {
+          "line": 475,
+          "level": 3,
+          "title": "Save draft",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 498,
+          "level": 3,
+          "title": "Synthetic video",
+          "tags": []
+        },
+        {
+          "line": 516,
+          "level": 3,
+          "title": "Video synthesis callback",
+          "tags": []
+        },
+        {
+          "line": 558,
+          "level": 3,
+          "title": "Save video file",
+          "tags": []
+        },
+        {
+          "line": 576,
+          "level": 3,
+          "title": "Save cover image",
+          "tags": []
+        },
+        {
+          "line": 596,
+          "level": 3,
+          "title": "Get a list of all currently selected materials",
+          "tags": [
+            "prefabricated-material"
+          ]
+        },
+        {
+          "line": 614,
+          "level": 3,
+          "title": "Get material information",
+          "tags": [
+            "prefabricated-material"
+          ]
+        },
+        {
+          "line": 634,
+          "level": 3,
+          "title": "Exit short video module",
+          "tags": []
+        },
+        {
+          "line": 654,
+          "level": 3,
+          "title": "Get draft list",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 677,
+          "level": 3,
+          "title": "Delete draft",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 700,
+          "level": 3,
+          "title": "Open draft",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 729,
+          "level": 2,
+          "title": "Module settings",
+          "tags": []
+        },
+        {
+          "line": 734,
+          "level": 2,
+          "title": "Agent Image Index",
+          "tags": []
+        }
+      ],
+      "images": [
+        {
+          "path": "../assets/image.png",
+          "asset_path": "markdown/native_quickstart/doc_en/../assets/image.png",
+          "exists": true,
+          "width": 494,
+          "height": 180,
+          "inferred_use": "step screenshot; inspect near the preceding heading before editing"
+        }
+      ]
+    },
+    {
+      "doc_id": "react-native-quickstart-doc-ch-quickstart-ch",
+      "source_path": "react_native_quickstart/doc_ch/quickstart_ch.md",
+      "asset_path": "markdown/react_native_quickstart/doc_ch/quickstart_ch.md",
+      "title": "美摄React Native短视频模块接入指引",
+      "language": "zh",
+      "track": "react-native",
+      "platforms": [
+        "android",
+        "ios"
+      ],
+      "tags": [
+        "quickstart",
+        "integration",
+        "react-native",
+        "android",
+        "ios",
+        "local-plugin",
+        "yarn",
+        "permission",
+        "license",
+        "server-config"
+      ],
+      "headings": [
+        {
+          "line": 11,
+          "level": 1,
+          "title": "美摄React Native短视频模块接入指引",
+          "tags": [
+            "integration"
+          ]
+        },
+        {
+          "line": 26,
+          "level": 2,
+          "title": "接入大致流程",
+          "tags": [
+            "integration"
+          ]
+        },
+        {
+          "line": 37,
+          "level": 2,
+          "title": "开发环境要求",
+          "tags": []
+        },
+        {
+          "line": 50,
+          "level": 2,
+          "title": "升级短视频注意事项",
+          "tags": []
+        },
+        {
+          "line": 51,
+          "level": 3,
+          "title": "2.0.0版本升级:",
+          "tags": []
+        },
+        {
+          "line": 53,
+          "level": 3,
+          "title": "1.5.1版本升级:",
+          "tags": []
+        },
+        {
+          "line": 55,
+          "level": 3,
+          "title": "1.5.0版本升级:",
+          "tags": []
+        },
+        {
+          "line": 57,
+          "level": 3,
+          "title": "1.4.0版本升级:",
+          "tags": []
+        },
+        {
+          "line": 88,
+          "level": 3,
+          "title": "1.2.8版本升级：",
+          "tags": []
+        },
+        {
+          "line": 93,
+          "level": 3,
+          "title": "1.2.7版本升级：",
+          "tags": []
+        },
+        {
+          "line": 108,
+          "level": 2,
+          "title": "支持媒体格式",
+          "tags": []
+        },
+        {
+          "line": 112,
+          "level": 2,
+          "title": "短视频模块集成",
+          "tags": [
+            "integration"
+          ]
+        },
+        {
+          "line": 156,
+          "level": 2,
+          "title": "系统授权",
+          "tags": [
+            "license"
+          ]
+        },
+        {
+          "line": 163,
+          "level": 3,
+          "title": "iOS",
+          "tags": []
+        },
+        {
+          "line": 178,
+          "level": 3,
+          "title": "Android",
+          "tags": []
+        },
+        {
+          "line": 201,
+          "level": 2,
+          "title": "美摄SDK授权",
+          "tags": [
+            "license"
+          ]
+        },
+        {
+          "line": 222,
+          "level": 2,
+          "title": "网络接口配置",
+          "tags": [
+            "server-config"
+          ]
+        },
+        {
+          "line": 268,
+          "level": 2,
+          "title": "预制素材",
+          "tags": [
+            "prefabricated-material"
+          ]
+        },
+        {
+          "line": 292,
+          "level": 2,
+          "title": "短视频模块主要方法",
+          "tags": []
+        },
+        {
+          "line": 306,
+          "level": 3,
+          "title": "视频录制",
+          "tags": []
+        },
+        {
+          "line": 324,
+          "level": 3,
+          "title": "合拍",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 359,
+          "level": 3,
+          "title": "视频编辑",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 380,
+          "level": 3,
+          "title": "视频编辑完成回调",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 397,
+          "level": 3,
+          "title": "选择封面",
+          "tags": []
+        },
+        {
+          "line": 409,
+          "level": 3,
+          "title": "保存草稿",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 426,
+          "level": 3,
+          "title": "合成视频",
+          "tags": []
+        },
+        {
+          "line": 438,
+          "level": 3,
+          "title": "视频合成回调",
+          "tags": []
+        },
+        {
+          "line": 450,
+          "level": 3,
+          "title": "保存封面图片",
+          "tags": []
+        },
+        {
+          "line": 462,
+          "level": 3,
+          "title": "退出短视频模块",
+          "tags": []
+        },
+        {
+          "line": 482,
+          "level": 3,
+          "title": "获取草稿列表",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 499,
+          "level": 3,
+          "title": "删除草稿",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 516,
+          "level": 3,
+          "title": "打开草稿",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 539,
+          "level": 2,
+          "title": "模块设置",
+          "tags": []
+        },
+        {
+          "line": 543,
+          "level": 2,
+          "title": "隐私协议",
+          "tags": [
+            "permission"
+          ]
+        },
+        {
+          "line": 553,
+          "level": 2,
+          "title": "Agent 图片索引",
+          "tags": []
+        }
+      ],
+      "images": [
+        {
+          "path": "../assets/image.png",
+          "asset_path": "markdown/react_native_quickstart/doc_ch/../assets/image.png",
+          "exists": true,
+          "width": 491,
+          "height": 303,
+          "inferred_use": "step screenshot; inspect near the preceding heading before editing"
+        },
+        {
+          "path": "../assets/android_compile_1.png",
+          "asset_path": "markdown/react_native_quickstart/doc_ch/../assets/android_compile_1.png",
+          "exists": true,
+          "width": 1675,
+          "height": 283,
+          "inferred_use": "Android build issue and resolution reference"
+        },
+        {
+          "path": "../assets/android_compile_1_resolve.png",
+          "asset_path": "markdown/react_native_quickstart/doc_ch/../assets/android_compile_1_resolve.png",
+          "exists": true,
+          "width": 1262,
+          "height": 688,
+          "inferred_use": "Android build issue and resolution reference"
+        },
+        {
+          "path": "../assets/image_lic.png",
+          "asset_path": "markdown/react_native_quickstart/doc_ch/../assets/image_lic.png",
+          "exists": true,
+          "width": 973,
+          "height": 311,
+          "inferred_use": "license file placement or authorization UI reference"
+        },
+        {
+          "path": "../assets/image_lic_android.png",
+          "asset_path": "markdown/react_native_quickstart/doc_ch/../assets/image_lic_android.png",
+          "exists": true,
+          "width": 1662,
+          "height": 329,
+          "inferred_use": "license file placement or authorization UI reference"
+        }
+      ]
+    },
+    {
+      "doc_id": "react-native-quickstart-doc-en-quickstart-en",
+      "source_path": "react_native_quickstart/doc_en/quickstart_en.md",
+      "asset_path": "markdown/react_native_quickstart/doc_en/quickstart_en.md",
+      "title": "Meishe React Native short video module access guide",
+      "language": "en",
+      "track": "react-native",
+      "platforms": [
+        "android",
+        "ios"
+      ],
+      "tags": [
+        "quickstart",
+        "integration",
+        "react-native",
+        "android",
+        "ios",
+        "local-plugin",
+        "yarn",
+        "permission",
+        "license",
+        "server-config"
+      ],
+      "headings": [
+        {
+          "line": 11,
+          "level": 1,
+          "title": "Meishe React Native short video module access guide",
+          "tags": []
+        },
+        {
+          "line": 26,
+          "level": 2,
+          "title": "General Integration Process",
+          "tags": [
+            "integration"
+          ]
+        },
+        {
+          "line": 37,
+          "level": 2,
+          "title": "Development environment requirements",
+          "tags": []
+        },
+        {
+          "line": 49,
+          "level": 2,
+          "title": "Upgrade short video notes",
+          "tags": []
+        },
+        {
+          "line": 50,
+          "level": 3,
+          "title": "Version 2.0.0 Updates:",
+          "tags": []
+        },
+        {
+          "line": 52,
+          "level": 3,
+          "title": "Version 1.5.1 Updates:",
+          "tags": []
+        },
+        {
+          "line": 54,
+          "level": 3,
+          "title": "Version 1.5.0 Updates:",
+          "tags": []
+        },
+        {
+          "line": 56,
+          "level": 3,
+          "title": "1.4.0 Version upgrade：",
+          "tags": []
+        },
+        {
+          "line": 87,
+          "level": 3,
+          "title": "1.2.8 Version upgrade：",
+          "tags": []
+        },
+        {
+          "line": 92,
+          "level": 3,
+          "title": "1.2.7 Version upgrade：",
+          "tags": []
+        },
+        {
+          "line": 107,
+          "level": 2,
+          "title": "Support media formats",
+          "tags": []
+        },
+        {
+          "line": 111,
+          "level": 2,
+          "title": "Short video module integration",
+          "tags": [
+            "integration"
+          ]
+        },
+        {
+          "line": 155,
+          "level": 2,
+          "title": "System authorization",
+          "tags": []
+        },
+        {
+          "line": 157,
+          "level": 3,
+          "title": "iOS",
+          "tags": []
+        },
+        {
+          "line": 172,
+          "level": 3,
+          "title": "Android",
+          "tags": []
+        },
+        {
+          "line": 195,
+          "level": 2,
+          "title": "Meishe SDK authorization",
+          "tags": []
+        },
+        {
+          "line": 211,
+          "level": 2,
+          "title": "Network interface configuration",
+          "tags": [
+            "server-config"
+          ]
+        },
+        {
+          "line": 257,
+          "level": 2,
+          "title": "Preset material",
+          "tags": [
+            "prefabricated-material"
+          ]
+        },
+        {
+          "line": 277,
+          "level": 2,
+          "title": "Main methods of short video module",
+          "tags": []
+        },
+        {
+          "line": 291,
+          "level": 3,
+          "title": "Video recording",
+          "tags": []
+        },
+        {
+          "line": 309,
+          "level": 3,
+          "title": "Picture in Picture",
+          "tags": []
+        },
+        {
+          "line": 339,
+          "level": 3,
+          "title": "Video editing",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 360,
+          "level": 3,
+          "title": "Video editing complete callback",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 377,
+          "level": 3,
+          "title": "Select cover",
+          "tags": []
+        },
+        {
+          "line": 389,
+          "level": 3,
+          "title": "Save draft",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 406,
+          "level": 3,
+          "title": "Synthetic video",
+          "tags": []
+        },
+        {
+          "line": 418,
+          "level": 3,
+          "title": "Video synthesis callback",
+          "tags": []
+        },
+        {
+          "line": 430,
+          "level": 3,
+          "title": "Save cover image",
+          "tags": []
+        },
+        {
+          "line": 442,
+          "level": 3,
+          "title": "Exit short video module",
+          "tags": []
+        },
+        {
+          "line": 462,
+          "level": 3,
+          "title": "Get draft list",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 479,
+          "level": 3,
+          "title": "Delete draft",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 496,
+          "level": 3,
+          "title": "Open draft",
+          "tags": [
+            "function-config"
+          ]
+        },
+        {
+          "line": 519,
+          "level": 2,
+          "title": "Module settings",
+          "tags": []
+        },
+        {
+          "line": 524,
+          "level": 2,
+          "title": "Agent Image Index",
+          "tags": []
+        }
+      ],
+      "images": [
+        {
+          "path": "../assets/image.png",
+          "asset_path": "markdown/react_native_quickstart/doc_en/../assets/image.png",
+          "exists": true,
+          "width": 491,
+          "height": 303,
+          "inferred_use": "step screenshot; inspect near the preceding heading before editing"
+        },
+        {
+          "path": "../assets/android_compile_1.png",
+          "asset_path": "markdown/react_native_quickstart/doc_en/../assets/android_compile_1.png",
+          "exists": true,
+          "width": 1675,
+          "height": 283,
+          "inferred_use": "Android build issue and resolution reference"
+        },
+        {
+          "path": "../assets/android_compile_1_resolve.png",
+          "asset_path": "markdown/react_native_quickstart/doc_en/../assets/android_compile_1_resolve.png",
+          "exists": true,
+          "width": 1262,
+          "height": 688,
+          "inferred_use": "Android build issue and resolution reference"
+        },
+        {
+          "path": "../assets/image_lic.png",
+          "asset_path": "markdown/react_native_quickstart/doc_en/../assets/image_lic.png",
+          "exists": true,
+          "width": 973,
+          "height": 311,
+          "inferred_use": "license file placement or authorization UI reference"
+        },
+        {
+          "path": "../assets/image_lic_android.png",
+          "asset_path": "markdown/react_native_quickstart/doc_en/../assets/image_lic_android.png",
+          "exists": true,
+          "width": 1662,
+          "height": 329,
+          "inferred_use": "license file placement or authorization UI reference"
+        }
+      ]
+    }
+  ]
+}

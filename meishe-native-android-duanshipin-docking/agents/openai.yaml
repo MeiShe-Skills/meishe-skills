@@ -1,0 +1,4 @@
+interface:
+  display_name: "美摄原生 Android 短视频接入"
+  short_description: "独立完成原生 Android 美摄短视频 Demo 接入、配置查询与验证。"
+  default_prompt: "使用 $meishe-native-android-duanshipin-docking 仅按原生 Android 路线接入官方美摄短视频 Demo 包。"

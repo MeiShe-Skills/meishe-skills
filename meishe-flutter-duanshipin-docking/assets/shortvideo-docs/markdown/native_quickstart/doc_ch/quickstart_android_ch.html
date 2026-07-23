@@ -1,0 +1,759 @@
+<!DOCTYPE html><html><head>
+      <title>quickstart_android_ch</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/ms20221114/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.8.25/crossnote/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-details{margin:0;padding:0;border:none}.markdown-preview .md-toc summary.md-toc-link-wrapper{cursor:pointer;list-style-position:outside}.markdown-preview .md-toc summary.md-toc-link-wrapper::marker{font-size:.85em}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='0']{margin-left:12px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='1']{margin-left:28px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='2']{margin-left:44px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='3']{margin-left:60px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='4']{margin-left:76px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='5']{margin-left:80px}.markdown-preview a.tag,.markdown-preview a.tag:active,.markdown-preview a.tag:link,.markdown-preview a.tag:visited,.markdown-preview span.tag{display:inline-block;background-color:var(--vscode-badge-background,rgba(127,127,127,.18));color:var(--vscode-badge-foreground,currentColor);border-radius:2em;font-size:.85em;font-weight:500;padding:.05em .55em;line-height:1.5;white-space:nowrap;text-decoration:none;text-shadow:none;box-shadow:none;transition:background-color .12s ease,opacity .12s ease}.markdown-preview a.tag{cursor:pointer}.markdown-preview a.tag:focus,.markdown-preview a.tag:hover{background-color:var(--vscode-badge-background,rgba(127,127,127,.32));color:var(--vscode-badge-foreground,currentColor);opacity:.85;text-decoration:none;outline:0}.markdown-preview .wikilink-embed-content{border-left:3px solid var(--vscode-textBlockQuote-border,rgba(128,128,128,.3));background:var(--vscode-textBlockQuote-background,rgba(128,128,128,.05));margin:.5em 0;padding:.5em .75em;border-radius:0 3px 3px 0}.markdown-preview .wikilink-embed-content.wikilink-embed-error{border-left-color:var(--vscode-errorForeground,#cf222e);color:var(--vscode-errorForeground,#cf222e);font-style:italic;opacity:.8}.markdown-preview .wikilink-embed-content h1:first-child,.markdown-preview .wikilink-embed-content h2:first-child,.markdown-preview .wikilink-embed-content h3:first-child,.markdown-preview .wikilink-embed-content h4:first-child,.markdown-preview .wikilink-embed-content h5:first-child,.markdown-preview .wikilink-embed-content h6:first-child{margin-top:.25em}.markdown-preview .wikilink-embed-content .wikilink-embed-content{margin:.25em 0;padding:.25em .5em}.markdown-preview .block-id{display:none}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-details{margin:0;padding:0;border:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='0']{padding-left:0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='1']{padding-left:16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='2']{padding-left:32px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='3']{padding-left:48px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='4']{padding-left:64px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='5']{padding-left:80px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+
+      </style>
+      
+    </head>
+    <body for="html-export">
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="美摄短视频模块接入指引">美摄短视频模块接入指引 </h1>
+<h2 id="开发环境要求">开发环境要求 </h2>
+<ul>
+<li>Android studio 2023.12+。</li>
+<li>JDK 11， TargetSdkVersion 34</li>
+</ul>
+<blockquote>
+<p>⚠️ <strong>Note:</strong> 需要在真机上运行，模拟器暂不支持</p>
+</blockquote>
+<h2 id="升级短视频注意事项">升级短视频注意事项 </h2>
+<h3 id="152版本升级">1.5.2版本升级: </h3>
+<ul>
+<li>一键成片做了全新升级，详细代码参考demo，可以在支持群联系服务端开发同事协助升级服务端接口，所以使用一键成片功能，一定要联系我们的服务端同事协助升级。有任何问题都可以联系我们</li>
+</ul>
+<h3 id="151版本升级">1.5.1版本升级: </h3>
+<ul>
+<li>修复了一些已知问题</li>
+</ul>
+<h3 id="150版本升级">1.5.0版本升级: </h3>
+<ul>
+<li>此版本更新较大，上线之前一定要进行回归测试，尤其是配置项的变化</li>
+</ul>
+<h3 id="140版本升级">1.4.0版本升级: </h3>
+<ul>
+<li>安卓的一键成片没有升级，所以安卓的接口没有变化，不需要改动。这一点要和ios区分开。有需要对接一键成片的，请在群里联系我们的相关同事</li>
+</ul>
+<h3 id="130版本升级">1.3.0版本升级: </h3>
+<ul>
+<li>1.编辑<strong>UI</strong>更新：调整下一步，保存位置为底部菜单。</li>
+<li>2.新增导出美摄sdk配置项；支持的配置参数详见：<a href="https://www.meishesdk.com/android/doc_ch/html/content/classcom_1_1meicam_1_1sdk_1_1NvsStreamingContext.html#COMPILE_CONFIGURATIONS">美摄sdk生成配置项参数</a></li>
+</ul>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token keyword keyword-private">private</span> <span class="token keyword keyword-void">void</span> <span class="token function">testCompileConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        mVideoConfig <span class="token operator">=</span> <span class="token class-name">NvModuleManager</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span><span class="token keyword keyword-null">null</span> <span class="token operator">==</span> mVideoConfig<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            mVideoConfig <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">NvVideoConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token class-name">NvCompileConfig</span> compileConfig <span class="token operator">=</span> mVideoConfig<span class="token punctuation">.</span><span class="token function">getCompileConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">&gt;</span></span> compileMap <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        compileMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token constant">VIDEO_ENCODEC_NAME</span><span class="token punctuation">,</span> <span class="token string">"hevc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        compileConfig<span class="token punctuation">.</span><span class="token function">setConfigure</span><span class="token punctuation">(</span>compileMap<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//        compileConfig.setFps(30);</span>
+        mVideoConfig<span class="token punctuation">.</span><span class="token function">setCompileConfig</span><span class="token punctuation">(</span>compileConfig<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><ul>
+<li>3.新增导出时支持多张图片保存，支持获取发布数据：<strong>视频路径，图片路径，musicInfo数据</strong>。</li>
+</ul>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code>    <span class="token class-name">NvPublishInfo</span> publishInfo <span class="token operator">=</span> <span class="token class-name">NvModuleManager</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPublishInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 单张图片路径</span>
+        <span class="token class-name">String</span> coverPath <span class="token operator">=</span> publishInfo<span class="token punctuation">.</span><span class="token function">getCoverPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 音乐信息</span>
+        <span class="token class-name">NvMusicInfo</span> musicInfo <span class="token operator">=</span> publishInfo<span class="token punctuation">.</span><span class="token function">getMusicInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 多张图片路径集合</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> imagesPath <span class="token operator">=</span> publishInfo<span class="token punctuation">.</span><span class="token function">getImagesPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 视频路径</span>
+        <span class="token class-name">String</span> videoPath <span class="token operator">=</span> publishInfo<span class="token punctuation">.</span><span class="token function">getVideoPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><ul>
+<li>4.新增Api，用于获取是否支持多张图片保存。</li>
+</ul>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code>    <span class="token keyword keyword-boolean">boolean</span> onlyHaveMultipleImage <span class="token operator">=</span> <span class="token class-name">NvModuleManager</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">isOnlyHaveMultipleImage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><ul>
+<li>5.新增拍摄配置项：默认选择项<strong>拍照，视频，快拍</strong>。</li>
+</ul>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code>    <span class="token keyword keyword-private">private</span> <span class="token keyword keyword-void">void</span> <span class="token function">testCaptureConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        mVideoConfig <span class="token operator">=</span> <span class="token class-name">NvModuleManager</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span><span class="token keyword keyword-null">null</span> <span class="token operator">==</span> mVideoConfig<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            mVideoConfig <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">NvVideoConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token class-name">NvCaptureConfig</span> captureConfig <span class="token operator">=</span> mVideoConfig<span class="token punctuation">.</span><span class="token function">getCaptureConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// NvCaptureBottomMenuItem.image</span>
+        <span class="token comment">// NvCaptureBottomMenuItem.video</span>
+        <span class="token comment">// NvCaptureBottomMenuItem.smart</span>
+        captureConfig<span class="token punctuation">.</span><span class="token function">setDefaultBottomMenuSelectItem</span><span class="token punctuation">(</span><span class="token class-name">NvCaptureConfig<span class="token punctuation">.</span>NvCaptureBottomMenuItem</span><span class="token punctuation">.</span>video<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mVideoConfig<span class="token punctuation">.</span><span class="token function">setCaptureConfig</span><span class="token punctuation">(</span>captureConfig<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><ul>
+<li>6.新增拍摄，编辑添加支持菜单文字修改阴影配置。</li>
+</ul>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code>    <span class="token keyword keyword-private">private</span> <span class="token keyword keyword-void">void</span> <span class="token function">testShadowLayer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        mVideoConfig <span class="token operator">=</span> <span class="token class-name">NvModuleManager</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span><span class="token keyword keyword-null">null</span> <span class="token operator">==</span> mVideoConfig<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            mVideoConfig <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">NvVideoConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// 设置阴影颜色</span>
+        mVideoConfig<span class="token punctuation">.</span><span class="token function">setShadowColor</span><span class="token punctuation">(</span><span class="token string">"#FC3E5A"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 设置阴影偏移量</span>
+        <span class="token class-name">NvShadowOffsetConfig</span> nvShadowOffsetConfig <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">NvShadowOffsetConfig</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mVideoConfig<span class="token punctuation">.</span><span class="token function">setShadowOffset</span><span class="token punctuation">(</span>nvShadowOffsetConfig<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><ul>
+<li>7.fix 特定环境下出现的拍摄滤镜底部弹窗出现的UI错乱问题。</li>
+<li>8.优化 检查相册中数据是否真实存在，如果不存在则提示视频｜照片不存在</li>
+<li>9.优化 编辑滑动底部进度条时，隐藏所有操作菜单项。</li>
+<li>10.Android适配16k。</li>
+<li>11.接口更新： <strong>NvModuleManager.java</strong> 统一了导出数据的获取接口。</li>
+</ul>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code>    <span class="token comment">// public interface OnCompileImageListener {</span>
+    <span class="token comment">//     void onCompileFinished(boolean isSuccess, String path);</span>
+    <span class="token comment">// }</span>
+   <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-interface">interface</span> <span class="token class-name">OnCompileImageListener</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-void">void</span> <span class="token function">onCompileFinished</span><span class="token punctuation">(</span><span class="token keyword keyword-boolean">boolean</span> isSuccess<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// path 统一从NvPublishInfo获取</span>
+    <span class="token class-name">NvModuleManager</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPublishInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h3 id="129版本升级">1.2.9版本升级： </h3>
+<ul>
+<li>1.2.9版本新增了导出带水印的视频和图片，如果用户配置了水印，那么在导出时视频和封面是带水印的。</li>
+</ul>
+<h3 id="128版本升级">1.2.8版本升级： </h3>
+<ul>
+<li>1.2.7版本进入拍摄、编辑、合拍时需要先下载资源，新版本不会阻塞进入拍摄、编辑、合拍，会在进入的时候后台默默下载。同时也提供了接口用户也可以主动调用，如果用户不主动调用shortvideo将会默认调用。</li>
+</ul>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">downloadPrefabricatedMaterial</span><span class="token punctuation">(</span><span class="token class-name">Activity</span> activity<span class="token punctuation">,</span> <span class="token class-name">OnAssetsRequestListener</span> onAssetsRequestListener<span class="token punctuation">)</span>
+</code></pre><h3 id="127版本升级">1.2.7版本升级： </h3>
+<ul>
+<li>原生工程直接替换AAR库<br>
+1.2.7版本在进入拍摄、合拍、剪辑功能时，在原有接口基础上增加回调，用来监听内置资源下载完成</li>
+</ul>
+<pre data-role="codeBlock" data-info="NvModuleManager.java" class="language-nvmodulemanager.java NvModuleManager.java"><code>//拍摄入口
+- public void openCapture(Activity activity, NvVideoConfig videoConfig, NvMusicInfo musicInfo, OnAssetsRequestListener onAssetsRequestListener);
+//合拍入口
+- public void startDualCapture(Activity activity, NvVideoConfig videoConfig, OnAssetsRequestListener onAssetsRequestListener);
+//剪辑入口
+- public void openEdit(Activity activity, NvVideoConfig videoConfig, OnAssetsRequestListener onAssetsRequestListener);
+</code></pre><h2 id="支持媒体格式">支持媒体格式 </h2>
+<p>详见：<a href="https://www.meishesdk.com/android/doc_ch/html/content/Introduction_8md.html">美摄sdk产品概述</a></p>
+<h1 id="工程构建">工程构建 </h1>
+<ol>
+<li>
+<p>新建Android 工程</p>
+<p>运行File—new—New Project， 进行如下设置后，点击finish</p>
+<p><img src="../assets/android_image/image-20240516153236811.png" alt="image-20240516153236811"></p>
+</li>
+<li>
+<p>将aar包到libs目录下</p>
+<p>将NvShortVideoCore. aar包，放到libs目录下</p>
+</li>
+<li>
+<p>将meishesdk.lic 放asset目录下</p>
+<p><img src="../assets/android_image/image-20240516185729759.png" alt="image-20240516185729759"></p>
+<blockquote>
+<p>meishesdk.lic 是通过美摄官网申请的license，该license和appid绑定</p>
+<p>在<a href="https://www.meishesdk.com">美摄官网</a>注册用户后，创建应用，配置appid，由美摄商务同事开通授权后，可在应用信息中下载授权文件。</p>
+<p>SDK授权和App的appld绑定。未授权时，SDK全功能不再检查授权，都可以使用，绘制的画面会带MEISHE水印。</p>
+</blockquote>
+</li>
+<li>
+<p>创建依赖项</p>
+<pre data-role="codeBlock" data-info="xml" class="language-xml xml"><code>implementation rootProject.ext.dependencies.extMutilDex
+implementation rootProject.ext.dependencies.extAndroidXDesign
+implementation rootProject.ext.dependencies.extAppcompat
+implementation rootProject.ext.dependencies.extAppcompatRecycler
+implementation rootProject.ext.dependencies.extConstraintLayout
+//Gson
+implementation rootProject.ext.dependencies.extGoogleGson
+implementation rootProject.ext.dependencies.extWebpdecoder
+//Utils
+implementation rootProject.ext.dependencies.utils
+//BRVAH
+implementation rootProject.ext.dependencies.brvah
+// glide 4.6.1~4.9.0 (exclude broken version 4.6.0, 4.7.0)
+implementation rootProject.ext.dependencies.extBumptechGlide
+annotationProcessor rootProject.ext.dependencies.extGlideAnnotation
+//permission
+implementation rootProject.ext.dependencies.permissionx
+//Smart refresh
+implementation rootProject.ext.dependencies.smartRefreshLayout
+implementation rootProject.ext.dependencies.smartRefreshHeader
+//room
+implementation rootProject.ext.dependencies.room
+annotationProcessor rootProject.ext.dependencies.roomComplier
+//okhttp
+implementation rootProject.ext.dependencies.extOkhttp
+//exoplayer
+implementation rootProject.ext.dependencies.exoplayer
+//eventBus
+implementation rootProject.ext.dependencies.eventBus
+</code></pre><p>依赖项见 config.gradle 配置</p>
+</li>
+</ol>
+<h2 id="系统权限说明">系统权限说明 </h2>
+<p>App 需要在以下权限，否则将无法使用短视频模块。</p>
+<pre data-role="codeBlock" data-info="xml" class="language-xml xml"><code> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.SYSTEM_ALERT_WINDOW<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.CAMERA<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.RECORD_AUDIO<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.WRITE_EXTERNAL_STORAGE<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.READ_EXTERNAL_STORAGE<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span> <span class="token comment">&lt;!-- &lt;uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" /&gt; --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.INTERNET<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.ACCESS_NETWORK_STATE<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.VIBRATE<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.WAKE_LOCK<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.ACCESS_NOTIFICATION_POLICY<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span> <span class="token comment">&lt;!-- &lt;uses-permission android:name="android.permission.INTERNET" /&gt; --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.ACCESS_WIFI_STATE<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.CHANGE_WIFI_STATE<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span> <span class="token comment">&lt;!-- 用于进行网络定位 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.ACCESS_COARSE_LOCATION<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span> <span class="token comment">&lt;!-- 用于访问GPS定位 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.ACCESS_FINE_LOCATION<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span> <span class="token comment">&lt;!-- 用于读取手机当前的状态 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.REQUEST_INSTALL_PACKAGES<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.EXPAND_STATUS_BAR<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+</code></pre><h2 id="美摄sdk授权">美摄SDK授权 </h2>
+<p>在<a href="https://www.meishesdk.com">美摄官网</a>注册用户后，创建应用，配置appid，由美摄商务同事开通授权后，可在应用信息中下载授权文件。</p>
+<p>需要将授权.lic文件添加到App工程的asset目录下</p>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code>执行<span class="token class-name">NvModuleManager</span><span class="token punctuation">.</span><span class="token function">initSdk</span><span class="token punctuation">(</span><span class="token string">"assets:/meishesdk.lic"</span><span class="token punctuation">)</span> 方法，进行sdk授权
+</code></pre><blockquote>
+<p>SDK授权和App的appld绑定。未授权时，SDK全功能不再检查授权，都可以使用，绘制的画面会带MEISHE水印。</p>
+</blockquote>
+<h2 id="网络接口配置">网络接口配置 </h2>
+<p>短视频模块用到的滤镜、贴纸、音乐等文件均通过网络接口获取。通过设置host的形式配置</p>
+<p>定义在NvsServerClient.java 文件中</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token comment">/*! \if ENGLISH
+     *
+     *  \brief Init net host
+     *  \param application The application
+     *  \param host the host
+     *  \param complatetionHandler
+     *  \else
+     *
+     *  \brief 初始化网路
+     *  \param application app
+     *  \param host host
+     *  \endif
+     */</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">initConfig</span><span class="token punctuation">(</span><span class="token maybe-class-name">Application</span> application<span class="token punctuation">,</span> <span class="token known-class-name class-name">String</span> host<span class="token punctuation">)</span>
+</code></pre><p>在EngineNetApi.java 里，定义了各种功能接口，可以修改以下变量，进行功能接口配置</p>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token doc-comment comment">/**
+     * 根据分类获取素材列表
+     * Get a list of materials by category
+     */</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-static">static</span> <span class="token class-name">String</span> <span class="token constant">NV_ASSET_REQUEST_URL</span> <span class="token operator">=</span> <span class="token string">"materialcenter/mall/custom/listAllAssemblyMaterial"</span><span class="token punctuation">;</span>
+    <span class="token doc-comment comment">/**
+     * 根据素材类型获取素材分类列表
+     * Gets a classified list of materials based on their type
+     */</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-static">static</span> <span class="token class-name">String</span> <span class="token constant">NV_ASSET_CATEGORY_URL</span> <span class="token operator">=</span> <span class="token string">"materialcenter/appSdkApi/listTypeAndCategory"</span><span class="token punctuation">;</span>
+    <span class="token doc-comment comment">/**
+     * 获取字体列表
+     * Get font list
+     * materialcenter/appSdkApi/material/listAll
+     */</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-static">static</span> <span class="token class-name">String</span> <span class="token constant">NV_ASSET_FONT_URL</span> <span class="token operator">=</span> <span class="token string">"materialcenter/listFont"</span><span class="token punctuation">;</span>
+    <span class="token doc-comment comment">/**
+     * 获取音乐列表
+     * Get music list
+     */</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-static">static</span> <span class="token class-name">String</span> <span class="token constant">NV_ASSET_MUSICIANS_URL</span> <span class="token operator">=</span> <span class="token string">"materialcenter/appSdkApi/listMusic"</span><span class="token punctuation">;</span>
+    <span class="token doc-comment comment">/**
+     * 把素材的id作为参数传入，获取到素材下载的链接
+     * Pass in the id of the material as a parameter to get the link to the material download
+     */</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-static">static</span> <span class="token class-name">String</span> <span class="token constant">NV_ASSET_DOWNLOAD_URL</span> <span class="token operator">=</span> <span class="token string">"materialcenter/mall/custom/materialInteraction"</span><span class="token punctuation">;</span>
+    <span class="token doc-comment comment">/**
+     * 获取预置素材
+     * Get the Prefabricated material for the project
+     */</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-static">static</span> <span class="token class-name">String</span> <span class="token constant">NV_ASSET_PREFABRICATED_URL</span> <span class="token operator">=</span> <span class="token string">"materialcenter/beautyAssets/latest"</span><span class="token punctuation">;</span>
+    <span class="token doc-comment comment">/**
+     * 一键成片
+     * AutoCut
+     */</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-static">static</span> <span class="token class-name">String</span> <span class="token constant">NV_ASSET_AUTOCUT_URL</span> <span class="token operator">=</span> <span class="token string">"materialcenter/recommend/listTemplate"</span><span class="token punctuation">;</span>
+    <span class="token doc-comment comment">/**
+     * 获取模版的标签分类
+     * Gets the label classification of the template
+     * materialcenter/appSdkApi/listTemplateTag
+     */</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-static">static</span> <span class="token class-name">String</span> <span class="token constant">NV_ASSET_TAG_URL</span> <span class="token operator">=</span> <span class="token string">"materialcenter/listTemplateTag"</span><span class="token punctuation">;</span>
+    <span class="token doc-comment comment">/** 公共参数
+      *Default parameters
+      */</span>
+    <span class="token class-name">NvsServerClient<span class="token punctuation">.</span>MallInfo</span><span class="token punctuation">.</span><span class="token constant">CLIENT_ID</span> <span class="token operator">=</span> <span class="token class-name">NV_ClientId</span><span class="token punctuation">;</span>
+    <span class="token class-name">NvsServerClient<span class="token punctuation">.</span>MallInfo</span><span class="token punctuation">.</span><span class="token constant">CLIENT_SECRET</span> <span class="token operator">=</span> <span class="token class-name">NV_ClientSecret</span><span class="token punctuation">;</span>
+    <span class="token class-name">NvsServerClient<span class="token punctuation">.</span>MallInfo</span><span class="token punctuation">.</span><span class="token constant">ASSEMBLY_ID</span> <span class="token operator">=</span> <span class="token class-name">NV_AssemblyId</span><span class="token punctuation">;</span>
+</code></pre><h2 id="预制素材">预制素材 </h2>
+<p>短视频模块依赖的素材包可根据需要选择。预制素材详见：<a href="./PrefabricatedMaterial_ch.html">短视频模块预制素材</a></p>
+<h2 id="短视频模块主要方法">短视频模块主要方法 </h2>
+<p>模块方法主要定义在NvModuleManager.java 文件中</p>
+<h3 id="初始化sdk">初始化sdk </h3>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code> <span class="token doc-comment comment">/** \if ENGLISH
+     *
+     *  \brief InitSdk
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">licPath</span> the licPath
+     *  \else
+     *
+     *  \brief 美摄SDK授权
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">licPath</span> 授权文件
+     *  \endif
+     */</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">initSdk</span><span class="token punctuation">(</span><span class="token class-name">String</span> licPath<span class="token punctuation">)</span>
+</code></pre><h3 id="视频录制">视频录制 </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token doc-comment comment">/** \if ENGLISH
+     *
+     *  \brief Open capture
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">activity</span> the activity
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">videoConfig</span> the config information
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">musicInfo</span> the config music information
+     *  \else
+     *
+     *  \brief 打开拍摄
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">activity</span> 授权文件
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">videoConfig</span> 配置信息
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">musicInfo</span> 音乐信息
+     *  \endif
+     */</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">openCapture</span><span class="token punctuation">(</span><span class="token maybe-class-name">Activity</span> activity<span class="token punctuation">,</span> <span class="token maybe-class-name">NvVideoConfig</span> videoConfig<span class="token punctuation">,</span> <span class="token maybe-class-name">NvMusicInfo</span> musicInfo<span class="token punctuation">)</span>
+</code></pre><h3 id="合拍">合拍 </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token doc-comment comment">/** \if ENGLISH
+     *
+     *  \brief Open dual capture.Open the album, and jump to the dual capture activity.
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">activity</span> the activity
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">videoConfig</span> the config information
+     *  \else
+     *
+     *  \brief 打开合拍 即跳转相册，进入合拍页面
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">activity</span> activity
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">videoConfig</span> 配置信息
+     *  \endif
+     */</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">openDualCapture</span><span class="token punctuation">(</span><span class="token maybe-class-name">Activity</span> activity<span class="token punctuation">,</span> <span class="token maybe-class-name">NvVideoConfig</span> videoConfig<span class="token punctuation">)</span>
+
+ <span class="token doc-comment comment">/** \if ENGLISH
+     *
+     *  \brief Open dual capture.Open the album, and jump to the dual capture activity.
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">activity</span> the activity.
+     * If you need to configure the export path, you need to call this method
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">videoConfig</span> the config information
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">videoPath</span> The video path prepared for co production must be a local path.
+     *  \else
+     *
+     *  \brief 打开合 拍即跳转相册，进入合拍页面
+     *  如果需要配置导出路径，需要调用此方法
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">activity</span> 授权文件
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">videoConfig</span> 配置信息
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">videoPath</span> 准备合拍的视频路径，必须是本地路径
+     *  \endif
+     */</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">openDualCapture</span><span class="token punctuation">(</span><span class="token maybe-class-name">Activity</span> activity<span class="token punctuation">,</span> <span class="token maybe-class-name">NvVideoConfig</span> videoConfig<span class="token punctuation">,</span> <span class="token known-class-name class-name">String</span> videoPath<span class="token punctuation">)</span>
+</code></pre><h3 id="视频编辑">视频编辑 </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token doc-comment comment">/** \if ENGLISH
+     *
+     *  \brief Open edit
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">activity</span> the activity
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">videoConfig</span> the config information
+     *  \else
+     *
+     *  \brief 打开编辑
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">activity</span> activity
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">videoConfig</span> 配置信息
+     *  \endif
+     */</span>
+<span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">openEdit</span><span class="token punctuation">(</span><span class="token maybe-class-name">Activity</span> activity<span class="token punctuation">,</span> <span class="token maybe-class-name">NvVideoConfig</span> videoConfig<span class="token punctuation">)</span>
+</code></pre><h3 id="跳转发布页回调">跳转发布页回调 </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token keyword keyword-public">public</span> <span class="token keyword keyword-interface">interface</span> <span class="token class-name">NvModuleManagerCallback</span> <span class="token punctuation">{</span>
+
+    <span class="token doc-comment comment">/** \if ENGLISH
+     *
+     *  \brief Publish with info callback
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">activity</span> The activity
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">needSaveDraft</span> Need save draft or not.
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">needSaveCover</span> Need save cover or not.
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">needSaveVideo</span> Need save video or not.
+     *  \else
+     *
+     *  \brief 跳转发布页面回调
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">activity</span> The activity
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">needSaveDraft</span> 是否要保存草稿
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">needSaveCover</span> 是否要保存封面
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">needSaveVideo</span> 是否要保存视频
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">videoPath</span> 视频地址
+     *  \endif
+     */</span>
+    <span class="token keyword keyword-void">void</span> <span class="token function">publishWithInfo</span><span class="token punctuation">(</span><span class="token maybe-class-name">Activity</span> activity<span class="token punctuation">,</span> boolean needSaveDraft<span class="token punctuation">,</span> boolean needSaveCover<span class="token punctuation">,</span> boolean needSaveVideo<span class="token punctuation">,</span> <span class="token known-class-name class-name">String</span> videoPath<span class="token punctuation">)</span>
+</code></pre><h3 id="编辑封面">编辑封面 </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token doc-comment comment">/** if ENGLISH
+     *
+     *  \brief EditCover
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">activity</span> the from activity
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">overPoint</span> Last editing time for cover page
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">requestCode</span> The request code
+     *  \else
+     *
+     *  \brief 编辑封面
+     *  <span class="token keyword keyword-@param">@param</span>  <span class="token parameter">activity</span> 编辑封面的发起页面
+     *  <span class="token keyword keyword-@param">@param</span>  <span class="token parameter">overPoint</span> 上一次编辑封面的时间点
+     *  <span class="token keyword keyword-@param">@param</span>  <span class="token parameter">requestCode</span> 请求code
+     *  \endif
+     */</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-static">static</span> <span class="token keyword keyword-void">void</span> <span class="token function">editCover</span><span class="token punctuation">(</span><span class="token maybe-class-name">Activity</span> activity<span class="token punctuation">,</span> long overPoint<span class="token punctuation">,</span> int requestCode<span class="token punctuation">)</span>
+
+    <span class="token comment">//封面编辑不会生成Bitmap，封面的选择时间点，会在onActivityResult方法回调里返回， key是“coverPoint”</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-static">static</span> final <span class="token known-class-name class-name">String</span> <span class="token constant">INTENT_KEY_COVER_POINT</span> <span class="token operator">=</span> <span class="token string">"coverPoint"</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//可以通过CaptureAndEditUtil.java中的方法获取bitmap</span>
+
+     <span class="token doc-comment comment">/** if ENGLISH
+     *
+     *  \brief Get image from timeline
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">overPoint</span> The cover point
+     *  \else
+     *
+     *  \brief 获取时间线上某一帧图片的bitmap
+     *  <span class="token keyword keyword-@param">@param</span>  <span class="token parameter">overPoint</span> 选择封面的时间点
+     *  \endif
+     */</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-static">static</span> <span class="token maybe-class-name">Bitmap</span> <span class="token function">getImageFromTime</span><span class="token punctuation">(</span>long overPoint<span class="token punctuation">)</span>
+</code></pre><blockquote>
+<p>如果需要保存封面，见保存封面接口</p>
+</blockquote>
+<h3 id="保存草稿">保存草稿 </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code> <span class="token doc-comment comment">/** \if ENGLISH
+     *
+     *  \brief Save draft
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">videoDesc</span> The draft description
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">coverPoint</span> The cover point
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">callBack</span> The draft save callback
+     *  \else
+     *
+     *  \brief 保存草稿
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">videoDesc</span> 草稿描述
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">coverPoint</span> 草稿封面
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">callBack</span> 保存草稿回调
+     *  \endif
+     */</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">saveDraft</span><span class="token punctuation">(</span><span class="token known-class-name class-name">String</span> videoDesc<span class="token punctuation">,</span> long coverPoint<span class="token punctuation">,</span> <span class="token maybe-class-name">DraftManager</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">DraftSaveCallBack</span></span> callBack<span class="token punctuation">)</span>
+</code></pre><h3 id="合成视频">合成视频 </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token doc-comment comment">/** if ENGLISH
+     *
+     *  \brief Save video to album
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">callback</span> The on compile video listener
+     *  \else
+     *
+     *  \brief 保存视频到相册
+     *  <span class="token keyword keyword-@param">@param</span>  <span class="token parameter">callback</span> 保存视频回调
+     *  \endif
+     */</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-static">static</span> <span class="token keyword keyword-void">void</span> <span class="token function">saveVideoToAlbum</span><span class="token punctuation">(</span><span class="token maybe-class-name">OnCompileVideoListener</span> callback<span class="token punctuation">)</span>
+</code></pre><h3 id="视频合成回调">视频合成回调 </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token keyword keyword-public">public</span> <span class="token keyword keyword-interface">interface</span> <span class="token class-name">OnCompileVideoListener</span> <span class="token punctuation">{</span>
+        <span class="token doc-comment comment">/**! \if ENGLISH
+         *
+         *  \brief compile video progress callback
+         *  \@param <span class="token parameter">timeline</span>  the current timeline
+         *  \@param <span class="token parameter">progress</span>  the current progress
+         *  \else
+         *
+         *  \brief 合成视频进度回调
+         *  \@param <span class="token parameter">timeline</span> 当前的时间线
+         *  \@param <span class="token parameter">progress</span> 当前的进度
+         *  \endif
+         */</span>
+        <span class="token keyword keyword-void">void</span> <span class="token function">compileProgress</span><span class="token punctuation">(</span><span class="token maybe-class-name">NvsTimeline</span> timeline<span class="token punctuation">,</span>int progress<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token doc-comment comment">/**! \if ENGLISH
+         *
+         *  \brief compile video finished callback
+         *  \@param <span class="token parameter">timeline</span>  the current timeline
+         *  \else
+         *
+         *  \brief 合成视频完成回调
+         *  \@param <span class="token parameter">timeline</span> 当前的时间线
+         *  \endif
+         */</span>
+        <span class="token keyword keyword-void">void</span> <span class="token function">compileFinished</span><span class="token punctuation">(</span><span class="token maybe-class-name">NvsTimeline</span> timeline<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token doc-comment comment">/**! \if ENGLISH
+         *
+         *  \brief compile video failed callback
+         *  \@param <span class="token parameter">timeline</span>  the current timeline
+         *  \else
+         *
+         *  \brief 合成视频失败回调
+         *  \@param <span class="token parameter">timeline</span> 当前的时间线
+         *  \endif
+         */</span>
+        <span class="token keyword keyword-void">void</span> <span class="token function">compileFailed</span><span class="token punctuation">(</span><span class="token maybe-class-name">NvsTimeline</span> timeline<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+         <span class="token doc-comment comment">/**! \if ENGLISH
+         *
+         *  \brief compile video completed callback
+         *  \@param <span class="token parameter">timeline</span>  the current timeline
+         *  \@param <span class="token parameter">compileVideoPath</span>  the compile video path
+         *  \@param <span class="token parameter">isCanceled</span>  The compile is canceled or not
+         *  \else
+         *
+         *  \brief 合成视频完成回调
+         *  \@param <span class="token parameter">timeline</span> 当前的时间线
+         *  \@param <span class="token parameter">compileVideoPath</span> 保存路径
+         *  \@param <span class="token parameter">isCanceled</span> 合成是否被取消
+         *  \endif
+         */</span>
+        <span class="token keyword keyword-void">void</span> <span class="token function">compileCompleted</span><span class="token punctuation">(</span><span class="token maybe-class-name">NvsTimeline</span> nvsTimeline<span class="token punctuation">,</span> <span class="token known-class-name class-name">String</span> compileVideoPath<span class="token punctuation">,</span> boolean isCanceled<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token doc-comment comment">/**! \if ENGLISH
+         *
+         *  \brief compile video cancel callback
+         *  \else
+         *
+         *  \brief 合成视频被取消回调
+         *  \endif
+         */</span>
+        <span class="token keyword keyword-void">void</span> <span class="token function">compileVideoCancel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+        <span class="token doc-comment comment">/**! \if ENGLISH
+         *
+         *  \brief compile video completed callback
+         *  \@param <span class="token parameter">isHardwareEncoder</span> Is hardware encoder or not
+         *  \@param <span class="token parameter">errorType</span> The error type
+         *  \@param <span class="token parameter">stringInfo</span> The error string info
+         *  \@param <span class="token parameter">flags</span> the  flags
+         *  \else
+         *
+         *  \brief 合成视频完成回调
+         *  \@param <span class="token parameter">isHardwareEncoder</span> 是否是硬件错误
+         *  \@param <span class="token parameter">errorType</span> 错误类型
+         *  \@param <span class="token parameter">stringInfo</span> 提示信息
+         *  \@param <span class="token parameter">flags</span> the  flags
+         *  \endif
+         */</span>
+        <span class="token keyword keyword-void">void</span> <span class="token function">onCompileCompleted</span><span class="token punctuation">(</span>boolean isHardwareEncoder<span class="token punctuation">,</span> int errorType<span class="token punctuation">,</span> <span class="token known-class-name class-name">String</span> stringInfo<span class="token punctuation">,</span> int flags<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><h3 id="保存封面图片">保存封面图片 </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token doc-comment comment">/** if ENGLISH
+     *
+     *  \brief Save cover
+     *  <span class="token keyword keyword-@param">@param</span>  <span class="token parameter">coverDir</span> the cover file dir.
+     *  <span class="token keyword keyword-@param">@param</span>  <span class="token parameter">coverFileName</span> the cover file name.If empty, it is a timestamp.
+     *  <span class="token keyword keyword-@param">@param</span>  <span class="token parameter">coverTime</span> the coverTime
+     *   <span class="token keyword keyword-@param">@param</span>  <span class="token parameter">needSaveToAlbum</span> Need Save To Album or not
+     *   <span class="token keyword keyword-@param">@param</span>  <span class="token parameter">callBack</span> the on cover saved callback for update ui
+     *  <span class="token keyword keyword-@return">@return</span> the boolean Did you successfully execute the save draft
+     *  \else
+     *
+     *  \brief 保存封面
+     *  <span class="token keyword keyword-@param">@param</span>  <span class="token parameter">coverDir</span> 封面文件夹路径
+     *  <span class="token keyword keyword-@param">@param</span>  <span class="token parameter">coverFileName</span> 封面文件明显,如果为空，则是时间戳
+     *  <span class="token keyword keyword-@param">@param</span>  <span class="token parameter">coverTime</span> 封面时间点
+     *  <span class="token keyword keyword-@param">@param</span>  <span class="token parameter">needSaveToAlbum</span> 是否需要保存封面
+     *  <span class="token keyword keyword-@param">@param</span>  <span class="token parameter">callBack</span> 保存草稿回调，用于更新UI
+     *  <span class="token keyword keyword-@return">@return</span> the boolean 是否执行保存草稿成功
+     *  \endif
+     */</span>
+    <span class="token keyword keyword-public">public</span> boolean <span class="token function">saveCover</span><span class="token punctuation">(</span><span class="token known-class-name class-name">String</span> coverDir<span class="token punctuation">,</span> <span class="token known-class-name class-name">String</span> coverFileName<span class="token punctuation">,</span> long coverTime<span class="token punctuation">,</span> boolean needSaveToAlbum<span class="token punctuation">,</span> <span class="token maybe-class-name">OnCoverSavedCallBack</span> callBack<span class="token punctuation">)</span>
+</code></pre><h3 id="退出短视频模块">退出短视频模块 </h3>
+<p>视频发布页退出时调用</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code> <span class="token doc-comment comment">/** \if ENGLISH
+     *
+     *  \brief Finish publish
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">activity</span> The activity
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">toActivityClassName</span> The next activity classname you want to
+     *  \else
+     *
+     *  \brief 退出发布页
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">activity</span> 当前页面
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">toActivityClassName</span> 要去的页面的类名
+     *  \endif
+     */</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">finishPublish</span><span class="token punctuation">(</span><span class="token maybe-class-name">Activity</span> activity<span class="token punctuation">,</span> <span class="token known-class-name class-name">String</span> toActivityClassName<span class="token punctuation">)</span>
+</code></pre><h3 id="获取草稿列表">获取草稿列表 </h3>
+<p>方法定义在DraftManager.java中</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code> <span class="token doc-comment comment">/** \if ENGLISH
+     *
+     *  \brief Get all draft data
+     *  <span class="token keyword keyword-@return">@return</span>  The draft data list
+     *  \else
+     *
+     *  \brief 获取草稿数据
+     *  <span class="token keyword keyword-@return">@return</span>  The draft data list
+     *  \endif
+     */</span>
+    <span class="token keyword keyword-public">public</span> <span class="token maybe-class-name">List</span><span class="token operator">&lt;</span><span class="token maybe-class-name">DraftData</span><span class="token operator">&gt;</span> <span class="token function">getAllDraftData</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre><h3 id="删除草稿">删除草稿 </h3>
+<p>方法定义在DraftManager.java中</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token doc-comment comment">/** \if ENGLISH
+     *
+     *  \brief Delete draft
+     *  <span class="token keyword keyword-@param">@param</span>   <span class="token parameter">draftData</span> The draft data
+     *  \else
+     *
+     *  \brief 获取草稿数据
+     *  <span class="token keyword keyword-@param">@param</span>  <span class="token parameter">draftData</span> The draft data
+     *  \endif
+     */</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">deleteDraft</span><span class="token punctuation">(</span>final <span class="token maybe-class-name">DraftData</span> draftData<span class="token punctuation">)</span>
+</code></pre><h3 id="打开草稿">打开草稿 </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token doc-comment comment">/** \if ENGLISH
+     *
+     *  \brief Open draft and jump to edit activity
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">activity</span> The activity
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">draftData</span> the draft data
+     *  \else
+     *
+     *  \brief 打开草稿,并跳转编辑页面
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">activity</span> 当前页面
+     *  <span class="token keyword keyword-@param">@param</span> <span class="token parameter">draftData</span> 草稿数据
+     *  \endif
+     */</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">openDraftAndJumpToEdit</span><span class="token punctuation">(</span><span class="token maybe-class-name">Activity</span> activity<span class="token punctuation">,</span> <span class="token maybe-class-name">DraftData</span> draftData<span class="token punctuation">)</span>
+</code></pre><h2 id="模块设置">模块设置 </h2>
+<p>短视频模块设置类NvVideoConfig，包含功能模块设置、UI定制。详见：<a href="functionConfiguration_ch.html">短视频功能模块设置</a>、<a href="UIConfiguration_ch.html">短视频UI模块设置</a></p>
+<h2 id="开发者合规指南">开发者合规指南 </h2>
+<p><a href="https://www.meishesdk.com/compliance-guide/">开发者合规指南</a></p>
+
+      </div>
+      <div class="md-sidebar-toc"><div class="md-toc">
+<details open="" class="md-toc-details">
+<summary class="md-toc-link-wrapper" data-level="0">
+  <a href="#美摄短视频模块接入指引" class="md-toc-link">美摄短视频模块接入指引</a>
+</summary>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#开发环境要求" class="md-toc-link">开发环境要求</a>
+</div>
+<details open="" class="md-toc-details">
+<summary class="md-toc-link-wrapper" data-level="1">
+  <a href="#升级短视频注意事项" class="md-toc-link">升级短视频注意事项</a>
+</summary>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#152版本升级" class="md-toc-link">1.5.2版本升级:</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#151版本升级" class="md-toc-link">1.5.1版本升级:</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#150版本升级" class="md-toc-link">1.5.0版本升级:</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#140版本升级" class="md-toc-link">1.4.0版本升级:</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#130版本升级" class="md-toc-link">1.3.0版本升级:</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#129版本升级" class="md-toc-link">1.2.9版本升级：</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#128版本升级" class="md-toc-link">1.2.8版本升级：</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#127版本升级" class="md-toc-link">1.2.7版本升级：</a>
+</div>
+</details>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#支持媒体格式" class="md-toc-link">支持媒体格式</a>
+</div>
+</details>
+<details open="" class="md-toc-details">
+<summary class="md-toc-link-wrapper" data-level="0">
+  <a href="#工程构建" class="md-toc-link">工程构建</a>
+</summary>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#系统权限说明" class="md-toc-link">系统权限说明</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#美摄sdk授权" class="md-toc-link">美摄SDK授权</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#网络接口配置" class="md-toc-link">网络接口配置</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#预制素材" class="md-toc-link">预制素材</a>
+</div>
+<details open="" class="md-toc-details">
+<summary class="md-toc-link-wrapper" data-level="1">
+  <a href="#短视频模块主要方法" class="md-toc-link">短视频模块主要方法</a>
+</summary>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#初始化sdk" class="md-toc-link">初始化sdk</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#视频录制" class="md-toc-link">视频录制</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#合拍" class="md-toc-link">合拍</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#视频编辑" class="md-toc-link">视频编辑</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#跳转发布页回调" class="md-toc-link">跳转发布页回调</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#编辑封面" class="md-toc-link">编辑封面</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#保存草稿" class="md-toc-link">保存草稿</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#合成视频" class="md-toc-link">合成视频</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#视频合成回调" class="md-toc-link">视频合成回调</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#保存封面图片" class="md-toc-link">保存封面图片</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#退出短视频模块" class="md-toc-link">退出短视频模块</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#获取草稿列表" class="md-toc-link">获取草稿列表</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#删除草稿" class="md-toc-link">删除草稿</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#打开草稿" class="md-toc-link">打开草稿</a>
+</div>
+</details>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#模块设置" class="md-toc-link">模块设置</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#开发者合规指南" class="md-toc-link">开发者合规指南</a>
+</div>
+</details>
+</div>
+</div>
+      <a id="sidebar-toc-btn">≡</a>
+    
+    
+    
+    
+    
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  
+    </body></html>

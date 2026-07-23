@@ -1,0 +1,1 @@
+"""Flutter-only integration route."""

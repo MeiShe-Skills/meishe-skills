@@ -1,0 +1,181 @@
+{
+  "aar": [
+    "native-quickstart-doc-ch-quickstart-android-ch",
+    "native-quickstart-doc-en-quickstart-android-en"
+  ],
+  "android": [
+    "flutter-quickstart-doc-ch-quickstart-ch",
+    "flutter-quickstart-doc-en-quickstart-en",
+    "react-native-quickstart-doc-ch-quickstart-ch",
+    "react-native-quickstart-doc-en-quickstart-en"
+  ],
+  "capture": [
+    "native-quickstart-doc-ch-functionconfiguration-ch",
+    "native-quickstart-doc-en-functionconfiguration-en"
+  ],
+  "cocoapods": [
+    "native-quickstart-doc-ch-quickstart-ch",
+    "native-quickstart-doc-en-quickstart-en"
+  ],
+  "compile": [
+    "native-quickstart-doc-ch-functionconfiguration-ch",
+    "native-quickstart-doc-en-functionconfiguration-en"
+  ],
+  "download": [
+    "native-quickstart-doc-ch-prefabricatedmaterial-ch",
+    "native-quickstart-doc-en-prefabricatedmaterial-en"
+  ],
+  "edit": [
+    "native-quickstart-doc-ch-functionconfiguration-ch",
+    "native-quickstart-doc-en-functionconfiguration-en"
+  ],
+  "flutter": [
+    "flutter-quickstart-doc-ch-quickstart-ch",
+    "flutter-quickstart-doc-en-quickstart-en",
+    "native-quickstart-doc-ch-functionconfiguration-ch",
+    "native-quickstart-doc-ch-prefabricatedmaterial-ch",
+    "native-quickstart-doc-en-functionconfiguration-en",
+    "native-quickstart-doc-en-prefabricatedmaterial-en"
+  ],
+  "function-config": [
+    "flutter-quickstart-doc-ch-quickstart-ch",
+    "flutter-quickstart-doc-en-quickstart-en",
+    "native-quickstart-doc-ch-functionconfiguration-ch",
+    "native-quickstart-doc-ch-quickstart-android-ch",
+    "native-quickstart-doc-ch-quickstart-ch",
+    "native-quickstart-doc-en-functionconfiguration-en",
+    "native-quickstart-doc-en-quickstart-android-en",
+    "native-quickstart-doc-en-quickstart-en",
+    "react-native-quickstart-doc-ch-quickstart-ch",
+    "react-native-quickstart-doc-en-quickstart-en"
+  ],
+  "gradle": [
+    "native-quickstart-doc-ch-quickstart-android-ch",
+    "native-quickstart-doc-en-quickstart-android-en"
+  ],
+  "info.plist": [
+    "native-quickstart-doc-ch-quickstart-ch",
+    "native-quickstart-doc-en-quickstart-en"
+  ],
+  "integration": [
+    "flutter-quickstart-doc-ch-quickstart-ch",
+    "flutter-quickstart-doc-en-quickstart-en",
+    "native-quickstart-doc-ch-functionconfiguration-ch",
+    "native-quickstart-doc-ch-quickstart-android-ch",
+    "native-quickstart-doc-ch-quickstart-ch",
+    "native-quickstart-doc-en-functionconfiguration-en",
+    "native-quickstart-doc-en-quickstart-android-en",
+    "native-quickstart-doc-en-quickstart-en",
+    "react-native-quickstart-doc-ch-quickstart-ch",
+    "react-native-quickstart-doc-en-quickstart-en"
+  ],
+  "ios": [
+    "flutter-quickstart-doc-ch-quickstart-ch",
+    "flutter-quickstart-doc-en-quickstart-en",
+    "react-native-quickstart-doc-ch-quickstart-ch",
+    "react-native-quickstart-doc-en-quickstart-en"
+  ],
+  "license": [
+    "flutter-quickstart-doc-ch-quickstart-ch",
+    "flutter-quickstart-doc-en-quickstart-en",
+    "native-quickstart-doc-ch-quickstart-android-ch",
+    "native-quickstart-doc-ch-quickstart-ch",
+    "native-quickstart-doc-en-quickstart-android-en",
+    "native-quickstart-doc-en-quickstart-en",
+    "react-native-quickstart-doc-ch-quickstart-ch",
+    "react-native-quickstart-doc-en-quickstart-en"
+  ],
+  "local-plugin": [
+    "flutter-quickstart-doc-ch-quickstart-ch",
+    "flutter-quickstart-doc-en-quickstart-en",
+    "react-native-quickstart-doc-ch-quickstart-ch",
+    "react-native-quickstart-doc-en-quickstart-en"
+  ],
+  "manifest": [
+    "native-quickstart-doc-ch-quickstart-android-ch",
+    "native-quickstart-doc-en-quickstart-android-en"
+  ],
+  "native": [
+    "native-quickstart-doc-ch-functionconfiguration-ch",
+    "native-quickstart-doc-ch-prefabricatedmaterial-ch",
+    "native-quickstart-doc-en-functionconfiguration-en",
+    "native-quickstart-doc-en-prefabricatedmaterial-en"
+  ],
+  "native-android": [
+    "native-quickstart-doc-ch-quickstart-android-ch",
+    "native-quickstart-doc-en-quickstart-android-en"
+  ],
+  "native-ios": [
+    "native-quickstart-doc-ch-quickstart-ch",
+    "native-quickstart-doc-en-quickstart-en"
+  ],
+  "permission": [
+    "flutter-quickstart-doc-ch-quickstart-ch",
+    "flutter-quickstart-doc-en-quickstart-en",
+    "native-quickstart-doc-ch-quickstart-android-ch",
+    "native-quickstart-doc-ch-quickstart-ch",
+    "native-quickstart-doc-en-quickstart-android-en",
+    "native-quickstart-doc-en-quickstart-en",
+    "react-native-quickstart-doc-ch-quickstart-ch",
+    "react-native-quickstart-doc-en-quickstart-en"
+  ],
+  "podfile": [
+    "native-quickstart-doc-ch-quickstart-ch",
+    "native-quickstart-doc-en-quickstart-en"
+  ],
+  "prefabricated-material": [
+    "flutter-quickstart-doc-ch-quickstart-ch",
+    "flutter-quickstart-doc-en-quickstart-en",
+    "native-quickstart-doc-ch-prefabricatedmaterial-ch",
+    "native-quickstart-doc-ch-quickstart-android-ch",
+    "native-quickstart-doc-ch-quickstart-ch",
+    "native-quickstart-doc-en-prefabricatedmaterial-en",
+    "native-quickstart-doc-en-quickstart-android-en",
+    "native-quickstart-doc-en-quickstart-en",
+    "react-native-quickstart-doc-ch-quickstart-ch",
+    "react-native-quickstart-doc-en-quickstart-en"
+  ],
+  "publish": [
+    "native-quickstart-doc-ch-functionconfiguration-ch",
+    "native-quickstart-doc-en-functionconfiguration-en"
+  ],
+  "quickstart": [
+    "flutter-quickstart-doc-ch-quickstart-ch",
+    "flutter-quickstart-doc-en-quickstart-en",
+    "native-quickstart-doc-ch-quickstart-android-ch",
+    "native-quickstart-doc-ch-quickstart-ch",
+    "native-quickstart-doc-en-quickstart-android-en",
+    "native-quickstart-doc-en-quickstart-en",
+    "react-native-quickstart-doc-ch-quickstart-ch",
+    "react-native-quickstart-doc-en-quickstart-en"
+  ],
+  "react-native": [
+    "native-quickstart-doc-ch-functionconfiguration-ch",
+    "native-quickstart-doc-ch-prefabricatedmaterial-ch",
+    "native-quickstart-doc-en-functionconfiguration-en",
+    "native-quickstart-doc-en-prefabricatedmaterial-en",
+    "react-native-quickstart-doc-ch-quickstart-ch",
+    "react-native-quickstart-doc-en-quickstart-en"
+  ],
+  "server-config": [
+    "flutter-quickstart-doc-ch-quickstart-ch",
+    "flutter-quickstart-doc-en-quickstart-en",
+    "native-quickstart-doc-ch-prefabricatedmaterial-ch",
+    "native-quickstart-doc-ch-quickstart-android-ch",
+    "native-quickstart-doc-ch-quickstart-ch",
+    "native-quickstart-doc-en-functionconfiguration-en",
+    "native-quickstart-doc-en-prefabricatedmaterial-en",
+    "native-quickstart-doc-en-quickstart-android-en",
+    "native-quickstart-doc-en-quickstart-en",
+    "react-native-quickstart-doc-ch-quickstart-ch",
+    "react-native-quickstart-doc-en-quickstart-en"
+  ],
+  "ui-config": [
+    "native-quickstart-doc-ch-functionconfiguration-ch",
+    "native-quickstart-doc-en-functionconfiguration-en"
+  ],
+  "yarn": [
+    "react-native-quickstart-doc-ch-quickstart-ch",
+    "react-native-quickstart-doc-en-quickstart-en"
+  ]
+}

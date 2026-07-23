@@ -1,0 +1,1307 @@
+{
+  "schemaVersion": 2,
+  "track": "native-android",
+  "configurationSource": {"java": "<applicationId path>/meishe/MeisheFeatureConfig.java"},
+  "verifiedVersions": ["2.0.1.0"],
+  "integrationVerifiedVersions": {
+    "2.0.2.1": {
+      "status": "verified",
+      "evidence": "device-behavior",
+      "behavior": "AAR 接入、初始化、拍摄、合拍、编辑和草稿主链路已在 Android 真机通过；该结论不自动证明每个配置字段沿用 2.0.1.0 行为。"
+    }
+  },
+  "fieldMappings": {
+    "primaryColor": {
+      "zh": "主色",
+      "aliases": [
+        "主题主色",
+        "primary color"
+      ]
+    },
+    "backgroundColor": {
+      "zh": "背景色",
+      "aliases": [
+        "页面背景色",
+        "background color"
+      ]
+    },
+    "panelBackgroundColor": {
+      "zh": "面板背景色",
+      "aliases": [
+        "弹窗背景色",
+        "panel background color"
+      ]
+    },
+    "textColor": {
+      "zh": "主文字颜色",
+      "aliases": [
+        "文字颜色",
+        "text color"
+      ]
+    },
+    "secondaryTextColor": {
+      "zh": "次要文字颜色",
+      "aliases": [
+        "辅助文字颜色",
+        "secondary text color"
+      ]
+    },
+    "enableLocalMusic": {
+      "zh": "本地音乐入口",
+      "aliases": [
+        "显示本地音乐",
+        "隐藏本地音乐",
+        "local music"
+      ]
+    },
+    "shadowOffset": {
+      "zh": "文字阴影偏移",
+      "aliases": [
+        "阴影偏移",
+        "shadow offset"
+      ]
+    },
+    "shadowColor": {
+      "zh": "文字阴影颜色",
+      "aliases": [
+        "阴影颜色",
+        "shadow color"
+      ]
+    },
+    "albumConfig.type": {
+      "zh": "相册素材类型",
+      "aliases": [
+        "相册类型",
+        "素材类型",
+        "album type"
+      ]
+    },
+    "albumConfig.maxSelectCount": {
+      "zh": "相册最大选择数",
+      "aliases": [
+        "相册最多选择",
+        "album max select count"
+      ]
+    },
+    "albumConfig.useAutoCut": {
+      "zh": "相册一键成片",
+      "aliases": [
+        "一键成片",
+        "相册 AutoCut",
+        "album autocut"
+      ]
+    },
+    "templateConfig.maxSelectCount": {
+      "zh": "模板最大选择数",
+      "aliases": [
+        "模板最多选择",
+        "template max select count"
+      ]
+    },
+    "templateConfig.useAutoCut": {
+      "zh": "模板一键成片",
+      "aliases": [
+        "一键成片",
+        "模板 AutoCut",
+        "template autocut"
+      ]
+    },
+    "templateConfig.maxRecommandTemplateCount": {
+      "zh": "推荐模板最大数量",
+      "aliases": [
+        "推荐模板数量",
+        "max recommended template count"
+      ]
+    },
+    "captureConfig.captureDeviceIndex": {
+      "zh": "默认摄像头",
+      "aliases": [
+        "前后摄像头",
+        "capture device index"
+      ]
+    },
+    "captureConfig.resolution": {
+      "zh": "拍摄预览分辨率",
+      "aliases": [
+        "拍摄分辨率",
+        "capture resolution"
+      ]
+    },
+    "captureConfig.fps": {
+      "zh": "拍摄帧率",
+      "aliases": [
+        "录制帧率",
+        "capture fps"
+      ]
+    },
+    "captureConfig.imageDuration": {
+      "zh": "拍摄图片时长",
+      "aliases": [
+        "照片时长",
+        "capture image duration"
+      ]
+    },
+    "captureConfig.autoSavePhotograph": {
+      "zh": "拍照自动保存相册",
+      "aliases": [
+        "拍照保存相册",
+        "auto save photograph"
+      ]
+    },
+    "captureConfig.timeRanges": {
+      "zh": "普通录制时长档位",
+      "aliases": [
+        "录制时长",
+        "capture time ranges"
+      ]
+    },
+    "captureConfig.smartTimeRange": {
+      "zh": "快拍时长范围",
+      "aliases": [
+        "快拍时长",
+        "smart capture time range"
+      ]
+    },
+    "captureConfig.filterDefaultValue": {
+      "zh": "拍摄滤镜默认强度",
+      "aliases": [
+        "拍摄滤镜强度",
+        "capture filter default value"
+      ]
+    },
+    "captureConfig.enableCaptureAlbum": {
+      "zh": "拍摄页相册入口",
+      "aliases": [
+        "拍摄相册",
+        "enable capture album"
+      ]
+    },
+    "captureConfig.ignoreVideoRotation": {
+      "zh": "忽略视频旋转",
+      "aliases": [
+        "视频旋转方向",
+        "ignore video rotation"
+      ]
+    },
+    "captureConfig.autoDisablesMic": {
+      "zh": "拍摄自动静音",
+      "aliases": [
+        "拍摄自动关闭麦克风",
+        "capture auto disable mic"
+      ]
+    },
+    "captureConfig.recordConfiguration": {
+      "zh": "底层录制配置",
+      "aliases": [
+        "拍摄编码配置",
+        "record configuration"
+      ]
+    },
+    "beautyConfig.categoricalArray": {
+      "zh": "美颜分类",
+      "aliases": [
+        "美颜分类列表",
+        "beauty categories"
+      ]
+    },
+    "beautyConfig.beautyEffectArray": {
+      "zh": "美肤列表",
+      "aliases": [
+        "美肤项目",
+        "beauty effect list"
+      ]
+    },
+    "beautyConfig.beautyShapeArray": {
+      "zh": "美型列表",
+      "aliases": [
+        "美型项目",
+        "beauty shape list"
+      ]
+    },
+    "beautyConfig.beautyMicroShapeArray": {
+      "zh": "微整形列表",
+      "aliases": [
+        "微整形项目",
+        "beauty micro shape list"
+      ]
+    },
+    "beautyConfig.beautyAdjustArray": {
+      "zh": "美颜调节列表",
+      "aliases": [
+        "调节列表",
+        "beauty adjust list"
+      ]
+    },
+    "dualConfig.left": {
+      "zh": "合拍窗口左边距",
+      "aliases": [
+        "合拍窗口横向位置",
+        "dual left"
+      ]
+    },
+    "dualConfig.top": {
+      "zh": "合拍窗口上边距",
+      "aliases": [
+        "合拍窗口纵向位置",
+        "dual top"
+      ]
+    },
+    "dualConfig.limitWidth": {
+      "zh": "合拍窗口大小",
+      "aliases": [
+        "合拍窗口宽度",
+        "dual limit width"
+      ]
+    },
+    "dualConfig.defaultType": {
+      "zh": "合拍默认版式",
+      "aliases": [
+        "默认合拍样式",
+        "dual default type"
+      ]
+    },
+    "dualConfig.supportedTypes": {
+      "zh": "合拍支持版式",
+      "aliases": [
+        "合拍样式列表",
+        "dual supported types"
+      ]
+    },
+    "dualConfig.autoDisablesMic": {
+      "zh": "合拍自动静音",
+      "aliases": [
+        "合拍自动关闭麦克风",
+        "dual auto disable mic"
+      ]
+    },
+    "editConfig.editMenuItems": {
+      "zh": "编辑功能菜单",
+      "aliases": [
+        "编辑菜单",
+        "edit menu items"
+      ]
+    },
+    "editConfig.resolution": {
+      "zh": "编辑预览分辨率",
+      "aliases": [
+        "编辑分辨率",
+        "edit preview resolution"
+      ]
+    },
+    "editConfig.fps": {
+      "zh": "编辑预览帧率",
+      "aliases": [
+        "编辑帧率",
+        "edit preview fps"
+      ]
+    },
+    "editConfig.minEffectDuration": {
+      "zh": "最短特效时长",
+      "aliases": [
+        "特效最小时长",
+        "minimum effect duration"
+      ]
+    },
+    "editConfig.minAudioDuration": {
+      "zh": "最短录音时长",
+      "aliases": [
+        "最短配音时长",
+        "minimum audio duration"
+      ]
+    },
+    "editConfig.defaultImageDuration": {
+      "zh": "编辑图片默认时长",
+      "aliases": [
+        "图片默认时长",
+        "default image duration"
+      ]
+    },
+    "editConfig.captionColor": {
+      "zh": "默认字幕颜色",
+      "aliases": [
+        "字幕颜色",
+        "caption color"
+      ]
+    },
+    "editConfig.captionColorList": {
+      "zh": "字幕颜色列表",
+      "aliases": [
+        "可选字幕颜色",
+        "caption color list"
+      ]
+    },
+    "editConfig.supportedCaptionStyles": {
+      "zh": "支持的字幕样式",
+      "aliases": [
+        "字幕样式",
+        "supported caption styles"
+      ]
+    },
+    "editConfig.bubbleConfig": {
+      "zh": "字幕气泡配置",
+      "aliases": [
+        "气泡样式",
+        "bubble config"
+      ]
+    },
+    "editConfig.editModeSource": {
+      "zh": "画幅来源",
+      "aliases": [
+        "编辑画幅来源",
+        "edit mode source"
+      ]
+    },
+    "editConfig.editMode": {
+      "zh": "初始编辑画幅",
+      "aliases": [
+        "固定画幅",
+        "edit mode"
+      ]
+    },
+    "editConfig.supportedEditModes": {
+      "zh": "支持的编辑画幅",
+      "aliases": [
+        "支持画幅",
+        "supported edit modes"
+      ]
+    },
+    "editConfig.maxVolume": {
+      "zh": "最大音量",
+      "aliases": [
+        "编辑最大音量",
+        "max volume"
+      ]
+    },
+    "editConfig.filterDefaultValue": {
+      "zh": "编辑滤镜默认强度",
+      "aliases": [
+        "编辑滤镜强度",
+        "edit filter default value"
+      ]
+    },
+    "editConfig.disableTimeEffect": {
+      "zh": "禁用时间特效",
+      "aliases": [
+        "关闭时间特效",
+        "disable time effect"
+      ]
+    },
+    "compileConfig.resolution": {
+      "zh": "导出分辨率",
+      "aliases": [
+        "合成分辨率",
+        "compile resolution"
+      ]
+    },
+    "compileConfig.fps": {
+      "zh": "导出帧率",
+      "aliases": [
+        "合成帧率",
+        "compile fps"
+      ]
+    },
+    "compileConfig.bitrateGrade": {
+      "zh": "导出码率等级",
+      "aliases": [
+        "码率等级",
+        "bitrate grade"
+      ]
+    },
+    "compileConfig.bitrate": {
+      "zh": "导出精确码率",
+      "aliases": [
+        "导出码率",
+        "compile bitrate"
+      ]
+    },
+    "compileConfig.imageType": {
+      "zh": "封面图片格式",
+      "aliases": [
+        "封面格式",
+        "cover image type"
+      ]
+    },
+    "compileConfig.autoSaveVideo": {
+      "zh": "导出后自动保存视频",
+      "aliases": [
+        "自动保存视频",
+        "auto save video"
+      ]
+    },
+    "compileConfig.watermarkConfig": {
+      "zh": "视频水印",
+      "aliases": [
+        "导出水印",
+        "video watermark"
+      ]
+    },
+    "compileConfig.coverWatermarkConfig": {
+      "zh": "封面水印",
+      "aliases": [
+        "封面图片水印",
+        "cover watermark"
+      ]
+    },
+    "compileConfig.configure": {
+      "zh": "底层合成配置",
+      "aliases": [
+        "合成字典",
+        "compile configuration"
+      ]
+    },
+    "modelConfig.*": {
+      "zh": "模型文件配置",
+      "aliases": [
+        "模型路径",
+        "model configuration"
+      ]
+    },
+    "captureMenuItems": {
+      "zh": "拍摄右侧菜单",
+      "aliases": [
+        "普通拍摄菜单",
+        "拍摄功能菜单",
+        "capture menu items"
+      ]
+    },
+    "captureBottomMenuItems": {
+      "zh": "拍摄底部模式",
+      "aliases": [
+        "拍摄底部菜单",
+        "capture bottom menu items"
+      ]
+    },
+    "defaultBottomMenuSelectItem": {
+      "zh": "默认拍摄模式",
+      "aliases": [
+        "默认底部模式",
+        "default capture mode"
+      ]
+    },
+    "dualMenuItems": {
+      "zh": "合拍右侧菜单",
+      "aliases": [
+        "合拍功能菜单",
+        "dual capture menu items"
+      ]
+    }
+  },
+  "valueMappings": {
+    "captureMenuItems::device": {
+      "zh": "翻转摄像头",
+      "aliases": [
+        "切换摄像头",
+        "前后摄像头切换"
+      ]
+    },
+    "captureMenuItems::speed": {
+      "zh": "快慢速",
+      "aliases": [
+        "拍摄快慢速",
+        "普通拍摄快慢速",
+        "拍摄速度"
+      ]
+    },
+    "captureMenuItems::timer": {
+      "zh": "倒计时",
+      "aliases": [
+        "拍摄倒计时",
+        "定时拍摄"
+      ]
+    },
+    "captureMenuItems::beauty": {
+      "zh": "美颜",
+      "aliases": [
+        "拍摄美颜"
+      ]
+    },
+    "captureMenuItems::makeup": {
+      "zh": "美妆",
+      "aliases": [
+        "拍摄美妆"
+      ]
+    },
+    "captureMenuItems::prop": {
+      "zh": "人脸道具",
+      "aliases": [
+        "拍摄道具",
+        "道具"
+      ]
+    },
+    "captureMenuItems::flashlight": {
+      "zh": "闪光灯",
+      "aliases": [
+        "拍摄闪光灯",
+        "普通拍摄闪光灯"
+      ]
+    },
+    "captureMenuItems::filter": {
+      "zh": "拍摄滤镜",
+      "aliases": [
+        "滤镜",
+        "拍摄页滤镜"
+      ]
+    },
+    "captureMenuItems::original": {
+      "zh": "原声",
+      "aliases": [
+        "拍摄原声",
+        "麦克风原声"
+      ]
+    },
+    "dualMenuItems::device": {
+      "zh": "合拍翻转摄像头",
+      "aliases": [
+        "合拍切换摄像头"
+      ]
+    },
+    "dualMenuItems::speed": {
+      "zh": "合拍快慢速",
+      "aliases": [
+        "合拍速度"
+      ]
+    },
+    "dualMenuItems::timer": {
+      "zh": "合拍倒计时",
+      "aliases": [
+        "合拍定时拍摄"
+      ]
+    },
+    "dualMenuItems::beauty": {
+      "zh": "合拍美颜",
+      "aliases": []
+    },
+    "dualMenuItems::makeup": {
+      "zh": "合拍美妆",
+      "aliases": []
+    },
+    "dualMenuItems::prop": {
+      "zh": "合拍人脸道具",
+      "aliases": [
+        "合拍道具"
+      ]
+    },
+    "dualMenuItems::flashlight": {
+      "zh": "合拍闪光灯",
+      "aliases": []
+    },
+    "dualMenuItems::filter": {
+      "zh": "合拍滤镜",
+      "aliases": []
+    },
+    "dualMenuItems::original": {
+      "zh": "合拍原声",
+      "aliases": [
+        "合拍麦克风原声"
+      ]
+    },
+    "dualMenuItems::dualtype": {
+      "zh": "合拍样式",
+      "aliases": [
+        "合拍版式入口"
+      ]
+    },
+    "captureBottomMenuItems::image": {
+      "zh": "拍照模式",
+      "aliases": [
+        "图片模式",
+        "底部拍照"
+      ]
+    },
+    "captureBottomMenuItems::video": {
+      "zh": "视频模式",
+      "aliases": [
+        "普通视频",
+        "底部视频"
+      ]
+    },
+    "captureBottomMenuItems::smart": {
+      "zh": "快拍模式",
+      "aliases": [
+        "智能拍摄",
+        "快拍"
+      ]
+    },
+    "captureBottomMenuItems::template": {
+      "zh": "一键成片",
+      "aliases": [
+        "模板模式",
+        "拍摄一键成片",
+        "拍摄模板"
+      ]
+    },
+    "defaultBottomMenuSelectItem::image": {
+      "zh": "拍照模式",
+      "aliases": [
+        "图片模式",
+        "底部拍照"
+      ]
+    },
+    "defaultBottomMenuSelectItem::video": {
+      "zh": "视频模式",
+      "aliases": [
+        "普通视频",
+        "底部视频"
+      ]
+    },
+    "defaultBottomMenuSelectItem::smart": {
+      "zh": "快拍模式",
+      "aliases": [
+        "智能拍摄",
+        "快拍"
+      ]
+    },
+  "defaultBottomMenuSelectItem::template": {
+    "zh": "默认模板模式",
+    "aliases": [
+      "模板作为默认模式"
+    ]
+    },
+    "editConfig.editMenuItems::release": {
+      "zh": "发布",
+      "aliases": [
+        "发布菜单",
+        "编辑发布"
+      ]
+    },
+    "editConfig.editMenuItems::download": {
+      "zh": "保存",
+      "aliases": [
+        "下载",
+        "保存菜单",
+        "编辑保存"
+      ]
+    },
+    "editConfig.editMenuItems::edit": {
+      "zh": "编辑（裁剪）",
+      "aliases": [
+        "裁剪",
+        "编辑",
+        "素材编辑"
+      ]
+    },
+    "editConfig.editMenuItems::text": {
+      "zh": "文字",
+      "aliases": [
+        "编辑文字",
+        "文字功能"
+      ]
+    },
+    "editConfig.editMenuItems::sticker": {
+      "zh": "贴纸",
+      "aliases": [
+        "编辑贴纸"
+      ]
+    },
+    "editConfig.editMenuItems::effect": {
+      "zh": "特效",
+      "aliases": [
+        "编辑特效"
+      ]
+    },
+    "editConfig.editMenuItems::filter": {
+      "zh": "编辑滤镜",
+      "aliases": [
+        "滤镜"
+      ]
+    },
+    "editConfig.editMenuItems::caption": {
+      "zh": "自动字幕",
+      "aliases": [
+        "字幕识别",
+        "自动字幕菜单"
+      ]
+    },
+    "editConfig.editMenuItems::audio": {
+      "zh": "音效",
+      "aliases": [
+        "编辑音效"
+      ]
+    },
+    "editConfig.editMenuItems::record": {
+      "zh": "配音",
+      "aliases": [
+        "录音",
+        "编辑配音"
+      ]
+    },
+    "albumConfig.type::0": {
+      "zh": "全部素材",
+      "aliases": [
+        "相册全部"
+      ]
+    },
+    "albumConfig.type::1": {
+      "zh": "仅视频",
+      "aliases": [
+        "只看视频"
+      ]
+    },
+    "albumConfig.type::2": {
+      "zh": "仅图片",
+      "aliases": [
+        "只看图片"
+      ]
+    },
+    "captureConfig.captureDeviceIndex::0": {
+      "zh": "后置摄像头",
+      "aliases": [
+        "后摄"
+      ]
+    },
+    "captureConfig.captureDeviceIndex::1": {
+      "zh": "前置摄像头",
+      "aliases": [
+        "前摄"
+      ]
+    },
+    "captureConfig.resolution::720": {
+      "zh": "720P 拍摄",
+      "aliases": [
+        "拍摄 720P"
+      ]
+    },
+    "captureConfig.resolution::1080": {
+      "zh": "1080P 拍摄",
+      "aliases": [
+        "拍摄 1080P"
+      ]
+    },
+    "captureConfig.recordConfiguration::bitrate": {
+      "zh": "录制码率",
+      "aliases": [
+        "拍摄码率"
+      ]
+    },
+    "captureConfig.recordConfiguration::gopsize": {
+      "zh": "关键帧间隔",
+      "aliases": [
+        "GOP"
+      ]
+    },
+    "captureConfig.recordConfiguration::video encoder name": {
+      "zh": "视频编码器",
+      "aliases": [
+        "HEVC 编码器",
+        "编码器名称"
+      ]
+    },
+    "beautyConfig.categoricalArray::Skin": {
+      "zh": "美肤分类",
+      "aliases": [
+        "Skin 分类"
+      ]
+    },
+    "beautyConfig.categoricalArray::Shape": {
+      "zh": "美型分类",
+      "aliases": [
+        "Shape 分类"
+      ]
+    },
+    "beautyConfig.categoricalArray::MicroShape": {
+      "zh": "微整形分类",
+      "aliases": [
+        "MicroShape 分类"
+      ]
+    },
+    "beautyConfig.categoricalArray::Adjust": {
+      "zh": "调节分类",
+      "aliases": [
+        "Adjust 分类"
+      ]
+    },
+    "dualConfig.defaultType::leftRight": {
+      "zh": "左右分屏",
+      "aliases": [
+        "左右合拍"
+      ]
+    },
+    "dualConfig.defaultType::topDown": {
+      "zh": "上下分屏",
+      "aliases": [
+        "上下合拍"
+      ]
+    },
+    "dualConfig.defaultType::leftRect": {
+      "zh": "左侧矩形小窗",
+      "aliases": [
+        "矩形合拍"
+      ]
+    },
+    "dualConfig.defaultType::leftCircle": {
+      "zh": "左侧圆形小窗",
+      "aliases": [
+        "左圆合拍"
+      ]
+    },
+    "dualConfig.defaultType::topCircle": {
+      "zh": "顶部圆形小窗",
+      "aliases": [
+        "上圆合拍"
+      ]
+    },
+    "dualConfig.supportedTypes::leftRight": {
+      "zh": "左右分屏",
+      "aliases": [
+        "左右合拍"
+      ]
+    },
+    "dualConfig.supportedTypes::topDown": {
+      "zh": "上下分屏",
+      "aliases": [
+        "上下合拍"
+      ]
+    },
+    "dualConfig.supportedTypes::leftRect": {
+      "zh": "左侧矩形小窗",
+      "aliases": [
+        "矩形合拍"
+      ]
+    },
+    "dualConfig.supportedTypes::leftCircle": {
+      "zh": "左侧圆形小窗",
+      "aliases": [
+        "左圆合拍"
+      ]
+    },
+    "dualConfig.supportedTypes::topCircle": {
+      "zh": "顶部圆形小窗",
+      "aliases": [
+        "上圆合拍"
+      ]
+    },
+    "editConfig.supportedCaptionStyles::none": {
+      "zh": "无字幕样式",
+      "aliases": [
+        "无样式"
+      ]
+    },
+    "editConfig.supportedCaptionStyles::bg": {
+      "zh": "字幕背景",
+      "aliases": [
+        "背景样式"
+      ]
+    },
+    "editConfig.supportedCaptionStyles::bgAlpha": {
+      "zh": "半透明字幕背景",
+      "aliases": [
+        "透明背景样式"
+      ]
+    },
+    "editConfig.supportedCaptionStyles::outline": {
+      "zh": "字幕描边",
+      "aliases": [
+        "描边样式"
+      ]
+    },
+    "editConfig.bubbleConfig::light": {
+      "zh": "浅色气泡模糊",
+      "aliases": [
+        "浅色模糊"
+      ]
+    },
+    "editConfig.bubbleConfig::dark": {
+      "zh": "深色气泡模糊",
+      "aliases": [
+        "深色模糊"
+      ]
+    },
+    "editConfig.editMode::9v16": {
+      "zh": "9:16 竖屏",
+      "aliases": [
+        "9比16",
+        "竖屏"
+      ]
+    },
+    "editConfig.editMode::16v9": {
+      "zh": "16:9 横屏",
+      "aliases": [
+        "16比9",
+        "横屏"
+      ]
+    },
+    "editConfig.editMode::3v4": {
+      "zh": "3:4 画幅",
+      "aliases": [
+        "3比4"
+      ]
+    },
+    "editConfig.editMode::4v3": {
+      "zh": "4:3 画幅",
+      "aliases": [
+        "4比3"
+      ]
+    },
+    "editConfig.editMode::1v1": {
+      "zh": "1:1 方形",
+      "aliases": [
+        "1比1",
+        "方形"
+      ]
+    },
+    "editConfig.editMode::18v9": {
+      "zh": "18:9 画幅",
+      "aliases": [
+        "18比9"
+      ]
+    },
+    "editConfig.editMode::9v18": {
+      "zh": "9:18 画幅",
+      "aliases": [
+        "9比18"
+      ]
+    },
+    "editConfig.editMode::8v9": {
+      "zh": "8:9 画幅",
+      "aliases": [
+        "8比9"
+      ]
+    },
+    "editConfig.editMode::9v8": {
+      "zh": "9:8 画幅",
+      "aliases": [
+        "9比8"
+      ]
+    },
+    "editConfig.supportedEditModes::9v16": {
+      "zh": "9:16 竖屏",
+      "aliases": [
+        "9比16",
+        "竖屏"
+      ]
+    },
+    "editConfig.supportedEditModes::16v9": {
+      "zh": "16:9 横屏",
+      "aliases": [
+        "16比9",
+        "横屏"
+      ]
+    },
+    "editConfig.supportedEditModes::3v4": {
+      "zh": "3:4 画幅",
+      "aliases": [
+        "3比4"
+      ]
+    },
+    "editConfig.supportedEditModes::4v3": {
+      "zh": "4:3 画幅",
+      "aliases": [
+        "4比3"
+      ]
+    },
+    "editConfig.supportedEditModes::1v1": {
+      "zh": "1:1 方形",
+      "aliases": [
+        "1比1",
+        "方形"
+      ]
+    },
+    "editConfig.supportedEditModes::18v9": {
+      "zh": "18:9 画幅",
+      "aliases": [
+        "18比9"
+      ]
+    },
+    "editConfig.supportedEditModes::9v18": {
+      "zh": "9:18 画幅",
+      "aliases": [
+        "9比18"
+      ]
+    },
+    "editConfig.supportedEditModes::8v9": {
+      "zh": "8:9 画幅",
+      "aliases": [
+        "8比9"
+      ]
+    },
+    "editConfig.supportedEditModes::9v8": {
+      "zh": "9:8 画幅",
+      "aliases": [
+        "9比8"
+      ]
+    },
+    "compileConfig.resolution::720": {
+      "zh": "720P 导出",
+      "aliases": [
+        "导出 720P"
+      ]
+    },
+    "compileConfig.resolution::1080": {
+      "zh": "1080P 导出",
+      "aliases": [
+        "导出 1080P"
+      ]
+    },
+    "compileConfig.resolution::4K": {
+      "zh": "4K 导出",
+      "aliases": [
+        "导出 4K"
+      ]
+    },
+    "compileConfig.bitrateGrade::Low": {
+      "zh": "低码率",
+      "aliases": [
+        "低码率等级"
+      ]
+    },
+    "compileConfig.bitrateGrade::Medium": {
+      "zh": "中码率",
+      "aliases": [
+        "中码率等级"
+      ]
+    },
+    "compileConfig.bitrateGrade::High": {
+      "zh": "高码率",
+      "aliases": [
+        "高码率等级"
+      ]
+    },
+    "compileConfig.imageType::PNG": {
+      "zh": "PNG 封面",
+      "aliases": [
+        "PNG 图片"
+      ]
+    },
+    "compileConfig.imageType::JPEG": {
+      "zh": "JPEG 封面",
+      "aliases": [
+        "JPG 封面"
+      ]
+    },
+    "compileConfig.watermarkConfig::TopRight": {
+      "zh": "右上角",
+      "aliases": [
+        "水印右上"
+      ]
+    },
+    "compileConfig.watermarkConfig::TopLeft": {
+      "zh": "左上角",
+      "aliases": [
+        "水印左上"
+      ]
+    },
+    "compileConfig.watermarkConfig::BottomLeft": {
+      "zh": "左下角",
+      "aliases": [
+        "水印左下"
+      ]
+    },
+    "compileConfig.watermarkConfig::BottomRight": {
+      "zh": "右下角",
+      "aliases": [
+        "水印右下"
+      ]
+    },
+    "compileConfig.coverWatermarkConfig::TopRight": {
+      "zh": "右上角",
+      "aliases": [
+        "水印右上"
+      ]
+    },
+    "compileConfig.coverWatermarkConfig::TopLeft": {
+      "zh": "左上角",
+      "aliases": [
+        "水印左上"
+      ]
+    },
+    "compileConfig.coverWatermarkConfig::BottomLeft": {
+      "zh": "左下角",
+      "aliases": [
+        "水印左下"
+      ]
+    },
+    "compileConfig.coverWatermarkConfig::BottomRight": {
+      "zh": "右下角",
+      "aliases": [
+        "水印右下"
+      ]
+    }
+  },
+  "capabilities": [
+    {
+      "id": "global.colors",
+      "members": ["primaryColor", "backgroundColor", "panelBackgroundColor", "textColor", "secondaryTextColor"],
+      "aliases": ["全局颜色", "主题颜色", "主色", "背景色", "文字颜色"],
+      "type": "String #RRGGBB", "default": "generated demo palette", "constraints": ["颜色必须使用 SDK 接受的十六进制格式"], "enumValues": [], "dependencies": [], "conflicts": [],
+      "mutationTarget": "MeisheFeatureConfig.apply(NvVideoConfig) 的全局颜色赋值",
+      "platforms": {"android": {"version": "2.0.1.0", "status": "verified", "evidence": "device-behavior", "behavior": "五个颜色入口在真实素材、拍摄和编辑页面分别生效。"}},
+      "alternative": "", "verification": "进入对应页面并用高对比测试色检查实际像素。"
+    },
+    {
+      "id": "global.shadow",
+      "members": ["shadowOffset", "shadowColor"], "aliases": ["全局阴影", "文字阴影", "阴影偏移", "阴影颜色"],
+      "type": "NvShadowOffsetConfig + String", "default": "SDK defaults", "constraints": ["shadowRadius 在当前 AAR 只读"], "enumValues": [], "dependencies": [], "conflicts": [],
+      "mutationTarget": "MeisheFeatureConfig.apply(NvVideoConfig) 的 shadow 配置",
+      "platforms": {"android": {"version": "2.0.1.0", "status": "ineffective", "evidence": "device-behavior", "behavior": "红色大偏移阴影在已测标题和编辑页面没有可见变化。"}},
+      "alternative": "需要应用自有文字组件时在应用 UI 层实现阴影。", "verification": "用高对比阴影与基线截图比较，不以字段下传代替效果。"
+    },
+    {
+      "id": "global.local-music",
+      "members": ["enableLocalMusic"], "aliases": ["本地音乐", "隐藏本地音乐", "显示本地音乐"],
+      "type": "boolean", "default": false, "constraints": ["显示入口仍依赖系统媒体权限"], "enumValues": [true, false], "dependencies": ["media permission"], "conflicts": [],
+      "mutationTarget": "MeisheFeatureConfig.apply(NvVideoConfig) -> setEnableLocalMusic",
+      "platforms": {"android": {"version": "2.0.1.0", "status": "verified", "evidence": "device-behavior", "behavior": "开关会增加或移除本地音乐入口。"}},
+      "alternative": "", "verification": "进入添加音乐页面检查本地入口与在线入口。"
+    },
+    {
+      "id": "album.controls",
+      "members": ["albumConfig.type", "albumConfig.maxSelectCount", "albumConfig.useAutoCut"], "aliases": ["相册类型", "相册最多选择", "相册一键成片", "只看图片", "只看视频"],
+      "type": "int + boolean", "default": "type=0,maxSelectCount=50,useAutoCut=true", "constraints": ["type 只能为 0/1/2", "maxSelectCount 必须大于 0"], "enumValues": [0, 1, 2], "dependencies": [], "conflicts": [],
+      "mutationTarget": "MeisheFeatureConfig.apply(NvVideoConfig) -> albumConfig",
+      "platforms": {"android": {"version": "2.0.1.0", "status": "verified", "evidence": "device-behavior", "behavior": "全部/视频/图片、单选上限和一键成片入口均按配置变化。"}},
+      "alternative": "", "verification": "检查标签内容、连续选择数量和一键成片入口。"
+    },
+    {
+      "id": "template.controls",
+      "members": ["templateConfig.maxSelectCount", "templateConfig.useAutoCut", "templateConfig.maxRecommandTemplateCount"], "aliases": ["模板最多选择", "模板一键成片", "推荐模板数量"],
+      "type": "int + boolean", "default": "50,true,20", "constraints": ["两个数量必须大于 0"], "enumValues": [], "dependencies": ["online template service"], "conflicts": [],
+      "mutationTarget": "MeisheFeatureConfig.apply(NvVideoConfig) -> templateConfig",
+      "platforms": {"android": {"version": "2.0.1.0", "status": "verified", "evidence": "device-behavior", "behavior": "选材上限 1、关闭一键成片和推荐数量 1 均在在线模板流程生效。"}},
+      "alternative": "", "verification": "使用至少三个真实素材检查选材和结果卡片数量。"
+    },
+    {
+      "id": "capture.menus",
+      "members": ["captureMenuItems", "captureBottomMenuItems", "defaultBottomMenuSelectItem", "dualMenuItems"], "aliases": ["隐藏拍摄页快慢速", "删除拍摄功能", "拍摄菜单", "合拍菜单", "默认拍摄模式", "底部拍摄模式"],
+      "type": "ordered List<enum>", "default": "all verified menu items", "constraints": ["数组非空且无重复", "默认项必须存在", "template 必须位于最后", "删除功能必须改有序数组"], "enumValues": ["device", "speed", "timer", "beauty", "makeup", "prop", "flashlight", "filter", "original", "dualtype", "image", "video", "smart", "template"], "dependencies": [], "conflicts": [],
+      "mutationTarget": "MeisheFeatureConfig.apply(NvVideoConfig) -> captureConfig menu lists",
+      "platforms": {"android": {"version": "2.0.1.0", "status": "verified", "evidence": "device-behavior", "behavior": "拍摄 9 项、底部 4 项和合拍 10 项逐项删除后入口消失且后续 UI 重排。"}},
+      "alternative": "不要使用透明、hidden 或空字符串占位。", "verification": "逐项删除并检查入口、下级功能和后续控件位置。"
+    },
+    {
+      "id": "capture.media",
+      "members": ["captureConfig.captureDeviceIndex", "captureConfig.resolution", "captureConfig.fps", "captureConfig.imageDuration", "captureConfig.autoSavePhotograph"], "aliases": ["前后摄像头", "拍摄分辨率", "拍摄帧率", "照片时长", "拍照保存相册"],
+      "type": "int + enum + long + boolean", "default": "1,1080,30,3000,false", "constraints": ["device 只能为 0/1", "imageDuration 必须大于 0", "超过 30fps 可能回退"], "enumValues": [720, 1080, 15, 30], "dependencies": ["device camera capability"], "conflicts": [],
+      "mutationTarget": "MeisheFeatureConfig.apply(NvVideoConfig) -> captureConfig",
+      "platforms": {"android": {"version": "2.0.1.0", "status": "partial", "evidence": "media-output", "behavior": "摄像头、720p、15fps、图片 6 秒和拍照保存生效；60fps 在 Redmi Note 7 回退约 30fps。"}},
+      "alternative": "高帧率请求前先检查目标设备；稳定档位使用 15/30fps。", "verification": "提取原始媒体检查尺寸、帧数、时长，并查询 MediaStore。"
+    },
+    {
+      "id": "capture.timing",
+      "members": ["captureConfig.timeRanges", "captureConfig.smartTimeRange", "captureConfig.enableCaptureAlbum", "captureConfig.filterDefaultValue"], "aliases": ["录制时长", "快拍时长", "拍摄页相册", "拍摄滤镜强度"],
+      "type": "NvTimePair list + boolean + double", "default": "SDK/demo defaults", "constraints": ["0 <= min < max", "滤镜强度 0..1"], "enumValues": [], "dependencies": [], "conflicts": [],
+      "mutationTarget": "MeisheFeatureConfig.apply(NvVideoConfig) -> captureConfig",
+      "platforms": {"android": {"version": "2.0.1.0", "status": "verified", "evidence": "media-output", "behavior": "普通和快拍上限均自动停止；相册入口与滤镜 0/1 边界生效。"}},
+      "alternative": "", "verification": "录制越过上限、检查入口并测量滤镜滑杆位置。"
+    },
+    {
+      "id": "capture.rotation",
+      "members": ["captureConfig.ignoreVideoRotation"], "aliases": ["忽略视频旋转", "旋转方向", "横屏录制"],
+      "type": "boolean", "default": true, "constraints": ["自动方向事件不能替代物理旋转"], "enumValues": [true, false], "dependencies": ["physical device rotation"], "conflicts": [],
+      "mutationTarget": "MeisheFeatureConfig.apply(NvVideoConfig) -> captureConfig",
+      "platforms": {"android": {"version": "2.0.1.0", "status": "limited", "evidence": "external-required", "behavior": "当前证据不能替代用户物理横置设备后的方向元数据验证。"}},
+      "alternative": "保持默认值，交由最终目标设备人工复核。", "verification": "物理旋转真机录制并检查旋转矩阵和实际画面方向。"
+    },
+    {
+      "id": "capture.audio-recording",
+      "members": ["captureConfig.autoDisablesMic", "captureConfig.recordConfiguration"], "aliases": ["拍摄自动静音", "关闭原声", "拍摄码率", "GOP", "HEVC录制"],
+      "type": "boolean + Map<String,Object>", "default": "false,empty", "constraints": ["录制字典只使用 bitrate/gopsize/video encoder name 公开键"], "enumValues": ["bitrate", "gopsize", "video encoder name"], "dependencies": ["device codec support"], "conflicts": [],
+      "mutationTarget": "MeisheFeatureConfig.apply(NvVideoConfig) -> captureConfig",
+      "platforms": {"android": {"version": "2.0.1.0", "status": "partial", "evidence": "media-output", "behavior": "未选音乐时 autoDisablesMic 不改变音轨；bitrate 与 GOP 生效，video/hevc 在当前设备仍回退 H.264。"}},
+      "alternative": "需要强制静音时在业务录制/导出流程显式处理音轨；编码格式以输出探针为准。", "verification": "用 ffprobe 检查 AAC、音量、编码器、码率和关键帧。"
+    },
+    {
+      "id": "beauty.lists",
+      "members": ["beautyConfig.categoricalArray", "beautyConfig.beautyEffectArray", "beautyConfig.beautyShapeArray", "beautyConfig.beautyMicroShapeArray", "beautyConfig.beautyAdjustArray"], "aliases": ["美颜分类", "美肤列表", "美型列表", "微整形列表", "调节列表"],
+      "type": "ordered enum lists", "default": "all public items", "constraints": ["仅使用当前 AAR 枚举"], "enumValues": ["Skin", "Shape", "MicroShape", "Adjust"], "dependencies": ["matching model files for model-backed effects"], "conflicts": [],
+      "mutationTarget": "MeisheFeatureConfig.apply(NvVideoConfig) -> beautyConfig",
+      "platforms": {"android": {"version": "2.0.1.0", "status": "verified", "evidence": "device-behavior", "behavior": "分类和四组子项单项保留后均正确裁剪并重排。"}},
+      "alternative": "", "verification": "逐个分类进入页面检查唯一子项和无空位重排。"
+    },
+    {
+      "id": "dual.layout",
+      "members": ["dualConfig.left", "dualConfig.top", "dualConfig.limitWidth", "dualConfig.defaultType", "dualConfig.supportedTypes"], "aliases": ["合拍窗口位置", "合拍窗口大小", "合拍默认版式", "合拍支持版式"],
+      "type": "normalized numbers + enum/mask", "default": "SDK/demo defaults", "constraints": ["坐标和宽度必须在 0..1", "defaultType 必须在 supportedTypes 内"], "enumValues": ["leftRight", "topDown", "leftRect", "leftCircle", "topCircle"], "dependencies": [], "conflicts": [],
+      "mutationTarget": "MeisheFeatureConfig.apply(NvVideoConfig) -> dualConfig",
+      "platforms": {"android": {"version": "2.0.1.0", "status": "partial", "evidence": "device-behavior", "behavior": "小窗坐标和支持列表生效；defaultType 首次进入仍显示 leftRight。"}},
+      "alternative": "用 supportedTypes 限制为唯一版式；不要承诺 defaultType 自动选中。", "verification": "进入合拍页读取实际 frame 和版式面板。"
+    },
+    {
+      "id": "dual.audio",
+      "members": ["dualConfig.autoDisablesMic"], "aliases": ["合拍自动静音", "合拍麦克风", "关闭合拍录音"],
+      "type": "boolean", "default": false, "constraints": ["当前原生 Android AAR 不公开 muteOriginal"], "enumValues": [true, false], "dependencies": ["source video audio"], "conflicts": [],
+      "mutationTarget": "MeisheFeatureConfig.apply(NvVideoConfig) -> dualConfig",
+      "platforms": {"android": {"version": "2.0.1.0", "status": "partial", "evidence": "media-output", "behavior": "true 会移除相机麦克风音轨，但保留合拍源视频声音。"}},
+      "alternative": "需要控制源视频声音时使用支持 muteOriginal 的框架路线或自有后处理。", "verification": "提取合拍输出并区分相机与源视频音轨。"
+    },
+    {
+      "id": "edit.menus",
+      "members": ["editConfig.editMenuItems"], "aliases": ["编辑菜单", "删除文字", "隐藏字幕", "隐藏保存", "隐藏发布"],
+      "type": "ordered List<NvEditMenuItem>", "default": "all public items", "constraints": ["无重复", "删除 release/download 前确认发布与草稿仍可达"], "enumValues": ["release", "download", "edit", "text", "sticker", "effect", "filter", "caption", "audio", "record"], "dependencies": [], "conflicts": [],
+      "mutationTarget": "MeisheFeatureConfig.apply(NvVideoConfig) -> editConfig.editMenuItems",
+      "platforms": {"android": {"version": "2.0.1.0", "status": "partial", "evidence": "device-behavior", "behavior": "除 caption 外九项删除有效并重排；caption 删除前后标准编辑 UI 完全一致。"}},
+      "alternative": "自动字幕入口不可见时不要把 caption 描述为可靠菜单开关。", "verification": "逐项删除并比较完整编辑 UI 树及发布流程。"
+    },
+    {
+      "id": "edit.preview-duration",
+      "members": ["editConfig.resolution", "editConfig.fps", "editConfig.defaultImageDuration", "editConfig.filterDefaultValue"], "aliases": ["编辑预览分辨率", "编辑预览帧率", "编辑图片时长", "编辑滤镜强度"],
+      "type": "enum + int/long + float", "default": "1080,30,4000,0.5", "constraints": ["fps 和图片时长必须大于 0", "滤镜强度 0..1"], "enumValues": [720, 1080, 15, 30], "dependencies": [], "conflicts": [],
+      "mutationTarget": "MeisheFeatureConfig.apply(NvVideoConfig) -> editConfig",
+      "platforms": {"android": {"version": "2.0.1.0", "status": "partial", "evidence": "device-behavior", "behavior": "720/15 页面稳定但无公开预览读回；图片 6 秒和滤镜 0/1 生效。"}},
+      "alternative": "预览参数只能标记为稳定，不等同于已读回底层尺寸/帧率。", "verification": "操作真实时间线并检查图片时长和滤镜滑杆。"
+    },
+    {
+      "id": "edit.minimum-duration",
+      "members": ["editConfig.minEffectDuration", "editConfig.minAudioDuration"], "aliases": ["最短特效时长", "最短录音时长", "最短配音时长"],
+      "type": "long milliseconds", "default": "100,10000", "constraints": ["必须大于 0"], "enumValues": [], "dependencies": [], "conflicts": [],
+      "mutationTarget": "MeisheFeatureConfig.apply(NvVideoConfig) -> editConfig",
+      "platforms": {"android": {"version": "2.0.1.0", "status": "partial", "evidence": "device-behavior", "behavior": "最短特效阈值被消费；minAudioDuration 存在单位换算缺陷，5000ms 时 1.36 秒录音仍被接受。"}},
+      "alternative": "配音最短时长由应用在保存录音前自行校验。", "verification": "分别生成低于阈值的特效和录音片段。"
+    },
+    {
+      "id": "edit.caption-bubble",
+      "members": ["editConfig.captionColor", "editConfig.captionColorList", "editConfig.supportedCaptionStyles", "editConfig.bubbleConfig"], "aliases": ["字幕颜色", "字幕样式", "气泡样式", "气泡模糊"],
+      "type": "String/list/config", "default": "SDK/demo defaults", "constraints": ["颜色列表非空", "图片名必须存在真实资源"], "enumValues": ["none", "bg", "bgAlpha", "outline", "light", "dark"], "dependencies": ["bubble image resources"], "conflicts": [],
+      "mutationTarget": "MeisheFeatureConfig.apply(NvVideoConfig) -> editConfig",
+      "platforms": {"android": {"version": "2.0.1.0", "status": "partial", "evidence": "device-behavior", "behavior": "字幕颜色和样式裁剪生效；气泡操作浮层配置生效，但 Android 9 未观察到三种模糊差异。"}},
+      "alternative": "需要稳定模糊效果时使用项目自有背景资源。", "verification": "创建字幕后检查颜色集合、样式按钮和气泡浮层。"
+    },
+    {
+      "id": "edit.modes",
+      "members": ["editConfig.editModeSource", "editConfig.editMode", "editConfig.supportedEditModes"], "aliases": ["编辑画幅", "固定比例", "支持画幅", "只保留9比16"],
+      "type": "enum + enum list", "default": "firstAsset,9v16,all", "constraints": ["fixed 时 editMode 必须合法", "2.0.1.0 禁止单元素 supportedEditModes", "自定义多元素列表不可靠"], "enumValues": ["9v16", "16v9", "3v4", "4v3", "1v1", "18v9", "9v18", "8v9", "9v8"], "dependencies": [], "conflicts": [],
+      "mutationTarget": "MeisheFeatureConfig.apply(NvVideoConfig) -> editConfig",
+      "platforms": {"android": {"version": "2.0.1.0", "status": "partial", "evidence": "device-behavior", "behavior": "九种 fixed 初始画幅生效；supportedEditModes 单元素崩溃、多元素忽略首项且不裁剪比例面板。"}},
+      "alternative": "只用 editModeSource/editMode 设置初始画幅，不承诺限制比例菜单。", "verification": "读取 liveWindow 比例并打开专业比例面板。"
+    },
+    {
+      "id": "edit.volume-time-effect",
+      "members": ["editConfig.maxVolume", "editConfig.disableTimeEffect"], "aliases": ["最大音量", "禁用时间特效", "隐藏慢动作", "隐藏反复"],
+      "type": "float + boolean", "default": "8,false", "constraints": ["maxVolume 稳定范围为 0 < value <= 8"], "enumValues": [true, false], "dependencies": [], "conflicts": [],
+      "mutationTarget": "MeisheFeatureConfig.apply(NvVideoConfig) -> editConfig",
+      "platforms": {"android": {"version": "2.0.1.0", "status": "partial", "evidence": "device-behavior", "behavior": "maxVolume 只控制标准时间线音乐/录音 0-100 映射；0 被 AAR 忽略。当前包装流程没有可达时间特效入口。"}},
+      "alternative": "专业剪辑片段音量需使用其独立面板；不可达的时间特效不做虚假隐藏。", "verification": "打开标准音乐音量与专业片段音量面板分别检查。"
+    },
+    {
+      "id": "compile.media",
+      "members": ["compileConfig.resolution", "compileConfig.fps", "compileConfig.bitrateGrade", "compileConfig.bitrate", "compileConfig.autoSaveVideo"], "aliases": ["导出分辨率", "导出帧率", "导出码率", "自动保存视频", "4K导出"],
+      "type": "enum/int/boolean", "default": "1080,30,Low,-1,true", "constraints": ["bitrate != -1 时覆盖 bitrateGrade", "4K 必须做设备内存验证"], "enumValues": [720, 1080, "4K", "Low", "Medium", "High"], "dependencies": ["device memory", "encoder capability"], "conflicts": ["bitrate vs bitrateGrade"],
+      "mutationTarget": "MeisheFeatureConfig.apply(NvVideoConfig) -> compileConfig",
+      "platforms": {"android": {"version": "2.0.1.0", "status": "partial", "evidence": "media-output", "behavior": "720、4K、15fps、三档码率、精确 1Mbps 和自动保存均生效；低内存设备 4K 会触发系统杀进程。"}},
+      "alternative": "生成默认保持 1080p；4K 只在目标设备受控验证后启用。", "verification": "用 ffprobe 和 MediaStore 检查最终文件及进程日志。"
+    },
+    {
+      "id": "compile.video-watermark",
+      "members": ["compileConfig.watermarkConfig"], "aliases": ["视频水印", "导出水印", "水印位置"],
+      "type": "NvWatermarkConfig", "default": null, "constraints": ["图片必须存在", "宽高大于 0", "偏移非负"], "enumValues": ["TopRight", "TopLeft", "BottomLeft", "BottomRight"], "dependencies": ["real image resource"], "conflicts": [],
+      "mutationTarget": "MeisheFeatureConfig.apply(NvVideoConfig) -> compileConfig.watermarkConfig",
+      "platforms": {"android": {"version": "2.0.1.0", "status": "verified", "evidence": "media-output", "behavior": "真实图片的四个水印位置均在导出首帧对应象限生效。"}},
+      "alternative": "", "verification": "导出四段视频并比较首帧四象限像素。"
+    },
+    {
+      "id": "compile.cover",
+      "members": ["compileConfig.imageType", "compileConfig.coverWatermarkConfig"], "aliases": ["封面格式", "JPEG封面", "PNG封面", "封面水印", "保存封面"],
+      "type": "enum + NvWatermarkConfig", "default": "PNG,null", "constraints": ["只有发布回调允许保存封面且公开 saveCover API 匹配时生成入口"], "enumValues": ["PNG", "JPEG", "TopRight", "TopLeft", "BottomLeft", "BottomRight"], "dependencies": ["verified saveCover API", "real image resource"], "conflicts": [],
+      "mutationTarget": "MeisheFeatureConfig.apply(NvVideoConfig) -> compileConfig and generated publish controller",
+      "platforms": {"android": {"version": "2.0.1.0", "status": "limited", "evidence": "static-api", "behavior": "AAR 公开 saveCover，但旧生成发布页未调用，现有运行证据没有可达封面输出；补齐入口后必须复测。"}},
+      "alternative": "API 形状不匹配时不生成按钮，并在交接报告中标记不支持。", "verification": "保存后检查 coverPath、文件签名和水印像素。"
+    },
+    {
+      "id": "external.configure-models",
+      "members": ["compileConfig.configure", "modelConfig.*"], "aliases": ["底层合成配置", "模型路径", "人脸模型", "抠像模型", "AutoCut模型"],
+      "type": "Map<String,Object> + file paths", "default": null, "constraints": ["未知字典键禁止写入", "模型必须来自匹配版本官方交付"], "enumValues": [], "dependencies": ["Meishe contract", "real model files", "matching license"], "conflicts": [],
+      "mutationTarget": "MeisheFeatureConfig.apply(NvVideoConfig) -> compileConfig/modelConfig",
+      "platforms": {"android": {"version": "2.0.1.0", "status": "limited", "evidence": "external-required", "behavior": "缺少公开字典合同和完整真实模型输入，不能宣称运行通过。"}},
+      "alternative": "获取美摄当前版本模型和字段合同后逐项验证。", "verification": "校验文件存在、版本匹配、License 与对应功能真实运行。"
+    }
+  ]
+}

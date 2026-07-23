@@ -1,0 +1,4 @@
+interface:
+  display_name: "美摄 Flutter 短视频接入"
+  short_description: "独立接入 Flutter Android、iOS 单端或双端美摄短视频 Demo。"
+  default_prompt: "使用 $meishe-flutter-duanshipin-docking 仅按 Flutter 路线接入官方美摄短视频 Demo 包。"

@@ -1,0 +1,525 @@
+<!DOCTYPE html><html><head>
+      <title>quickstart_en</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/ms20221114/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.8.25/crossnote/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      pre{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;padding:1em;margin:.5em 0;overflow:auto;line-height:1.5;tab-size:4;hyphens:none;color:#eff;background-color:#2e3d44!important;border:#475d69;border-radius:3px}pre[class*=language-]{padding:1em}code[class*=language-] .token.cdata,code[class*=language-] .token.comment,code[class*=language-] .token.doctype,code[class*=language-] .token.prolog,pre[class*=language-] .token.cdata,pre[class*=language-] .token.comment,pre[class*=language-] .token.doctype,pre[class*=language-] .token.prolog{color:#4f6875}code[class*=language-] .token.punctuation,pre[class*=language-] .token.punctuation{color:#82aaff}code[class*=language-] .namespace,pre[class*=language-] .namespace{opacity:.7}code[class*=language-] .token.constant,pre[class*=language-] .token.constant{color:#f07178}code[class*=language-] .token.property,pre[class*=language-] .token.property{color:#73d1c8}code[class*=language-] .token.boolean,code[class*=language-] .token.function-name,code[class*=language-] .token.number,pre[class*=language-] .token.boolean,pre[class*=language-] .token.function-name,pre[class*=language-] .token.number{color:#f78c6a}code[class*=language-] .token.tag,pre[class*=language-] .token.tag{color:#f07178}code[class*=language-] .token.deleted,pre[class*=language-] .token.deleted{color:#f07178}code[class*=language-] .token.symbol,pre[class*=language-] .token.symbol{color:#c3e88d}code[class*=language-] .token.selector,pre[class*=language-] .token.selector{color:#c792ea}code[class*=language-] .token.attr-name,pre[class*=language-] .token.attr-name{color:#c792ea}code[class*=language-] .token.string,pre[class*=language-] .token.string{color:#c3e88d}code[class*=language-] .token.char,pre[class*=language-] .token.char{color:#373b41}code[class*=language-] .token.builtin,code[class*=language-] .token.inserted,pre[class*=language-] .token.builtin,pre[class*=language-] .token.inserted{color:#c3e88d}code[class*=language-] .token.entity,pre[class*=language-] .token.entity{color:#89ddf3}code[class*=language-] .token.url,pre[class*=language-] .token.url{color:#ffcb6b}code[class*=language-] .token.operator,pre[class*=language-] .token.operator{color:#89ddf3}code[class*=language-] .token.atrule,code[class*=language-] .token.attr-value,code[class*=language-] .token.keyword,pre[class*=language-] .token.atrule,pre[class*=language-] .token.attr-value,pre[class*=language-] .token.keyword{color:#c792ea}code[class*=language-] .token.function,pre[class*=language-] .token.function{color:#82aaff}code[class*=language-] .token.class-name,pre[class*=language-] .token.class-name{color:#ffcb6b}code[class*=language-] .token.important,code[class*=language-] .token.regex,code[class*=language-] .token.variable,pre[class*=language-] .token.important,pre[class*=language-] .token.regex,pre[class*=language-] .token.variable{color:#89ddf3}code[class*=language-] .token.bold,code[class*=language-] .token.important,pre[class*=language-] .token.bold,pre[class*=language-] .token.important{font-weight:700}code[class*=language-] .token.italic,pre[class*=language-] .token.italic{font-style:italic}code[class*=language-] .token.entity,pre[class*=language-] .token.entity{cursor:help}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#eff;background-color:#263238;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#fff}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#9cffff}html body strong{color:#fff}html body del{color:#9cffff}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#82aaff;text-decoration:none}html body a:hover{color:#abc6ff;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#9cffff;background-color:#364850;border-left:4px solid #475d69}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#475d69;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#fff}html body table td,html body table th{border:1px solid #475d69;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#fff;background-color:#364850;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#475d69;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#fff;border:1px solid #475d69;border-bottom:2px solid #3b4d56;padding:2px 4px;background-color:#364850;border-radius:3px}@media print{html body{background-color:#263238}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#fff;page-break-after:avoid}html body blockquote{color:#9cffff}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-details{margin:0;padding:0;border:none}.markdown-preview .md-toc summary.md-toc-link-wrapper{cursor:pointer;list-style-position:outside}.markdown-preview .md-toc summary.md-toc-link-wrapper::marker{font-size:.85em}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='0']{margin-left:12px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='1']{margin-left:28px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='2']{margin-left:44px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='3']{margin-left:60px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='4']{margin-left:76px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='5']{margin-left:80px}.markdown-preview a.tag,.markdown-preview a.tag:active,.markdown-preview a.tag:link,.markdown-preview a.tag:visited,.markdown-preview span.tag{display:inline-block;background-color:var(--vscode-badge-background,rgba(127,127,127,.18));color:var(--vscode-badge-foreground,currentColor);border-radius:2em;font-size:.85em;font-weight:500;padding:.05em .55em;line-height:1.5;white-space:nowrap;text-decoration:none;text-shadow:none;box-shadow:none;transition:background-color .12s ease,opacity .12s ease}.markdown-preview a.tag{cursor:pointer}.markdown-preview a.tag:focus,.markdown-preview a.tag:hover{background-color:var(--vscode-badge-background,rgba(127,127,127,.32));color:var(--vscode-badge-foreground,currentColor);opacity:.85;text-decoration:none;outline:0}.markdown-preview .wikilink-embed-content{border-left:3px solid var(--vscode-textBlockQuote-border,rgba(128,128,128,.3));background:var(--vscode-textBlockQuote-background,rgba(128,128,128,.05));margin:.5em 0;padding:.5em .75em;border-radius:0 3px 3px 0}.markdown-preview .wikilink-embed-content.wikilink-embed-error{border-left-color:var(--vscode-errorForeground,#cf222e);color:var(--vscode-errorForeground,#cf222e);font-style:italic;opacity:.8}.markdown-preview .wikilink-embed-content h1:first-child,.markdown-preview .wikilink-embed-content h2:first-child,.markdown-preview .wikilink-embed-content h3:first-child,.markdown-preview .wikilink-embed-content h4:first-child,.markdown-preview .wikilink-embed-content h5:first-child,.markdown-preview .wikilink-embed-content h6:first-child{margin-top:.25em}.markdown-preview .wikilink-embed-content .wikilink-embed-content{margin:.25em 0;padding:.25em .5em}.markdown-preview .block-id{display:none}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-details{margin:0;padding:0;border:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='0']{padding-left:0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='1']{padding-left:16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='2']{padding-left:32px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='3']{padding-left:48px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='4']{padding-left:64px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='5']{padding-left:80px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+
+      </style>
+      
+    </head>
+    <body for="html-export">
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="meishe-react-native-short-video-module-access-guide">Meishe React Native short video module access guide </h1>
+<h2 id="general-integration-process">General Integration Process </h2>
+<ul>
+<li>First, follow the current documentation for integration.</li>
+<li>Contact the sales department to request SDK authorization.</li>
+<li>By default, ShortVideo uses Meishe's own server. After integration, you will be required to migrate the server to your own server. Contact the sales department and we will arrange for a team to deploy the server for you.</li>
+<li>If you need to modify the current app's display, refer to the UI configuration or module configuration in the current documentation. (If you don't need to modify the UI, ignore this step.)</li>
+</ul>
+<h2 id="development-environment-requirements">Development environment requirements </h2>
+<ul>
+<li>react-native ^0.41.2</li>
+<li>iOS
+<ul>
+<li>iOS 12.0 and above</li>
+<li>Swift 5</li>
+<li>CocoaPods</li>
+</ul>
+</li>
+<li>Anroid
+<ul>
+<li>Android Studio 3.0+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>⚠️ <strong>Note:</strong>  This feature must be run on a physical device, as it is currently not supported on the simulator.</p>
+</blockquote>
+<h2 id="upgrade-short-video-notes">Upgrade short video notes </h2>
+<h3 id="version-200-updates">Version 2.0.0 Updates: </h3>
+<ul>
+<li>Fixed some known issues. iOS version is 2.0.0, and Android version is 1.5.1.</li>
+</ul>
+<h3 id="version-151-updates">Version 1.5.1 Updates: </h3>
+<ul>
+<li>Fixed some known issues</li>
+</ul>
+<h3 id="version-150-updates">Version 1.5.0 Updates: </h3>
+<ul>
+<li>This release involves significant updates; therefore, regression testing is absolutely essential prior to deployment—particularly regarding changes to configuration settings.</li>
+</ul>
+<h3 id="140-version-upgrade">1.4.0 Version upgrade： </h3>
+<ul>
+<li>The VideoEditPlugin file has changed; please be aware of this during the upgrade.</li>
+<li>The NvStreamingSdkCore.xcframework has been upgraded to version 3.15.3. If you are upgrading from a version below 1.4.0, you need to contact your business team to update the SDK license. This upgrade is only available for iOS.</li>
+<li>The AutoCut video creation feature has been completely upgraded. You can now contact our server-side development team in a group chat to assist with upgrading the server-side interface. This upgrade is only available for iOS; Android is not yet supported. Therefore, to use the AutoCut video creation feature, you must contact our server-side team for assistance. Please feel free to contact us with any questions.<pre data-role="codeBlock" data-info="" class="language-text"><code>  var assetAutoCutUrl = '';
+  if (Platform.OS === 'ios') {
+    assetAutoCutUrl = 'https://creative.meishesdk.com/api/app/aivideo/asset/all/1';
+  } else {
+    assetAutoCutUrl = 'materialcenter/recommend/listTemplate';
+  }
+
+// Initialize server config
+useEffect(() =&gt; {
+  const map = {
+    host: 'https://mall.meishesdk.com/api/shortvideo/v1/',
+    assetRequestUrl: 'materialcenter/mall/custom/listAllAssemblyMaterial',
+    assetCategoryUrl: 'materialcenter/appSdkApi/listTypeAndCategory',
+    assetMusiciansUrl: 'materialcenter/appSdkApi/listMusic',
+    assetFontUrl: 'materialcenter/listFont',
+    assetDownloadUrl: 'materialcenter/mall/custom/materialInteraction',
+    assetPrefabricatedUrl: 'materialcenter/beautyAssets/latest',
+    assetAutoCutUrl: assetAutoCutUrl,
+    assetTagUrl: 'materialcenter/listTemplateTag',
+    clientId: '7480f2bf193d417ea7d93d64',
+    clientSecret: 'e4434ff769404f64b33f462331a80957',
+    assemblyId: 'MEISHE_MATERIAL_LIST',
+    isAbroad: 1,
+  };
+</code></pre>
+</li>
+<li>For server updates, please contact our server team.</li>
+</ul>
+<h3 id="128-version-upgrade">1.2.8 Version upgrade： </h3>
+<ul>
+<li>In version 1.2.7, you need to download resources before entering shooting, editing, and co-shooting. The new version will not block the entry into shooting, editing, and co-shooting, and will silently download in the background when entering. It also provides an interface for users to actively call it. If the user does not actively call shortvideo, it will be called by default.</li>
+</ul>
+<pre data-role="codeBlock" data-info="ts" class="language-ts ts"><code><span class="token function">downloadPrefabricatedMaterial</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span><span class="token builtin">boolean</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+</code></pre><h3 id="127-version-upgrade">1.2.7 Version upgrade： </h3>
+<ul>
+<li>ReactNative users, please replace the react_native/react-native-nvshortvideo/ folder and replace the license file (flutter/nvshortvideo/ios/Assets/meicam_licence.lic)<br>
+//Shooting entrance<br>
+<code>startVideoCapture(config: videoConfig): Promise&lt;boolean&gt;;</code><br>
+//PIP entrance<br>
+<code>startVideoDualCapture(config: videoConfig): Promise&lt;boolean&gt;;</code><br>
+//Editing entrance<br>
+<code>startSelectFilesForEdit(config: videoConfig): Promise&lt;boolean&gt;;</code><br>
+//Save image to album<br>
+<code>saveImageToAlbum(): Promise&lt;string&gt;;</code><br>
+//Whether there is only one picture when editing<br>
+<code>isOnlyHaveImage(): Promise&lt;boolean&gt;;</code><br>
+//Show saveing options panel<br>
+<code>showSaveOptionsPanel():Promise&lt;number&gt;;</code></li>
+</ul>
+<h2 id="support-media-formats">Support media formats </h2>
+<p>For details, see: <a href="https://www.meishesdk.com/ios/doc_en/html/content/Introduction_8md.html">Meishes sdk product overview</a></p>
+<h2 id="short-video-module-integration">Short video module integration </h2>
+<p>After the short video module is downloaded and decompressed, it can be used as Flutter’s local private library. The decompressed file directory is as follows:</p>
+<p><img src="../assets/image.png" alt="alt text"></p>
+<ol>
+<li>
+<p>Add dependencies<br>
+Run the following command in the root directory of the App project:</p>
+<pre data-role="codeBlock" data-info="shell" class="language-shell shell"><code> <span class="token function">yarn</span> <span class="token function">add</span> file:xxx/react-native-nvshortvideo
+</code></pre><blockquote>
+<p>Important：It is recommended to use the yarn command, If you use the npm command, refer to the <a href="https://docs.npmjs.com/cli/install">npm documentation</a></p>
+</blockquote>
+</li>
+<li>
+<p>Update native dependency</p>
+<p>iOS： cd ios &amp;&amp; pod install</p>
+<p>Android：</p>
+<pre class="language-text">1.Execute yarn install in the current project
+2.yarn start
+</pre>
+</li>
+<li>
+<p>FAQ</p>
+<p>Android：</p>
+<p>（1）After running Android with yarn start, the following error is displayed</p>
+<p><img src="../assets/android_compile_1.png" alt=""></p>
+<p>solve:</p>
+<p><img src="../assets/android_compile_1_resolve.png" alt=""></p>
+</li>
+</ol>
+<h2 id="system-authorization">System authorization </h2>
+<h3 id="ios">iOS </h3>
+<p>App needs to add the following permissions in Info.plist, otherwise it will not be able to use the short video module.</p>
+<pre data-role="codeBlock" data-info="xml" class="language-xml xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>key</span><span class="token punctuation">&gt;</span></span>NSCameraUsageDescription<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>key</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span><span class="token punctuation">&gt;</span></span>AppYour consent is required to access the camera<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>string</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>key</span><span class="token punctuation">&gt;</span></span>NSMicrophoneUsageDescription<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>key</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span><span class="token punctuation">&gt;</span></span>AppYour consent is required to access the microphone<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>string</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>key</span><span class="token punctuation">&gt;</span></span>NSPhotoLibraryUsageDescription<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>key</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span><span class="token punctuation">&gt;</span></span>AppYour consent is required to access the album<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>string</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>key</span><span class="token punctuation">&gt;</span></span>NSAppleMusicUsageDescription<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>key</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span><span class="token punctuation">&gt;</span></span>AppYour consent is required to access music<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>string</span><span class="token punctuation">&gt;</span></span>
+</code></pre><h3 id="android">Android </h3>
+<p>TODO：Add the following permissions in AndroidManifest.xml</p>
+<pre data-role="codeBlock" data-info="xml" class="language-xml xml"><code> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.SYSTEM_ALERT_WINDOW<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.CAMERA<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.RECORD_AUDIO<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.WRITE_EXTERNAL_STORAGE<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.READ_EXTERNAL_STORAGE<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span> <span class="token comment">&lt;!-- &lt;uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" /&gt; --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.INTERNET<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.ACCESS_NETWORK_STATE<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.VIBRATE<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.WAKE_LOCK<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.ACCESS_NOTIFICATION_POLICY<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span> <span class="token comment">&lt;!-- &lt;uses-permission android:name="android.permission.INTERNET" /&gt; --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.ACCESS_WIFI_STATE<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.CHANGE_WIFI_STATE<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span> <span class="token comment">&lt;!-- 用于进行网络定位 --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.ACCESS_COARSE_LOCATION<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span> <span class="token comment">&lt;!-- 用于访问GPS定位 --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.ACCESS_FINE_LOCATION<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span> <span class="token comment">&lt;!-- 用于读取手机当前的状态 --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.REQUEST_INSTALL_PACKAGES<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.EXPAND_STATUS_BAR<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+</code></pre><h2 id="meishe-sdk-authorization">Meishe SDK authorization </h2>
+<p>Meishe SDK authorization method:</p>
+<p>After registering as a user on <a href="https://en.meishesdk.com/">Meishe‘s official website</a>, create an application and configure the App package name. After a Meishe business colleague activates the authorization, you can download the authorization file in the application information.</p>
+<p>Replace the authorization file in the short video module package with the downloaded authorization .lic file. The path in the module package:</p>
+<ul>
+<li>iOS：<br>
+<img src="../assets/image_lic.png" alt="alt text"></li>
+<li>Android：<br>
+<img src="../assets/image_lic_android.png" alt="alt text"></li>
+</ul>
+<blockquote>
+<p>The SDK authorization is bound to the package name of the App. When it is not authorized, all functions of the SDK can be used without checking the authorization, and the drawn picture will have the MEISHE watermark.</p>
+</blockquote>
+<h2 id="network-interface-configuration">Network interface configuration </h2>
+<p>The filters, stickers, music and other files used in the short video module are all obtained through the network interface. The server needs to implement the corresponding interface according to the interface document.<br>
+Configure the server address and public parameters in the App project.</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token keyword module keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">NvShortVideo</span><span class="token punctuation">,</span> <span class="token maybe-class-name">NvVideoConfig</span> <span class="token punctuation">}</span></span> <span class="token keyword module keyword-from">from</span> <span class="token string">'react-native-nvshortvideo'</span><span class="token punctuation">;</span>
+<span class="token spread operator">...</span>
+  <span class="token comment">//服务器地址</span>
+  <span class="token comment">//Server url</span>
+  <span class="token comment">/// assetRequestUrl  素材列表请求 Material list request</span>
+  <span class="token comment">/// assetCategoryUrl 素材分类列表请求 Material category list request</span>
+  <span class="token comment">/// assetMusiciansUrl 音乐列表请求 Music list request</span>
+  <span class="token comment">/// assetFontUrl 字体列表请求 Font list request</span>
+  <span class="token comment">/// assetDownloadUrl 下载地址请求 Download address request</span>
+  <span class="token comment">/// assetPrefabricatedUrl 预制素材请求 Prefabricated material request</span>
+  <span class="token comment">/// assetAutoCutUrl 一键成片网络请求 AutoCut request</span>
+  <span class="token comment">/// assetTagUrl 模版标签列表请求 Template tag list request</span>
+  <span class="token comment">/// clientId clientId</span>
+  <span class="token comment">/// clientSecret clientSecret</span>
+  <span class="token comment">/// assemblyId assemblyId</span>
+  <span class="token comment">/// isAbroad 海外数据请求，0==全部，1==海外 Overseas data request, 0== all, 1== overseas</span>
+  <span class="token keyword keyword-let">let</span> map <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token string-property property">'host'</span><span class="token operator">:</span> <span class="token string">'https://mall.meishesdk.com/api/shortvideo/'</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'assetRequestUrl'</span><span class="token operator">:</span> <span class="token string">'materialcenter/mall/custom/listAllAssemblyMaterial'</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'assetCategoryUrl'</span><span class="token operator">:</span> <span class="token string">'materialcenter/appSdkApi/listTypeAndCategory'</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'assetMusiciansUrl'</span><span class="token operator">:</span> <span class="token string">'materialcenter/appSdkApi/listMusic'</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'assetFontUrl'</span><span class="token operator">:</span> <span class="token string">'materialcenter/listFont'</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'assetDownloadUrl'</span><span class="token operator">:</span> <span class="token string">'materialcenter/mall/custom/materialInteraction'</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'assetPrefabricatedUrl'</span><span class="token operator">:</span> <span class="token string">'materialcenter/beautyAssets/latest'</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'assetAutoCutUrl'</span><span class="token operator">:</span> <span class="token string">'materialcenter/recommend/listTemplate'</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'assetTagUrl'</span><span class="token operator">:</span> <span class="token string">'materialcenter/listTemplateTag'</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'clientId'</span><span class="token operator">:</span> <span class="token string">'7480f2bf193d417ea7d93d64'</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'clientSecret'</span><span class="token operator">:</span> <span class="token string">'e4434ff769404f64b33f462331a80957'</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'assemblyId'</span><span class="token operator">:</span> <span class="token string">'MEISHE_MATERIAL_LIST'</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'isAbroad'</span><span class="token operator">:</span> <span class="token number">1</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token keyword keyword-let">let</span> videoOperator <span class="token operator">=</span> <span class="token maybe-class-name">NvShortVideo</span><span class="token punctuation">.</span><span class="token method function property-access">shareInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  videoOperator<span class="token punctuation">.</span><span class="token method function property-access">configServerInfo</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h2 id="preset-material">Preset material </h2>
+<p>The material packages that the short video module relies on can be selected as needed. For details of preset materials, see: <a href="../../nv_short_video_ios_doc/doc_en/html/PrefabricatedMaterial_en.html">Short video module preset materials</a><br>
+Download preset materials. If you call this interface, shortvideo will not call it repeatedly when entering. If you do not call it, shortvideo will default to background calling when entering.</p>
+<pre data-role="codeBlock" data-info="ts" class="language-ts ts"><code><span class="token comment">/*! \if ENGLISH
+ *
+ *  \brief Download material
+ *  \param completionHandler Completion callback
+ *  \else
+ *  \endif
+ *  */</span>
+<span class="token function">downloadPrefabricatedMaterial</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span><span class="token builtin">boolean</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+</code></pre><h2 id="main-methods-of-short-video-module">Main methods of short video module </h2>
+<p>Module singleton: let videoOperator = NvShortVideo.shareInstance();<br>
+Example call:</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token keyword module keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">NvShortVideo</span><span class="token punctuation">,</span> <span class="token maybe-class-name">NvVideoConfig</span> <span class="token punctuation">}</span></span> <span class="token keyword module keyword-from">from</span> <span class="token string">'react-native-nvshortvideo'</span><span class="token punctuation">;</span>
+
+<span class="token spread operator">...</span>
+
+<span class="token keyword keyword-let">let</span> videoOperator <span class="token operator">=</span> <span class="token maybe-class-name">NvShortVideo</span><span class="token punctuation">.</span><span class="token method function property-access">shareInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+videoOperator<span class="token punctuation">.</span><span class="token method function property-access">startVideoCaptrue</span><span class="token punctuation">(</span><span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">videoConfig</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h3 id="video-recording">Video recording </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code> <span class="token comment">/*! \if ENGLISH
+ *
+ *  \brief Shooting entrance
+ *  \param config Configuration item
+ *  \param music The default is nil，If you need to shoot with music, you need to pass an audio object, and the path of the audio must be local and has been downloaded
+ *  \else
+ *
+ *  \brief 拍摄入口
+ *  \param config 配置项
+ *  \param music 默认是nil，如果拍摄时需要带音乐拍摄，需要传递一个音频对象，音频的路径必须是本地的，已经下载的路径
+ *  \endif
+ */</span>
+<span class="token function">startVideoCaptrue</span><span class="token punctuation">(</span>config<span class="token operator">?</span><span class="token operator">:</span> <span class="token maybe-class-name">NvVideoConfig</span><span class="token punctuation">,</span> musicInfo<span class="token operator">?</span><span class="token operator">:</span> <span class="token maybe-class-name">NvMusicInfo</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword keyword-void">void</span><span class="token punctuation">;</span>
+</code></pre><h3 id="picture-in-picture">Picture in Picture </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token comment">/*! \if ENGLISH
+ *
+ *  \brief PIP entrance By default, the album is opened, and a material from the album is taken into the beat
+ *  \param config Configuration item
+ *  \else
+ *
+ *  \brief 合拍入口，默认打开相册，从相册取一个素材进入合拍
+ *  \param config 配置项
+ *  \endif
+ */</span>
+<span class="token function">startVideoDualCaptrue</span><span class="token punctuation">(</span>config<span class="token operator">?</span><span class="token operator">:</span> <span class="token maybe-class-name">NvVideoConfig</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword keyword-void">void</span><span class="token punctuation">;</span>
+
+<span class="token comment">/*! \if ENGLISH
+ *
+ *  \brief PIP entrance
+ *  \param config Configuration item
+ *  \param videoPath The video path to be filmed must be a local path
+ *  \else
+ *
+ *  \brief 合拍入口
+ *  \param config 配置项
+ *  \param videoPath 准备合拍的视频路径，必须是本地路径
+ *  \endif
+ */</span>
+<span class="token function">startVideoDualCaptrueWithVideo</span><span class="token punctuation">(</span>videoPath<span class="token operator">:</span> string<span class="token punctuation">,</span> config<span class="token operator">?</span><span class="token operator">:</span> <span class="token maybe-class-name">NvVideoConfig</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword keyword-void">void</span><span class="token punctuation">;</span>
+</code></pre><h3 id="video-editing">Video editing </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token comment">/*! \if ENGLISH
+ *
+ *  \brief Edit entrance
+ *  \param config Configuration item
+ *  \else
+ *
+ *  \brief 编辑入口
+ *  \param config 配置项
+ *  \endif
+ */</span>
+<span class="token function">startSeleteFilesForEdit</span><span class="token punctuation">(</span>config<span class="token operator">?</span><span class="token operator">:</span> <span class="token maybe-class-name">NvVideoConfig</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword keyword-void">void</span><span class="token punctuation">;</span>
+</code></pre><h3 id="video-editing-complete-callback">Video editing complete callback </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token comment">/*! \if ENGLISH
+ *  \brief Edit module event callback
+ *  \else
+ *  \brief 编辑模块事件回调
+ *  \endif
+*/</span>
+<span class="token function">setVideoEditEventHandler</span><span class="token punctuation">(</span>handler<span class="token operator">?</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">event</span><span class="token operator">:</span> <span class="token maybe-class-name">NvVideoEditEvent</span><span class="token punctuation">,</span> <span class="token literal-property property">info</span><span class="token operator">:</span> <span class="token known-class-name class-name">Map</span><span class="token operator">&lt;</span>string<span class="token punctuation">,</span> string<span class="token operator">&gt;</span></span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token keyword keyword-void">void</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword keyword-void">void</span><span class="token punctuation">;</span>
+</code></pre><h3 id="select-cover">Select cover </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token comment">/*! \if ENGLISH
+ *  \brief selete cover image
+ *  \else
+ *  \brief 选择封面图片
+ *  \endif
+*/</span>
+<span class="token function">selectCoverImage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token known-class-name class-name">Promise</span><span class="token operator">&lt;</span><span class="token known-class-name class-name">Map</span><span class="token operator">&lt;</span>string<span class="token punctuation">,</span> any<span class="token operator">&gt;&gt;</span><span class="token punctuation">;</span>
+</code></pre><h3 id="save-draft">Save draft </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token comment">/*! \if ENGLISH
+ *  \brief save draft
+ *  \else
+ *  \brief 保存草稿
+ *  \endif
+ */</span>
+<span class="token function">saveDraft</span><span class="token punctuation">(</span>info<span class="token operator">:</span> string<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token known-class-name class-name">Promise</span><span class="token operator">&lt;</span><span class="token known-class-name class-name">Map</span><span class="token operator">&lt;</span>string<span class="token punctuation">,</span> any<span class="token operator">&gt;&gt;</span><span class="token punctuation">;</span>
+</code></pre><h3 id="synthetic-video">Synthetic video </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token comment">/*! \if ENGLISH
+ *  \brief Composite video
+ *  \else
+ *  \brief 合成视频
+ *  \endif
+ */</span>
+<span class="token function">compileCurrentTimeline</span><span class="token punctuation">(</span>configure<span class="token operator">:</span> <span class="token known-class-name class-name">Map</span><span class="token operator">&lt;</span>string<span class="token punctuation">,</span> string<span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token known-class-name class-name">Promise</span><span class="token operator">&lt;</span><span class="token known-class-name class-name">Map</span><span class="token operator">&lt;</span>string<span class="token punctuation">,</span> any<span class="token operator">&gt;&gt;</span><span class="token punctuation">;</span>
+</code></pre><h3 id="video-synthesis-callback">Video synthesis callback </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token comment">/*! \if ENGLISH
+ *  \brief Composite video event callback
+ *  \else
+ *  \brief 视频合成事件回调
+ *  \endif
+ */</span>
+<span class="token function">setVideoCompileEventHandler</span><span class="token punctuation">(</span>handler<span class="token operator">?</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">event</span><span class="token operator">:</span> <span class="token maybe-class-name">NvVideoCompileEvent</span><span class="token punctuation">,</span> <span class="token literal-property property">compileInfo</span><span class="token operator">:</span> <span class="token known-class-name class-name">Map</span><span class="token operator">&lt;</span>string<span class="token punctuation">,</span> string<span class="token operator">&gt;</span></span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token keyword keyword-void">void</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword keyword-void">void</span><span class="token punctuation">;</span>
+</code></pre><h3 id="save-cover-image">Save cover image </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token comment">/*! \if ENGLISH
+ *  \brief save image
+ *  \else
+ *  \brief 保存图片
+ *  \endif
+ */</span>
+<span class="token function">saveImage</span><span class="token punctuation">(</span>coverImagePath<span class="token operator">:</span> string<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token known-class-name class-name">Promise</span><span class="token operator">&lt;</span><span class="token known-class-name class-name">Map</span><span class="token operator">&lt;</span>string<span class="token punctuation">,</span> any<span class="token operator">&gt;&gt;</span><span class="token punctuation">;</span>
+</code></pre><h3 id="exit-short-video-module">Exit short video module </h3>
+<p>Call it when the video publishing page exits</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token comment">/*! \if ENGLISH
+ *
+ *  \brief Exit the entire publisher call
+ *  \param taskId Returned by the edit completion callback
+ *  \warning This method will clean up the current draft and SDK-held resources, please call after completely exiting the editing and publishing process
+ *  \else
+ *
+ *  \brief 退出整个发布器调用
+ *  \param taskId 由编辑完成回调中返回
+ *  \warning 该方法会清理当前草稿以及sdk持有资源，请在完全退出编辑发布流程之后，调用
+ *  \endif
+ */</span>
+  <span class="token function">exitEdit</span><span class="token punctuation">(</span>taskId<span class="token operator">:</span> <span class="token known-class-name class-name">String</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword keyword-void">void</span><span class="token punctuation">;</span>
+</code></pre><h3 id="get-draft-list">Get draft list </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token comment">/*! \if ENGLISH
+ *  \brief get draft list
+ *  \else
+ *  \brief 获取草稿列表
+ *  \endif
+*/</span>
+<span class="token function">getDraftList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token known-class-name class-name">Promise</span><span class="token operator">&lt;</span><span class="token known-class-name class-name">Map</span><span class="token operator">&lt;</span>string<span class="token punctuation">,</span> any<span class="token operator">&gt;&gt;</span><span class="token punctuation">;</span>
+</code></pre><h3 id="delete-draft">Delete draft </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token comment">/*! \if ENGLISH
+ *  \brief delete draft
+ *  \else
+ *  \brief 删除草稿
+ *  \endif
+*/</span>
+<span class="token function">deleteDraft</span><span class="token punctuation">(</span>draftId<span class="token operator">:</span> string<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token known-class-name class-name">Promise</span><span class="token operator">&lt;</span><span class="token known-class-name class-name">Map</span><span class="token operator">&lt;</span>string<span class="token punctuation">,</span> any<span class="token operator">&gt;&gt;</span><span class="token punctuation">;</span>
+</code></pre><h3 id="open-draft">Open draft </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token comment">/*! \if ENGLISH
+ *
+ *  \brief Enter the editing portal through draft data recovery
+ *  \param draftId Current draft id
+ *  \param config Configuration item
+ *  \else
+ *
+ *  \brief 通过草稿数据恢复，进入编辑入口
+ *  \param draftId 当前草稿id
+ *  \param config 配置项
+ *  \endif
+ */</span>
+<span class="token function">reeditDraft</span><span class="token punctuation">(</span>draftId<span class="token operator">:</span> string<span class="token punctuation">,</span> config<span class="token operator">?</span><span class="token operator">:</span> <span class="token maybe-class-name">NvVideoConfig</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token known-class-name class-name">Promise</span><span class="token operator">&lt;</span><span class="token known-class-name class-name">Map</span><span class="token operator">&lt;</span>string<span class="token punctuation">,</span> any<span class="token operator">&gt;&gt;</span><span class="token punctuation">;</span>
+</code></pre><h2 id="module-settings">Module settings </h2>
+<p>The short video module setting class NvVideoConfig includes function module settings and UI customization. For details, see: <a href="../../nv_short_video_ios_doc/doc_en/html/functionConfiguration_en.html">Short video function module settings</a>、<a href="../../nv_short_video_ios_doc/doc_en/html/UIConfiguration_en.html">Short video UI module settings</a></p>
+
+      </div>
+      <div class="md-sidebar-toc"><div class="md-toc">
+<details open="" class="md-toc-details">
+<summary class="md-toc-link-wrapper" data-level="0">
+  <a href="#meishe-react-native-short-video-module-access-guide" class="md-toc-link">Meishe React Native short video module access guide</a>
+</summary>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#general-integration-process" class="md-toc-link">General Integration Process</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#development-environment-requirements" class="md-toc-link">Development environment requirements</a>
+</div>
+<details open="" class="md-toc-details">
+<summary class="md-toc-link-wrapper" data-level="1">
+  <a href="#upgrade-short-video-notes" class="md-toc-link">Upgrade short video notes</a>
+</summary>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#version-200-updates" class="md-toc-link">Version 2.0.0 Updates:</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#version-151-updates" class="md-toc-link">Version 1.5.1 Updates:</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#version-150-updates" class="md-toc-link">Version 1.5.0 Updates:</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#140-version-upgrade" class="md-toc-link">1.4.0 Version upgrade：</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#128-version-upgrade" class="md-toc-link">1.2.8 Version upgrade：</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#127-version-upgrade" class="md-toc-link">1.2.7 Version upgrade：</a>
+</div>
+</details>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#support-media-formats" class="md-toc-link">Support media formats</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#short-video-module-integration" class="md-toc-link">Short video module integration</a>
+</div>
+<details open="" class="md-toc-details">
+<summary class="md-toc-link-wrapper" data-level="1">
+  <a href="#system-authorization" class="md-toc-link">System authorization</a>
+</summary>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#ios" class="md-toc-link">iOS</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#android" class="md-toc-link">Android</a>
+</div>
+</details>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#meishe-sdk-authorization" class="md-toc-link">Meishe SDK authorization</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#network-interface-configuration" class="md-toc-link">Network interface configuration</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#preset-material" class="md-toc-link">Preset material</a>
+</div>
+<details open="" class="md-toc-details">
+<summary class="md-toc-link-wrapper" data-level="1">
+  <a href="#main-methods-of-short-video-module" class="md-toc-link">Main methods of short video module</a>
+</summary>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#video-recording" class="md-toc-link">Video recording</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#picture-in-picture" class="md-toc-link">Picture in Picture</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#video-editing" class="md-toc-link">Video editing</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#video-editing-complete-callback" class="md-toc-link">Video editing complete callback</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#select-cover" class="md-toc-link">Select cover</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#save-draft" class="md-toc-link">Save draft</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#synthetic-video" class="md-toc-link">Synthetic video</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#video-synthesis-callback" class="md-toc-link">Video synthesis callback</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#save-cover-image" class="md-toc-link">Save cover image</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#exit-short-video-module" class="md-toc-link">Exit short video module</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#get-draft-list" class="md-toc-link">Get draft list</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#delete-draft" class="md-toc-link">Delete draft</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="2">
+  <a href="#open-draft" class="md-toc-link">Open draft</a>
+</div>
+</details>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#module-settings" class="md-toc-link">Module settings</a>
+</div>
+</details>
+</div>
+</div>
+      <a id="sidebar-toc-btn">≡</a>
+    
+    
+    
+    
+    
+    
+<script>
+document.body.setAttribute('html-show-sidebar-toc', true)
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  
+    </body></html>

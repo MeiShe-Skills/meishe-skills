@@ -1,0 +1,4 @@
+interface:
+  display_name: "美摄 React Native 短视频接入"
+  short_description: "独立接入 React Native Android、iOS 单端或双端美摄短视频 Demo。"
+  default_prompt: "使用 $meishe-react-native-duanshipin-docking 仅按 React Native 路线接入官方美摄短视频 Demo 包。"
