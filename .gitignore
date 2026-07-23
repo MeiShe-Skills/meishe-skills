@@ -1,0 +1,52 @@
+# macOS
+.DS_Store
+**/.DS_Store
+.AppleDouble
+.LSOverride
+
+# Local agent installations and generated lock state
+/.agents/
+/.codex/
+/.claude/
+/.cursor/
+/.qoder/
+/skills-lock.json
+
+# IDE settings
+/.idea/
+/.vscode/
+*.iml
+
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Node and package-manager caches
+node_modules/
+.npm/
+.pnpm-store/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Native and framework build outputs
+.gradle/
+.dart_tool/
+build/
+DerivedData/
+Pods/
+
+# Local environment and temporary files
+.env
+.env.*
+!.env.example
+*.log
+*.tmp
+*.swp
+*~

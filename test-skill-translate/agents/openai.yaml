@@ -1,7 +1,0 @@
-interface:
-  display_name: "测试中文翻译"
-  short_description: "将非中文内容准确翻译为简体中文"
-  default_prompt: "Use $test-skill-translate to translate the provided text into accurate, natural Simplified Chinese."
-
-policy:
-  allow_implicit_invocation: false
