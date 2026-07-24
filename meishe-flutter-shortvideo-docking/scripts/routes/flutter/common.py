@@ -294,7 +294,17 @@ def update_flutter_readme(
             [
                 "### iOS",
                 "",
-                f"CocoaPods 完成后在 Xcode 打开 `{workspace}`，不要打开 `.xcodeproj`。选择 App scheme、目标设备，并在 `Signing & Capabilities` 选择用户自己的 Team 后点击 Run。",
+                "**推荐运行方式：Xcode**",
+                "",
+                "CocoaPods 完成后执行：",
+                "",
+                "```sh",
+                f"open \"{workspace}\"",
+                "```",
+                "",
+                "在 Xcode 中选择 App scheme、用户自己的签名 Team 和真实 iPhone/iPad，执行 `Product > Run`。必须打开 `.xcworkspace`，不要打开 `.xcodeproj`。",
+                "",
+                "**命令行运行方式（必须同时提供）**",
                 "",
                 "```sh",
                 f"cd {root}",
@@ -307,6 +317,11 @@ def update_flutter_readme(
     lines.append("")
     lines.extend(
         [
+            "### 遇到报错",
+            "",
+            "- 受操作系统、Flutter/Dart、Ruby/CocoaPods、JDK/Gradle、Xcode、网络、签名和设备环境差异影响，手动接入或运行可能报错。",
+            "- 遇到任何报错，请复制执行命令和完整原始报错信息发给当前 Agent 继续处理；不要只截取最后一行，也不需要自行猜测修复。",
+            "",
             "### 美摄配置边界",
             "",
             "- 官方 Demo 服务验证保持 `com.meishe.duanshipindemo`；客户包名需要客户服务器、正式 License 和签名配置。",

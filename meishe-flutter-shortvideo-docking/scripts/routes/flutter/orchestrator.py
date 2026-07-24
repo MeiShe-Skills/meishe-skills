@@ -20,6 +20,24 @@ def _register_configuration_handoffs(
     report: Report,
 ) -> None:
     root = target_root.resolve()
+    ios_root = root / "ios"
+    ios_target = ""
+    workspace = ios_root / "Runner.xcworkspace"
+    if targets.ios:
+        ios_target = ios.flutter_ios_app_target_name(ios_root)
+        ios_project = ios.flutter_ios_project_path(ios_root, ios_target)
+        workspaces = sorted(path for path in ios_root.glob("*.xcworkspace") if path.name != "Pods.xcworkspace")
+        preferred_workspace = ios_root / f"{ios_project.stem}.xcworkspace"
+        if preferred_workspace in workspaces:
+            workspace = preferred_workspace
+        elif len(workspaces) == 1:
+            workspace = workspaces[0]
+        elif not workspaces:
+            workspace = preferred_workspace
+        else:
+            raise IntegrationError(
+                "Could not uniquely determine the Flutter iOS workspace for configuration handoff."
+            )
     shared_steps = [
         ConfigurationApplyStep(
             label="Hot Restart 当前 Debug 会话",
@@ -40,19 +58,35 @@ def _register_configuration_handoffs(
             )
         )
     if targets.ios:
-        shared_steps.append(
-            ConfigurationApplyStep(
-                label="重新运行 iOS",
-                condition="没有活动调试会话、当前是 Release 包，或修改了 iOS 原生文件、Bundle Identifier、License、资源或签名配置。",
-                working_directory=root,
-                command="flutter run -d <IOS_DEVICE_ID>",
-                success_marker="Flutter/Xcode 构建成功，App 安装到指定 iOS 设备并启动。",
-            )
+        shared_steps.extend(
+            [
+                ConfigurationApplyStep(
+                    label="推荐使用 Xcode 重新运行 iOS",
+                    condition="没有活动调试会话、当前是 Release 包，或修改了 iOS 原生文件、Bundle Identifier、License、资源或签名配置。",
+                    working_directory=ios_root,
+                    command=(
+                        f"open \"{workspace.resolve()}\"\n"
+                        f"在 Xcode 中选择 {ios_target}、签名 Team 和真实设备，执行 Product > Run。"
+                    ),
+                    success_marker="Flutter/Xcode 构建成功，App 安装到所选 iOS 设备并启动。",
+                ),
+                ConfigurationApplyStep(
+                    label="命令行运行 iOS（必须同时提供）",
+                    condition="与 Xcode 推荐方式同时提供。",
+                    working_directory=root,
+                    command="flutter run -d <IOS_DEVICE_ID>",
+                    success_marker="Flutter 命令行构建成功，App 安装到指定 iOS 设备并启动。",
+                ),
+            ]
         )
     shared_notes = (
         "修改 Dart 配置不需要重新执行 flutter pub get；只有 pubspec.yaml 或锁文件依赖变化时才重新解析依赖。",
         "不要默认执行 flutter clean；仅在 Hot Restart 和完整重建后仍命中旧产物时，将 clean 作为缓存排障步骤。",
     )
+    if targets.ios:
+        shared_notes += (
+            "iOS 推荐使用 Xcode 运行，但 `flutter run -d <IOS_DEVICE_ID>` 也必须完整提供，不能标记为备选或省略。",
+        )
     report.add_configuration_handoff(
         "Flutter 功能配置",
         str((root / "lib" / "meishe_feature_config.dart").resolve()),
@@ -91,37 +125,30 @@ def _register_configuration_handoffs(
             platforms=("Android",),
         )
     if targets.ios:
-        ios_root = root / "ios"
-        ios_target = ios.flutter_ios_app_target_name(ios_root)
-        ios_project = ios.flutter_ios_project_path(ios_root, ios_target)
-        workspaces = sorted(path for path in ios_root.glob("*.xcworkspace") if path.name != "Pods.xcworkspace")
-        preferred_workspace = ios_root / f"{ios_project.stem}.xcworkspace"
-        if preferred_workspace in workspaces:
-            workspace = preferred_workspace
-        elif len(workspaces) == 1:
-            workspace = workspaces[0]
-        elif not workspaces:
-            workspace = preferred_workspace
-        else:
-            raise IntegrationError(
-                "Could not uniquely determine the Flutter iOS workspace for configuration handoff."
-            )
         report.add_configuration_handoff(
             "Flutter iOS 身份、签名、License 与原生资源",
             f"{workspace.resolve()} -> {ios_target} / Signing & Capabilities; {(root / 'vendor/meishe/nvshortvideo/ios/Assets/meishesdk.lic').resolve()}",
             "Bundle Identifier、Team、证书、profile、正式 License、Asset Catalog 和 Info.plist。",
             [
                 ConfigurationApplyStep(
-                    label="打开 workspace 并运行",
+                    label="推荐使用 Xcode 打开 workspace 并运行",
                     condition="修改任一 iOS 原生打包输入后；Podfile 和 Pod 依赖未变化时不需要再次 pod install。",
                     working_directory=ios_root,
                     command=f"open \"{workspace.resolve()}\"",
                     success_marker=f"Xcode 打开 {workspace.name}；选择 {ios_target}、真机和 Team 后点击 Product > Run，构建安装成功。",
-                )
+                ),
+                ConfigurationApplyStep(
+                    label="命令行运行 iOS（必须同时提供）",
+                    condition="与 Xcode 推荐方式同时提供。",
+                    working_directory=root,
+                    command="flutter run -d <IOS_DEVICE_ID>",
+                    success_marker="Flutter 命令行构建安装成功，设备上的新包身份与 License 对应。",
+                ),
             ],
             (
                 f"License 必须匹配最终 Bundle Identifier，并确认资源属于 {ios_target} target。",
                 "只有 Podfile、podspec 或 Pod 依赖变化时才重新执行报告中的 CocoaPods 安装命令。",
+                "Xcode 是推荐运行方式；命令行也是必需展示内容，不得称为备选。",
             ),
             platforms=("iOS",),
         )

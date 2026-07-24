@@ -33,6 +33,7 @@ def create_native_ios_target(
     target_name: str = "NativeIosFixture",
     scheme_name: str | None = None,
 ) -> None:
+    write(root / "README.md", "# Native iOS Fixture\n\nUser-maintained introduction.\n")
     if include_podfile:
         write(
             root / "Podfile",
@@ -218,6 +219,7 @@ def validate_native_ios_complete(work: Path) -> None:
             "MeisheShortVideo/MeisheShortVideoPublishViewController.swift",
             "Native iOS ShortVideo 2.0.2.1 AutoCut draft and timeline API shapes matched",
             "Generated native iOS handoff notes",
+            "Updated the managed native iOS run guide in README.md",
             "Generated native iOS material-request self-check handoff",
             "meishe_native_ios_self_check.md",
             "Dependency Installation",
@@ -286,6 +288,7 @@ def validate_native_ios_complete(work: Path) -> None:
     self_check = (target / "meishe_native_ios_self_check.md").read_text(encoding="utf-8")
     handoff = (target / "meishe_native_ios_handoff.md").read_text(encoding="utf-8")
     configuration_handoff = (target / "meishe_configuration_handoff.md").read_text(encoding="utf-8")
+    readme = (target / "README.md").read_text(encoding="utf-8")
     publish = (target / "MeisheShortVideo" / "MeisheShortVideoPublishViewController.swift").read_text(encoding="utf-8")
     drafts = (target / "MeisheShortVideo" / "MeisheShortVideoDraftsViewController.swift").read_text(encoding="utf-8")
     assert_contains(
@@ -405,12 +408,48 @@ def validate_native_ios_complete(work: Path) -> None:
             "NativeIosFixture.xcworkspace",
             "Signing & Capabilities",
             "Product > Run",
+            "推荐使用 Xcode",
+            "命令行重新构建、安装并启动 iOS（必须同时提供）",
+            "xcodebuild -workspace",
+            "-scheme \"NativeIosFixture\"",
+            "devicectl device install app",
+            "devicectl device process launch",
+            "com.meishe.duanshipindemo",
             "Target Membership",
             "真机要求：美摄短视频 Demo 必须运行在真实 iPhone 或 iPad 上",
             "无需再次 pod install",
             "不要默认 Clean Build Folder",
         ],
         "Native iOS command-level configuration handoff",
+    )
+    assert_contains(
+        readme,
+        [
+            "User-maintained introduction.",
+            "<!-- BEGIN MEISHE_NATIVE_IOS_RUN_GUIDE -->",
+            "美摄短视频 Demo 运行",
+            f"项目根目录：`{target.resolve()}`",
+            str((target / "NativeIosFixture.xcworkspace").resolve()),
+            "App Scheme：`NativeIosFixture`",
+            "Bundle Identifier：`com.meishe.duanshipindemo`",
+            "### 依赖安装",
+            "Native iOS CocoaPods",
+            "### 推荐运行方式：Xcode",
+            "Product > Run",
+            "### 命令行运行方式（必须同时提供）",
+            "xcrun devicectl list devices",
+            "xcodebuild -workspace",
+            "-scheme \"NativeIosFixture\"",
+            "devicectl device install app",
+            "devicectl device process launch",
+            "### 配置修改与生效",
+            str((target / "MeisheShortVideo" / "MeisheFeatureConfig.swift").resolve()),
+            "### 遇到报错",
+            "完整原始报错信息",
+            "当前 Agent",
+            "<!-- END MEISHE_NATIVE_IOS_RUN_GUIDE -->",
+        ],
+        "Native iOS managed README run guide",
     )
     run_after_materials = home[
         home.index("private func runAfterMaterials") : home.index("private func prepareMaterialsInBackground")
@@ -445,6 +484,14 @@ def validate_native_ios_complete(work: Path) -> None:
         read(feature_config_path),
         [user_feature_marker],
         "Native iOS user feature configuration preservation",
+    )
+    repeated_readme = read(target / "README.md")
+    if repeated_readme.count("<!-- BEGIN MEISHE_NATIVE_IOS_RUN_GUIDE -->") != 1:
+        raise AssertionError("Native iOS repeated integration must keep exactly one managed README run guide")
+    assert_contains(
+        repeated_readme,
+        ["User-maintained introduction.", "<!-- END MEISHE_NATIVE_IOS_RUN_GUIDE -->"],
+        "Native iOS README user content preservation",
     )
 
 

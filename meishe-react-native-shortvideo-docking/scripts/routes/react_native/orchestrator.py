@@ -44,6 +44,14 @@ def _register_configuration_handoffs(
     use_ts = (target_root / "tsconfig.json").exists() or (src_dir.exists() and any(src_dir.glob("*.ts")))
     suffix = "ts" if use_ts else "js"
     start_command, android_command, ios_command = _react_native_commands(package_manager)
+    ios_root = root / "ios"
+    workspaces = sorted(ios_root.glob("*.xcworkspace")) if targets.ios else []
+    projects = sorted(ios_root.glob("*.xcodeproj")) if targets.ios else []
+    ios_workspace = (
+        workspaces[0]
+        if workspaces
+        else ios_root / f"{projects[0].stem if projects else target_root.name}.xcworkspace"
+    )
     shared_steps = [
         ConfigurationApplyStep(
             label="启动 Metro（尚未运行时）",
@@ -71,18 +79,31 @@ def _register_configuration_handoffs(
             )
         )
     if targets.ios:
-        shared_steps.append(
-            ConfigurationApplyStep(
-                label="重新构建 iOS 包",
-                condition="当前是 Release 包，或修改了 iOS 原生文件、Bundle Identifier、License、资源或签名配置。",
-                working_directory=root,
-                command=ios_command,
-                success_marker="Xcode 构建成功，App 安装到所选 iOS 设备并启动。",
-            )
+        shared_steps.extend(
+            [
+                ConfigurationApplyStep(
+                    label="推荐使用 Xcode 重新构建并运行 iOS",
+                    condition="当前是 Release 包，或修改了 iOS 原生文件、Bundle Identifier、License、资源或签名配置。",
+                    working_directory=ios_root,
+                    command=(
+                        f"open \"{ios_workspace.resolve()}\"\n"
+                        "在 Xcode 中选择 App scheme、签名 Team 和真实设备，执行 Product > Run。"
+                    ),
+                    success_marker="Xcode 构建成功，App 安装到所选 iOS 设备并启动。",
+                ),
+                ConfigurationApplyStep(
+                    label="命令行重新构建并运行 iOS（必须同时提供）",
+                    condition="与 Xcode 推荐方式同时提供；Metro 必须保持运行。",
+                    working_directory=root,
+                    command=ios_command,
+                    success_marker="命令行构建成功，App 安装到指定 iOS 设备并启动。",
+                ),
+            ]
         )
     shared_notes = (
         "修改 TS/JS 配置不需要重新执行 npm/Yarn/pnpm 安装；只有 package.json 或锁文件变化时才重新安装依赖。",
         "不要默认清理缓存；仅在完整 Reload 后仍读取旧 bundle 时，再停止 Metro 并使用项目已有启动命令处理缓存。",
+        "iOS 推荐使用 Xcode 运行，但 Metro 和 iOS 命令行也必须完整提供，不能标记为备选或省略。",
     )
     report.add_configuration_handoff(
         "React Native 功能配置",
@@ -125,26 +146,30 @@ def _register_configuration_handoffs(
             platforms=("Android",),
         )
     if targets.ios:
-        ios_root = root / "ios"
-        workspaces = sorted(ios_root.glob("*.xcworkspace"))
-        projects = sorted(ios_root.glob("*.xcodeproj"))
-        workspace = workspaces[0] if workspaces else ios_root / f"{projects[0].stem if projects else target_root.name}.xcworkspace"
         report.add_configuration_handoff(
             "React Native iOS 身份、签名、License 与原生资源",
-            f"{workspace.resolve()} -> Signing & Capabilities; {(root / 'vendor/meishe/react-native-nvshortvideo/ios/Assets/meishesdk.lic').resolve()}",
+            f"{ios_workspace.resolve()} -> Signing & Capabilities; {(root / 'vendor/meishe/react-native-nvshortvideo/ios/Assets/meishesdk.lic').resolve()}",
             "Bundle Identifier、Team、证书、profile、正式 License、Asset Catalog 和 Info.plist。",
             [
                 ConfigurationApplyStep(
-                    label="打开 workspace 并运行",
+                    label="推荐使用 Xcode 打开 workspace 并运行",
                     condition="修改任一 iOS 原生打包输入后；Podfile 和 Pod 依赖未变化时不需要再次 pod install。",
                     working_directory=ios_root,
-                    command=f"open \"{workspace.resolve()}\"",
+                    command=f"open \"{ios_workspace.resolve()}\"",
                     success_marker="Xcode 打开 `.xcworkspace`；选择 App scheme 和真机，在 Signing & Capabilities 选择 Team 后点击 Product > Run，构建安装成功。",
-                )
+                ),
+                ConfigurationApplyStep(
+                    label="命令行运行 iOS（必须同时提供）",
+                    condition="与 Xcode 推荐方式同时提供；Metro 必须保持运行。",
+                    working_directory=root,
+                    command=ios_command,
+                    success_marker="命令行构建安装成功，设备上的新包身份与 License 对应。",
+                ),
             ],
             (
                 "License 必须匹配最终 Bundle Identifier，并确认文件属于 App target 的 Copy Bundle Resources。",
                 "只有 Podfile、podspec 或 Pod 依赖变化时才重新执行报告中的 CocoaPods 安装命令。",
+                "Xcode 是推荐运行方式；命令行也是必需展示内容，不得称为备选。",
             ),
             platforms=("iOS",),
         )

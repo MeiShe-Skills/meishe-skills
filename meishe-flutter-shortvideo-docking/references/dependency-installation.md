@@ -11,6 +11,8 @@
 
 不要改写成“是否授权”“能否操作真机”等逐项权限问题。若后续确实需要真机、截图或 IDE 操作，先把设备、动作、原因和预期信息补入同一份清单，再让用户重新选择。系统密码、钥匙串或系统安全弹窗仍由用户在系统界面确认。
 
+受操作系统、Flutter/Dart、Ruby/CocoaPods、JDK/Gradle、Xcode、网络、签名和设备环境差异影响，手动接入或运行可能报错。遇到任何报错，提示用户复制执行命令和完整原始报错信息发给当前 Agent 继续处理；不要只截取最后一行，也不要求用户自行猜测修复。
+
 ## 创建项目与 Dart 依赖
 
 - 新项目优先在目标父目录执行 `flutter create --no-pub <project-name>`；已有项目不得重新初始化。
@@ -24,6 +26,8 @@
 - 成功标志：实际 Xcode 工程对应的 `.xcworkspace`、`Pods/Manifest.lock` 存在，Pod 与 Flutter plugin 都指向项目本地路径。
 - Ruby 4.x 与 CocoaPods 1.15.2 出现 `cannot load such file -- kconv` 时属于工具链问题，按报告使用兼容 Ruby/CocoaPods 组合，不修改业务 Pod。
 - Git CDN/Specs 网络异常只可对当前命令临时使用 `GIT_HTTP_VERSION=HTTP/1.1`，不得写入 Git 全局配置或擅自切换镜像。
+- 依赖完成后，**推荐使用 Xcode** 打开实际 `.xcworkspace`，选择 App Scheme、签名 Team 和真实设备后执行 `Product > Run`。
+- **命令行运行方式也必须完整提供**：在项目根目录执行 `flutter run -d <IOS_DEVICE_ID>`。不得把命令行称为备选、可选或省略。
 
 ## Android
 
@@ -33,7 +37,7 @@
 ## 真机运行
 
 - 美摄短视频 Demo 只能运行和验收于真实设备；Android Emulator、iOS Simulator 和其他虚拟设备不受支持。
-- 在项目根目录运行 `flutter devices`，确认目标是已连接的真实设备，再运行 Android `flutter run -d <ANDROID_DEVICE_ID>` 或 iOS `flutter run -d <IOS_DEVICE_ID>`。
+- 在项目根目录运行 `flutter devices`，确认目标是已连接的真实设备。Android 运行 `flutter run -d <ANDROID_DEVICE_ID>`；iOS 推荐用 Xcode 打开实际 `.xcworkspace` 执行 `Product > Run`，同时必须提供 `flutter run -d <IOS_DEVICE_ID>` 命令行。
 - Agent 在选择边界必须把占位符替换成 `flutter devices` 返回的实际设备标识和绝对项目目录；双端分别列命令，单端项目不得展示另一端命令。
 
-双端项目按 Dart、iOS、Android 顺序展示；单端项目不得包含另一端命令。`自动执行` 只覆盖已列出的当前任务操作，不得自动改 Pub 源、Gradle 镜像、代理、证书或全局工具配置。
+双端项目按 Dart、iOS、Android 顺序展示；单端项目不得包含另一端命令。`自动执行` 只覆盖已列出的当前任务操作，不得自动改 Pub 源、Gradle 镜像、代理、证书或全局工具配置。接入后明确提示用户查看目标项目根目录 `README.md`，其中包含项目运行详细说明。

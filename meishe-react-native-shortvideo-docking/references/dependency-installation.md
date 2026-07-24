@@ -11,6 +11,8 @@
 
 不要改写成“是否授权”“能否操作真机”等逐项权限问题。若后续确实需要真机、截图或 IDE 操作，先把设备、动作、原因和预期信息补入同一份清单，再让用户重新选择。系统密码、钥匙串或系统安全弹窗仍由用户在系统界面确认。
 
+受操作系统、Node/包管理器、Ruby/CocoaPods、JDK/Gradle、Xcode、网络、签名和设备环境差异影响，手动接入或运行可能报错。遇到任何报错，提示用户复制执行命令和完整原始报错信息发给当前 Agent 继续处理；不要只截取最后一行，也不要求用户自行猜测修复。
+
 ## 创建项目
 
 - 已验证 React Native `0.78.0` / Community CLI `15.0.1` 可使用：`npx @react-native-community/cli@15.0.1 init <project-name> --version 0.78.0 --skip-install`。
@@ -30,6 +32,8 @@
 - 成功标志：生成或更新 `.xcworkspace`、`Pods/Manifest.lock`，且 Pod 路径指向项目本地 vendor。
 - Ruby 4.x 与 CocoaPods 1.15.2 出现 `cannot load such file -- kconv` 时属于工具链问题；先确认项目 Gemfile 含 `gem 'nkf'` 并重新执行 Bundler。未知 CocoaPods 版本不得自动套用该补丁。
 - Git CDN/Specs 网络异常只可对当前命令临时使用 `GIT_HTTP_VERSION=HTTP/1.1`，不得写入 Git 全局配置或擅自切换镜像。
+- 依赖完成后，**推荐使用 Xcode** 打开实际 `.xcworkspace`，选择 App Scheme、签名 Team 和真实设备后执行 `Product > Run`。
+- **命令行运行方式也必须完整提供**：先启动 Metro，再提供项目实际包管理器对应的 iOS `--udid` 命令。不得把命令行称为备选、可选或省略。
 
 ## Android
 
@@ -41,7 +45,7 @@
 
 - 美摄短视频 Demo 只能运行和验收于真实设备；Android Emulator、iOS Simulator 和其他虚拟设备不受支持。
 - Android 先运行 `adb devices` 确认真实设备，再在项目根目录运行 `npm run android -- --deviceId <ANDROID_DEVICE_ID>`。
-- iOS 先运行 `xcrun devicectl list devices` 确认真实 iPhone/iPad，再在项目根目录运行 `npm run ios -- --udid <IOS_DEVICE_UDID>`；也可打开实际 `.xcworkspace`，选择真实设备后执行 Product > Run。
+- iOS 先运行 `xcrun devicectl list devices` 确认真实 iPhone/iPad；推荐在 Xcode 打开实际 `.xcworkspace` 并执行 `Product > Run`，同时必须提供项目根目录的 Metro 启动和 `npm run ios -- --udid <IOS_DEVICE_UDID>` 完整命令。
 - Agent 在选择边界必须把占位符替换成已检测到的实际设备标识、绝对工作目录和适用平台命令；单端项目不得展示另一端命令。
 
-双端项目按 JavaScript、iOS、Android 顺序展示；单端项目不得包含另一端命令。`自动执行` 只覆盖已列出的当前任务操作，不得自动改 registry、代理、证书、Gradle 镜像或全局工具配置。
+双端项目按 JavaScript、iOS、Android 顺序展示；单端项目不得包含另一端命令。`自动执行` 只覆盖已列出的当前任务操作，不得自动改 registry、代理、证书、Gradle 镜像或全局工具配置。接入后明确提示用户查看目标项目根目录 `README.md`，其中包含项目运行详细说明。

@@ -91,6 +91,9 @@ def validate_skill_structure(
             "最终可见回复",
             "折叠的“处理中”区域",
             "不能用于运行或验收",
+            "目标项目根目录 `README.md` 的绝对路径",
+            "完整原始报错信息",
+            "不要求用户自行猜测修复",
         ],
         "standalone SKILL.md policy",
     )
@@ -109,12 +112,15 @@ def validate_skill_structure(
             "`自动执行` 也要先展示同一份命令清单",
             "## 真机运行",
             "虚拟设备不受支持",
+            "目标项目根目录 `README.md`",
+            "完整原始报错信息",
+            "不要求用户自行猜测修复",
         ],
         "visible execution commands and real-device policy",
     )
     dependency_expectations = {
         "react-native": ("adb devices", "xcrun devicectl list devices", "npm run android", "npm run ios"),
-        "flutter": ("flutter devices", "flutter run -d <ANDROID_DEVICE_ID>", "flutter run -d <IOS_DEVICE_ID>"),
+        "flutter": ("flutter devices", "flutter run -d <ANDROID_DEVICE_ID>", "flutter run -d <IOS_DEVICE_ID>", "Product > Run"),
         "native-ios": ("xcrun devicectl list devices", "Product > Run", "iOS Simulator"),
         "native-android": ("adb devices", "./gradlew :app:installDebug", "Android Emulator"),
     }
@@ -124,6 +130,16 @@ def validate_skill_structure(
         "route-specific physical-device commands",
     )
     if "ios" in platforms:
+        assert_contains(
+            dependency_text,
+            ["推荐使用 Xcode", "命令行运行方式也必须完整提供"],
+            "recommended Xcode and required command-line policy",
+        )
+        assert_not_contains(
+            dependency_text,
+            ["命令行备选", "命令行可选"],
+            "command-line run wording",
+        )
         assert_contains(
             skill_text,
             [

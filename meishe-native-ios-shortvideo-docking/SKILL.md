@@ -12,9 +12,10 @@ description: Independently integrate, configure, validate, and troubleshoot the 
 ## 修改与操作审批
 
 - 修改本 skill 前，先向用户列出简短中文计划、影响范围和验证方式，获得明确同意后才能写入；扩大范围必须再次获批。用户手动修改的内容不得擅自覆盖或撤销。
-- 集成脚本不执行 CocoaPods 下载、`xcodebuild` 或远程依赖解析。到达依赖、构建或设备操作边界时读取 `references/dependency-installation.md`，一次性列出绝对目录、全部命令/操作、执行顺序、用途和成功标志，然后让用户明确选择 `用户执行` 或 `自动执行`；未选择时暂停。
+- 集成脚本不执行 CocoaPods 下载、`xcodebuild` 或远程依赖解析。到达依赖、构建或设备操作边界时读取 `references/dependency-installation.md`，一次性列出绝对目录、全部命令/操作、执行顺序、用途和成功标志；必须同时列出 Xcode 操作和完整命令行，二者不能互相替代。然后让用户明确选择 `用户执行` 或 `自动执行`；未选择时暂停。
 - 展示二选一时，必须在当前轮次的最终可见回复中逐项重复上述完整清单和两个选择。不得把命令只放在 commentary、工具输出、折叠的“处理中”区域或报告文件中，不得让用户回看上一条消息；发送该回复后停止本轮工具调用，等待用户选择。
 - `用户执行`：把完成当前阶段所需的全部命令交给用户，不再逐条追问；用户返回结果后继续。`自动执行`：由 Agent 执行已列出的任务内操作，并先明确提示会额外消耗 Token 和时间。
+- 受操作系统、工具链版本、依赖缓存、网络、签名和设备环境差异影响，手动接入或运行可能报错。遇到任何报错，要求用户复制执行命令和完整原始报错信息发给当前 Agent 继续处理，不要求用户自行猜测修复，也不能只截取最后一行。
 - 默认不控制 iOS 真机。静态信息不足且真机操作确实必要时，也必须使用上述二选一方式列出设备、动作和预期信息，不得改为直接索要权限。
 
 ## 固定路线与输入
@@ -67,7 +68,8 @@ python scripts/query_shortvideo_docs.py --track native --platform ios --language
 ## 交付与生效
 
 - 必须生成 `meishe_configuration_handoff.md` 和 `meishe_docking_report.md`，列出 Swift 配置、服务器、License、Bundle Identifier、Team/签名和 CocoaPods 边界。
-- 最终回复设置独立醒目的“配置修改与生效”章节，以表格列出绝对配置路径、最快生效方式、重建条件和无需执行的步骤，并把准确命令或 Xcode 操作放入独立代码块。
+- 最终回复必须给出目标项目根目录 `README.md` 的绝对路径，并明确说明其中包含项目依赖安装、构建、真机运行和配置生效的详细说明。
+- 最终回复设置独立醒目的“配置修改与生效”章节，以表格列出绝对配置路径、最快生效方式、重建条件和无需执行的步骤，并把准确命令和 Xcode 操作分别放入独立代码块。明确推荐使用 Xcode 打开实际 `.xcworkspace` 运行，同时必须完整提供 `xcodebuild`、`devicectl device install app` 和 `devicectl device process launch` 命令行；不得把命令行称为备选或省略。
 - Swift、License、Bundle Identifier、签名、Info.plist 和资源变化必须重新构建安装；只有 Pod 声明变化才重新执行 CocoaPods。
 - 客户服务器读取 `references/customer-server.md`；没有真实接口、凭据、白名单和预期素材时，不宣称服务验证完成。
 - 生成 UI 使用 `references/demo-ui-style.md`。不创建假 License；缺少正式 License 时明确说明水印及身份边界。

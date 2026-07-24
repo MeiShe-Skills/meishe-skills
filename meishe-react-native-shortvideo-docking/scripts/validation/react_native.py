@@ -756,6 +756,12 @@ def validate_react_native_complete(work: Path) -> None:
             "npm run android -- --deviceId <ANDROID_DEVICE_ID>",
             "RnFixture.xcworkspace",
             "npm run ios -- --udid <IOS_DEVICE_UDID>",
+            "推荐运行方式：Xcode",
+            "命令行运行方式（必须同时提供）",
+            "Product > Run",
+            "### 遇到报错",
+            "完整原始报错信息",
+            "当前 Agent",
             "Android Emulator、iOS Simulator",
             "不能用于运行或验收",
             "Signing & Capabilities",
@@ -779,6 +785,8 @@ def validate_react_native_complete(work: Path) -> None:
             "npm start",
             "npm run android -- --deviceId <ANDROID_DEVICE_ID>",
             "npm run ios -- --udid <IOS_DEVICE_UDID>",
+            "推荐使用 Xcode 重新构建并运行 iOS",
+            "命令行重新构建并运行 iOS（必须同时提供）",
             "真机要求：美摄短视频 Demo 必须运行在已连接的真实设备上",
             "只有 package.json 或锁文件变化时才重新安装依赖",
             "Fast Refresh",
@@ -1062,7 +1070,7 @@ def validate_react_native_android_only(work: Path) -> None:
     )
     assert_not_contains(
         android_readme,
-        ["### iOS", ".xcworkspace", "npm run ios"],
+        ["### iOS", ".xcworkspace", "npm run ios", "推荐运行方式：Xcode", "Product > Run"],
         "React Native Android-only README isolation",
     )
     assert_contains(
@@ -1140,7 +1148,17 @@ def validate_react_native_ios_only(work: Path) -> None:
     ios_handoff = read(target / "meishe_configuration_handoff.md")
     assert_contains(
         ios_readme,
-        ["### iOS", "RnFixture.xcworkspace", "npm run ios -- --udid <IOS_DEVICE_UDID>"],
+        [
+            "### iOS",
+            "RnFixture.xcworkspace",
+            "推荐运行方式：Xcode",
+            "Product > Run",
+            "命令行运行方式（必须同时提供）",
+            "npm start",
+            "npm run ios -- --udid <IOS_DEVICE_UDID>",
+            "### 遇到报错",
+            "完整原始报错信息",
+        ],
         "React Native iOS-only README",
     )
     assert_not_contains(
@@ -1150,7 +1168,14 @@ def validate_react_native_ios_only(work: Path) -> None:
     )
     assert_contains(
         ios_handoff,
-        ["npm start", "npm run ios -- --udid <IOS_DEVICE_UDID>", "RnFixture.xcworkspace", "React Native iOS 身份、签名、License 与原生资源"],
+        [
+            "npm start",
+            "npm run ios -- --udid <IOS_DEVICE_UDID>",
+            "RnFixture.xcworkspace",
+            "推荐使用 Xcode",
+            "命令行重新构建并运行 iOS（必须同时提供）",
+            "React Native iOS 身份、签名、License 与原生资源",
+        ],
         "React Native iOS-only configuration handoff",
     )
     assert_not_contains(

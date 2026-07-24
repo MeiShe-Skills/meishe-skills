@@ -11,6 +11,8 @@
 
 不要改写成“是否授权”“能否操作真机”等逐项权限问题。若后续确实需要真机、截图或 Android Studio 操作，先把设备、动作、原因和预期信息补入同一份清单，再让用户重新选择。系统密码或系统安全弹窗仍由用户在系统界面确认。
 
+受操作系统、JDK/Gradle、Android Studio、网络、签名和设备环境差异影响，手动接入或运行可能报错。遇到任何报错，提示用户复制执行命令和完整原始报错信息发给当前 Agent 继续处理；不要只截取最后一行，也不要求用户自行猜测修复。
+
 ## 创建工程
 
 - 原生 Android 工程必须由用户先在 Android Studio 创建并完成所需基础设置；skill 不伪造 `settings.gradle`、wrapper 或应用 module。
@@ -29,4 +31,4 @@
 - 先运行 `adb devices` 确认真实设备，再按实际 module 执行 `./gradlew :app:installDebug`，并用 Android Studio Run 或 `adb shell am start -n <APPLICATION_ID>/<LAUNCHER_ACTIVITY>` 启动。
 - Agent 在选择边界必须把 module、Application ID、Launcher Activity、设备标识和绝对工作目录替换为项目实际值，不得把未解析模板直接交给用户。
 
-`自动执行` 只覆盖已列出的当前任务操作，不得自动修改 Gradle 镜像、代理、证书、全局 JDK 或 Android Studio 配置。网络失败先分类，再按二选一执行方式处理。
+`自动执行` 只覆盖已列出的当前任务操作，不得自动修改 Gradle 镜像、代理、证书、全局 JDK 或 Android Studio 配置。网络失败先分类，再按二选一执行方式处理。接入后明确提示用户查看目标项目根目录 `README.md`，其中包含项目运行详细说明。

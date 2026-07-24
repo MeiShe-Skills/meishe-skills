@@ -2103,6 +2103,99 @@ def write_ios_handoff(
     write_text(target_root / "meishe_native_ios_handoff.md", content, target_root, report, "Generated native iOS handoff notes")
 
 
+def update_native_ios_readme(
+    target_root: Path,
+    project_context: IosProjectContext,
+    effective_bundle_identifier: str,
+    report: Report,
+) -> None:
+    """Create or refresh the managed native-iOS run guide without replacing user README text."""
+    workspace = project_context.workspace_path.resolve()
+    scheme = project_context.scheme_name or "<APP_SCHEME>"
+    app_product = project_context.target_name
+    derived_data = target_root / ".meishe-xcodebuild"
+    app_path = (
+        derived_data
+        / "Build"
+        / "Products"
+        / "Debug-iphoneos"
+        / f"{app_product}.app"
+    )
+    dependency_lines = []
+    for step in report.dependency_steps:
+        dependency_lines.extend(
+            (
+                f"- **{step.label}**",
+                f"  - 工作目录：`{step.working_directory}`",
+                f"  - 命令：`{step.command}`",
+                f"  - 成功标志：{step.success_marker}",
+            )
+        )
+    dependency_section = "\n".join(dependency_lines) or "- 当前未生成依赖安装命令。"
+    configuration_section = report.configuration_handoff_markdown(heading_level=3).strip()
+    block = f"""<!-- BEGIN MEISHE_NATIVE_IOS_RUN_GUIDE -->
+## 美摄短视频 Demo 运行
+
+- 项目根目录：`{target_root.resolve()}`
+- Xcode workspace：`{workspace}`
+- App Scheme：`{scheme}`
+- Bundle Identifier：`{effective_bundle_identifier}`
+- 运行与验收设备：真实 iPhone 或 iPad；iOS Simulator 和其他虚拟设备不受支持。
+
+### 依赖安装
+
+{dependency_section}
+
+### 推荐运行方式：Xcode
+
+1. 运行 `open "{workspace}"` 打开实际 `.xcworkspace`，不要打开 `.xcodeproj`。
+2. 在 Xcode 顶部选择 App Scheme `{scheme}` 和真实 iPhone/iPad。
+3. 在 `Signing & Capabilities` 选择正确的 Team、证书和 provisioning profile。
+4. 执行 `Product > Run`（Command-R）。
+
+### 命令行运行方式（必须同时提供）
+
+命令行流程与推荐的 Xcode 流程必须同时保留。将设备占位符替换为 `xcrun devicectl list devices` 检测到的真实设备 ID：
+
+```bash
+xcrun devicectl list devices
+xcodebuild -workspace "{workspace}" -scheme "{scheme}" -configuration Debug -destination 'id=<IOS_DEVICE_UDID>' -derivedDataPath "{derived_data.resolve()}" -allowProvisioningUpdates build
+xcrun devicectl device install app --device <IOS_DEVICE_UDID> "{app_path.resolve()}"
+xcrun devicectl device process launch --device <IOS_DEVICE_UDID> "{effective_bundle_identifier}"
+```
+
+### 配置修改与生效
+
+{configuration_section}
+
+### 遇到报错
+
+受本机操作系统、Xcode/工具链、依赖缓存、网络、签名和设备状态差异影响，手动接入或运行期间可能报错。请把**执行的完整命令**和**完整原始报错信息**（不要只复制最后一行）发给当前 Agent 处理，不要求自行猜测修复。
+
+<!-- END MEISHE_NATIVE_IOS_RUN_GUIDE -->"""
+    readme = target_root / "README.md"
+    existing = read_text(readme) if readme.exists() else ""
+    pattern = re.compile(
+        r"<!-- BEGIN MEISHE_NATIVE_IOS_RUN_GUIDE -->.*?"
+        r"<!-- END MEISHE_NATIVE_IOS_RUN_GUIDE -->",
+        re.S,
+    )
+    if pattern.search(existing):
+        updated = pattern.sub(block, existing, count=1)
+    else:
+        updated = existing.rstrip()
+        if updated:
+            updated += "\n\n"
+        updated += block
+    write_text(
+        readme,
+        updated.rstrip() + "\n",
+        target_root,
+        report,
+        "Updated the managed native iOS run guide in README.md",
+    )
+
+
 def integrate_native_ios(args: argparse.Namespace, target_root: Path, report: Report) -> None:
     source_pods_package = resolve_ios_pods_package(args.plugin_path)
     package_root = Path(args.plugin_path).resolve() if args.plugin_path else source_pods_package.parent
@@ -2212,22 +2305,46 @@ def integrate_native_ios(args: argparse.Namespace, target_root: Path, report: Re
             f"在 Xcode 左侧选择项目 -> TARGETS/{ios_target} -> Signing & Capabilities 选择 Team；\n"
             "顶部选择列表中确认的 App scheme 和目标设备；执行 Product > Run（快捷键 Command-R）。"
         )
+    scheme_for_command = shared_scheme or "<APP_SCHEME>"
+    derived_data = target_root / ".meishe-xcodebuild"
+    app_path = (
+        derived_data
+        / "Build"
+        / "Products"
+        / "Debug-iphoneos"
+        / f"{ios_target}.app"
+    )
+    command_line_run = (
+        "xcrun devicectl list devices\n"
+        f"xcodebuild -workspace \"{workspace.resolve()}\" -scheme \"{scheme_for_command}\" "
+        "-configuration Debug -destination 'id=<IOS_DEVICE_UDID>' "
+        f"-derivedDataPath \"{derived_data.resolve()}\" -allowProvisioningUpdates build\n"
+        f"xcrun devicectl device install app --device <IOS_DEVICE_UDID> \"{app_path.resolve()}\"\n"
+        f"xcrun devicectl device process launch --device <IOS_DEVICE_UDID> \"{effective_bundle_identifier}\""
+    )
     feature_config = target_root / "MeisheShortVideo" / "MeisheFeatureConfig.swift"
     server_config = target_root / "MeisheShortVideo" / "MeisheShortVideoHomeViewController.swift"
     xcode_steps = [
         ConfigurationApplyStep(
-            label="打开 workspace",
+            label="推荐使用 Xcode 打开 workspace",
             condition="修改 Swift 功能配置、服务器、Bundle Identifier、License、签名或 iOS 资源后；Pod 依赖未变化时无需再次 pod install。",
             working_directory=target_root,
             command=f"open \"{workspace.resolve()}\"",
             success_marker="Xcode 打开 `.xcworkspace`，不是 `.xcodeproj`。",
         ),
         ConfigurationApplyStep(
-            label="重新构建并安装到 iOS 设备",
+            label="推荐使用 Xcode 重新构建并安装到 iOS 设备",
             condition="workspace 已打开且目标 Swift/资源均属于 App target。",
             working_directory=target_root,
             command=run_instruction,
             success_marker="Xcode 显示 Build Succeeded，设备安装并启动新 App，重新进入功能时使用新 NvVideoConfig。",
+        ),
+        ConfigurationApplyStep(
+            label="命令行重新构建、安装并启动 iOS（必须同时提供）",
+            condition="已使用 devicectl 检测真实设备 ID，并确认 workspace、App Scheme、Bundle Identifier 和签名。",
+            working_directory=target_root,
+            command=command_line_run,
+            success_marker="xcodebuild 显示 BUILD SUCCEEDED，devicectl 完成安装并按 Bundle Identifier 启动 App。",
         ),
     ]
     report.add_configuration_handoff(
@@ -2239,6 +2356,7 @@ def integrate_native_ios(args: argparse.Namespace, target_root: Path, report: Re
             "Swift 配置会编译进 App，修改后不能只重启旧安装包，必须重新 Build & Run。",
             "确认 MeisheFeatureConfig.swift 勾选 App target 的 Target Membership；不要把其他路线的枚举写入此文件。",
             "Podfile 和 Pod 依赖未变化时无需 pod install；不要默认 Clean Build Folder。",
+            "Xcode 是 iOS 推荐运行方式；命令行运行方式也必须完整提供，不得称为备选或省略。",
         ),
     )
     report.add_configuration_handoff(
@@ -2253,7 +2371,14 @@ def integrate_native_ios(args: argparse.Namespace, target_root: Path, report: Re
             "官方 Demo 服务只允许 `com.meishe.duanshipindemo`；客户 Bundle Identifier 必须使用匹配的客户服务和正式 License。",
             "修改服务器后彻底关闭并重新启动 App，再检查请求 URL、HTTP/业务码和实际素材下载；页面能打开不代表配置正确。",
             "确认 meishesdk.lic 位于 App target 的 Copy Bundle Resources。",
+            "Xcode 是 iOS 推荐运行方式；命令行运行方式也必须完整提供，不得称为备选或省略。",
         ),
+    )
+    update_native_ios_readme(
+        target_root,
+        project_context,
+        effective_bundle_identifier,
+        report,
     )
     assert_no_external_dependency_refs(target_root, source_pods_package, "Native iOS", report)
     assert_no_external_dependency_refs(target_root, package_root, "Native iOS package root", report)

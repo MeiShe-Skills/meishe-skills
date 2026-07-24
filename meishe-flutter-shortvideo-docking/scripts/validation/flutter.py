@@ -551,6 +551,12 @@ def validate_flutter_complete(work: Path) -> None:
             "flutter build apk --debug",
             "flutter run -d <ANDROID_DEVICE_ID>",
             "flutter run -d <IOS_DEVICE_ID>",
+            "推荐运行方式：Xcode",
+            "命令行运行方式（必须同时提供）",
+            "Product > Run",
+            "### 遇到报错",
+            "完整原始报错信息",
+            "当前 Agent",
             "Android Emulator、iOS Simulator",
             "不能用于运行或验收",
             "Runner.xcworkspace",
@@ -572,6 +578,8 @@ def validate_flutter_complete(work: Path) -> None:
             "大写 R（Hot Restart）",
             "flutter run -d <ANDROID_DEVICE_ID>",
             "flutter run -d <IOS_DEVICE_ID>",
+            "推荐使用 Xcode 重新运行 iOS",
+            "命令行运行 iOS（必须同时提供）",
             "真机要求：美摄短视频 Demo 必须运行在已连接的真实设备上",
             "不需要重新执行 flutter pub get",
             "不要默认执行 flutter clean",
@@ -1008,7 +1016,14 @@ def validate_flutter_android_only(work: Path) -> None:
     )
     assert_not_contains(
         android_readme,
-        ["### iOS", "pod install", ".xcworkspace", "<IOS_DEVICE_ID>"],
+        [
+            "### iOS",
+            "pod install",
+            ".xcworkspace",
+            "<IOS_DEVICE_ID>",
+            "推荐运行方式：Xcode",
+            "Product > Run",
+        ],
         "Flutter Android-only README isolation",
     )
     assert_contains(
@@ -1085,7 +1100,16 @@ def validate_flutter_ios_only(work: Path) -> None:
     ios_handoff = read(target / "meishe_configuration_handoff.md")
     assert_contains(
         ios_readme,
-        ["pod install", "Runner.xcworkspace", "flutter run -d <IOS_DEVICE_ID>"],
+        [
+            "pod install",
+            "Runner.xcworkspace",
+            "推荐运行方式：Xcode",
+            "Product > Run",
+            "命令行运行方式（必须同时提供）",
+            "flutter run -d <IOS_DEVICE_ID>",
+            "### 遇到报错",
+            "完整原始报错信息",
+        ],
         "Flutter iOS-only README",
     )
     assert_not_contains(
@@ -1095,7 +1119,14 @@ def validate_flutter_ios_only(work: Path) -> None:
     )
     assert_contains(
         ios_handoff,
-        ["Hot Restart", "flutter run -d <IOS_DEVICE_ID>", "Runner.xcworkspace", "Flutter iOS 身份、签名、License 与原生资源"],
+        [
+            "Hot Restart",
+            "flutter run -d <IOS_DEVICE_ID>",
+            "Runner.xcworkspace",
+            "推荐使用 Xcode",
+            "命令行运行 iOS（必须同时提供）",
+            "Flutter iOS 身份、签名、License 与原生资源",
+        ],
         "Flutter iOS-only configuration handoff",
     )
     assert_not_contains(

@@ -11,6 +11,8 @@
 
 不要改写成“是否授权”“能否操作真机”等逐项权限问题。若后续确实需要真机、截图或 Xcode 操作，先把设备、动作、原因和预期信息补入同一份清单，再让用户重新选择。系统密码、钥匙串或系统安全弹窗仍由用户在系统界面确认。
 
+受操作系统、Ruby/CocoaPods、Xcode、网络、签名和设备环境差异影响，手动接入或运行可能报错。遇到任何报错，提示用户复制执行命令和完整原始报错信息发给当前 Agent 继续处理；不要只截取最后一行，也不要求用户自行猜测修复。
+
 ## 新建工程身份
 
 - 当前任务新建原生 iOS 工程时，接入脚本必须追加：`--ios-bundle-identifier com.meishe.duanshipindemo`。
@@ -25,14 +27,15 @@
 
 ## 静态构建
 
-- 依赖完成后打开生成的 `.xcworkspace`，选择实际 scheme 和签名 Team，再按已选择的执行方式构建或运行。
+- 依赖完成后，**推荐使用 Xcode** 打开生成的 `.xcworkspace`，选择实际 Scheme、签名 Team 和真实设备，执行 `Product > Run`。
+- **命令行运行方式也必须完整提供**：列出设备查询、`xcodebuild` 真机构建、`xcrun devicectl device install app` 安装和 `xcrun devicectl device process launch` 启动命令。不得把命令行称为备选、可选或省略。
 - 无签名静态构建需要根据实际 workspace/scheme 给出准确 `xcodebuild` 命令；不得猜测 scheme。
 - 成功标志：Pod 能链接，Swift 编译无错误；签名、License 和真机行为仍分别验收。
 
 ## 真机运行
 
 - 美摄短视频 Demo 只能运行和验收于真实 iPhone 或 iPad；iOS Simulator 和其他虚拟设备不受支持。
-- 先运行 `xcrun devicectl list devices` 确认真实设备，再打开实际 `.xcworkspace`，选择 App Scheme、签名 Team 和真实设备，执行 Product > Run。
-- Agent 在选择边界必须列出实际 workspace 绝对路径、Scheme、设备标识、完整打开/构建操作和成功标志；不得保留可由工程检测确定的占位符。
+- 先运行 `xcrun devicectl list devices` 确认真实设备。推荐在 Xcode 打开实际 `.xcworkspace`，选择 App Scheme、签名 Team 和真实设备，执行 `Product > Run`；同时提供完整命令行构建、安装和启动流程。
+- Agent 在选择边界必须列出实际 workspace 绝对路径、Scheme、Bundle Identifier、设备标识、构建产物路径、完整 Xcode 操作、完整命令行和成功标志；不得保留可由工程检测确定的占位符。
 
-`自动执行` 只覆盖已列出的当前任务操作，不得自动修改证书、Team、profile、Keychain、代理或全局 Ruby 配置。
+`自动执行` 只覆盖已列出的当前任务操作，不得自动修改证书、Team、profile、Keychain、代理或全局 Ruby 配置。接入后明确提示用户查看目标项目根目录 `README.md`，其中包含项目运行详细说明。

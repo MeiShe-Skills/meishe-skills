@@ -20,6 +20,7 @@ from .shared import (
 
 
 def create_native_android_target(root: Path) -> None:
+    write(root / "README.md", "# Native Android Fixture\n\nUser-maintained introduction.\n")
     write(
         root / "settings.gradle",
         """pluginManagement { repositories { google(); mavenCentral(); gradlePluginPortal() } }
@@ -280,6 +281,7 @@ def validate_native_android_complete(work: Path) -> None:
     report = read(target / "meishe_docking_report.md")
     server_handoff = read(target / "meishe_server_config_handoff.md")
     configuration_handoff = read(target / "meishe_configuration_handoff.md")
+    readme = read(target / "README.md")
     assert_contains(
         report,
         [
@@ -313,6 +315,7 @@ def validate_native_android_complete(work: Path) -> None:
             "Configuration Handoff",
             "原生 Android 功能配置",
             "./gradlew :app:installDebug",
+            "Updated the managed native Android run guide in README.md",
         ],
         "Native Android report",
     )
@@ -334,6 +337,39 @@ def validate_native_android_complete(work: Path) -> None:
         "Native Android command-level configuration handoff",
     )
     assert_contains(
+        readme,
+        [
+            "User-maintained introduction.",
+            "<!-- BEGIN MEISHE_NATIVE_ANDROID_RUN_GUIDE -->",
+            "美摄短视频 Demo 运行",
+            f"项目根目录：`{target.resolve()}`",
+            f"Android 工程目录：`{target.resolve()}`",
+            "App module：`app`",
+            "applicationId：`com.meishe.duanshipindemo`",
+            str(feature_config_path.resolve()),
+            "### 依赖安装",
+            "Native Android Gradle dependencies and Debug build",
+            "### Android Studio 运行",
+            "Gradle Sync",
+            "### 命令行构建与真机运行",
+            "adb devices",
+            "./gradlew :app:installDebug",
+            "adb shell am force-stop com.meishe.duanshipindemo",
+            "com.meishe.duanshipindemo.meishe.MeisheShortVideoDemoActivity",
+            "### 配置修改与生效",
+            "### 遇到报错",
+            "完整原始报错信息",
+            "当前 Agent",
+            "<!-- END MEISHE_NATIVE_ANDROID_RUN_GUIDE -->",
+        ],
+        "Native Android managed README run guide",
+    )
+    assert_not_contains(
+        readme,
+        ["Xcode", ".xcworkspace", "Product > Run"],
+        "Native Android README platform isolation",
+    )
+    assert_contains(
         server_handoff,
         [
             "`MeisheFeatureConfig.java` 是用户功能配置最终来源",
@@ -352,6 +388,14 @@ def validate_native_android_complete(work: Path) -> None:
         read(feature_config_path),
         [user_feature_marker],
         "Native Android user feature configuration preservation",
+    )
+    repeated_readme = read(target / "README.md")
+    if repeated_readme.count("<!-- BEGIN MEISHE_NATIVE_ANDROID_RUN_GUIDE -->") != 1:
+        fail("Native Android repeated integration must keep exactly one managed README run guide")
+    assert_contains(
+        repeated_readme,
+        ["User-maintained introduction.", "<!-- END MEISHE_NATIVE_ANDROID_RUN_GUIDE -->"],
+        "Native Android README user content preservation",
     )
 
 

@@ -1759,6 +1759,92 @@ def enable_native_androidx_jetifier(android_root: Path, target_root: Path, repor
     )
 
 
+def update_native_android_readme(
+    target_root: Path,
+    android_root: Path,
+    app_module: Path,
+    package_name: str,
+    feature_config_path: Path,
+    gradle_command: str,
+    report: Report,
+) -> None:
+    """Create or refresh the managed native-Android run guide without replacing user README text."""
+    module_name = ":".join(app_module.relative_to(android_root).parts)
+    activity = f"{package_name}/{package_name}.meishe.MeisheShortVideoDemoActivity"
+    dependency_lines = []
+    for step in report.dependency_steps:
+        dependency_lines.extend(
+            (
+                f"- **{step.label}**",
+                f"  - 工作目录：`{step.working_directory}`",
+                f"  - 命令：`{step.command}`",
+                f"  - 成功标志：{step.success_marker}",
+            )
+        )
+    dependency_section = "\n".join(dependency_lines) or "- 当前未生成依赖安装命令。"
+    configuration_section = report.configuration_handoff_markdown(heading_level=3).strip()
+    block = f"""<!-- BEGIN MEISHE_NATIVE_ANDROID_RUN_GUIDE -->
+## 美摄短视频 Demo 运行
+
+- 项目根目录：`{target_root.resolve()}`
+- Android 工程目录：`{android_root.resolve()}`
+- App module：`{module_name}`
+- applicationId：`{package_name}`
+- 功能配置：`{feature_config_path.resolve()}`
+- 运行与验收设备：真实 Android 设备；Android Emulator 和其他虚拟设备不受支持。
+
+### 依赖安装
+
+{dependency_section}
+
+### Android Studio 运行
+
+1. 用 Android Studio 打开 `{android_root.resolve()}`。
+2. 等待 Gradle Sync 完成，选择 App module `{module_name}` 和已连接的真实 Android 设备。
+3. 执行 Run，安装并启动 Debug App；若生成的短视频页不是 launcher，请从现有入口跳转，或使用下方 ADB 命令直接启动。
+
+### 命令行构建与真机运行
+
+```bash
+cd "{android_root.resolve()}"
+adb devices
+{gradle_command}
+adb shell am force-stop {package_name}
+adb shell am start -n {activity}
+```
+
+### 配置修改与生效
+
+{configuration_section}
+
+### 遇到报错
+
+受本机操作系统、Android/Java/Gradle 工具链、依赖缓存、网络、签名和设备状态差异影响，手动接入或运行期间可能报错。请把**执行的完整命令**和**完整原始报错信息**（不要只复制最后一行）发给当前 Agent 处理，不要求自行猜测修复。
+
+<!-- END MEISHE_NATIVE_ANDROID_RUN_GUIDE -->"""
+    readme = target_root / "README.md"
+    existing = read_text(readme) if readme.exists() else ""
+    pattern = re.compile(
+        r"<!-- BEGIN MEISHE_NATIVE_ANDROID_RUN_GUIDE -->.*?"
+        r"<!-- END MEISHE_NATIVE_ANDROID_RUN_GUIDE -->",
+        re.S,
+    )
+    if pattern.search(existing):
+        updated = pattern.sub(block, existing, count=1)
+    else:
+        updated = existing.rstrip()
+        if updated:
+            updated += "\n\n"
+        updated += block
+    write_text(
+        readme,
+        updated.rstrip() + "\n",
+        target_root,
+        report,
+        "Updated the managed native Android run guide in README.md",
+    )
+
+
 def integrate_native_android(args: argparse.Namespace, target_root: Path, aar: Path, report: Report) -> None:
     android_root = find_android_root(target_root)
     app_module = find_app_module(android_root)
@@ -1885,4 +1971,13 @@ def integrate_native_android(args: argparse.Namespace, target_root: Path, aar: P
         report.add_next_check(f"Native Android: launch the app normally; `{package_name}.meishe.MeisheShortVideoDemoActivity` is the generated launcher.")
     else:
         report.add_next_check(f"Native Android: start `{package_name}.meishe.MeisheShortVideoDemoActivity` from your existing launcher or route to see the generated ShortVideo demo entry.")
+    update_native_android_readme(
+        target_root,
+        android_root,
+        app_module,
+        package_name,
+        feature_config_path,
+        gradle_command,
+        report,
+    )
     assert_no_external_dependency_refs(target_root, aar, "Native Android", report)

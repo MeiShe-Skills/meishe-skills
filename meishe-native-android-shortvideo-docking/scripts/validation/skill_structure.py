@@ -91,6 +91,9 @@ def validate_skill_structure(
             "最终可见回复",
             "折叠的“处理中”区域",
             "不能用于运行或验收",
+            "目标项目根目录 `README.md` 的绝对路径",
+            "完整原始报错信息",
+            "不要求用户自行猜测修复",
         ],
         "standalone SKILL.md policy",
     )
@@ -109,6 +112,9 @@ def validate_skill_structure(
             "`自动执行` 也要先展示同一份命令清单",
             "## 真机运行",
             "虚拟设备不受支持",
+            "目标项目根目录 `README.md`",
+            "完整原始报错信息",
+            "不要求用户自行猜测修复",
         ],
         "visible execution commands and real-device policy",
     )
