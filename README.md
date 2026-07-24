@@ -54,6 +54,21 @@ npx skills add https://github.com/MeiShe-Skills/meishe-skills --list
 Treat this command's output as the authoritative catalog for the current
 repository version.
 
+## Current ShortVideo Skills
+
+The currently published ShortVideo integration routes use the following names:
+
+| Skill | Target |
+| --- | --- |
+| `meishe-react-native-shortvideo-docking` | React Native Android, iOS, or both |
+| `meishe-flutter-shortvideo-docking` | Flutter Android, iOS, or both |
+| `meishe-native-ios-shortvideo-docking` | Native iOS |
+| `meishe-native-android-shortvideo-docking` | Native Android |
+
+This table describes the current ShortVideo routes only. It is not a fixed
+repository-wide catalog; use `--list` to discover all available skills,
+including skills added later.
+
 ## Interactive Installation
 
 Let the CLI detect an agent and select skills interactively:
@@ -102,12 +117,11 @@ npx skills add MeiShe-Skills/meishe-skills --all
 
 ## Install Selected Skills
 
-First run the `--list` command, then replace `SKILL_NAME` with a name from its
-output:
+First run the `--list` command, then select a name from its output. For example:
 
 ```sh
 npx skills add MeiShe-Skills/meishe-skills \
-  --skill SKILL_NAME \
+  --skill meishe-react-native-shortvideo-docking \
   --agent cursor
 ```
 
@@ -190,7 +204,7 @@ npx skills update --global
 Update one selected skill:
 
 ```sh
-npx skills update SKILL_NAME
+npx skills update meishe-react-native-shortvideo-docking
 ```
 
 ## Notes
