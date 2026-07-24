@@ -21,6 +21,7 @@ description: Independently integrate, configure, validate, and troubleshoot the 
 - 目标根目录必须有 `package.json` 且声明 React Native；至少存在 `android/` 或 `ios/`。两个目录都存在时执行双端路线，单端项目不运行、不报告另一端。
 - 美摄短视频 Demo 必须连接并运行在真实 Android/iOS 设备上；Android Emulator、iOS Simulator 和其他虚拟设备不受支持，不能用于运行或验收。
 - 唯一 SDK 输入是官方 `react_native/react-native-nvshortvideo` npm 包。必须存在有效 `package.json` 和对应原生目录；不得使用 Flutter 插件、原生 AAR 或原生 iOS Pod 包代替。
+- 缺少官方包时，在任何项目写入前停止，并在当前轮次最终可见回复中完整说明：打开 `https://www.meishesdk.com/developers`，依次进入「开发者中心」->「产品及DEMO下载」->「移动端」->「短视频Demo」，下载「React Native工程」，取得 `react_native/react-native-nvshortvideo/package.json`。明确告诉用户可将解压包或 `react-native-nvshortvideo` 复制到目标项目并提供项目内路径，也可保留在其他本地位置并直接提供绝对 `--plugin-path`；不得只写“请提供包或路径”或只引用说明文件。
 - 自动发现只搜索 `--target-root`。输入缺失、结构无效、锁文件冲突或目标平台缺失时，在任何目标写入前失败。
 - 外部包只作为复制源，最终依赖必须指向 `vendor/meishe/react-native-nvshortvideo`。完成后检查锁文件和配置中不存在 Downloads、父目录或其他外部绝对路径。
 - 读取顺序：`references/react-native.md`、`references/react-native/common.md`、`references/react-native/feature-configuration.md`、`references/packages/react-native.md`、`references/verified/react-native.md`；再按实际目标读取 `android.md`、`ios.md`，排障时只读对应平台 troubleshooting。
@@ -39,6 +40,12 @@ python scripts/integrate_react_native.py \
 - 用户已有项目未显式要求改身份时，先读取 App Target 的现有 Bundle Identifier 并保持不变；若不是 `com.meishe.duanshipindemo`，必须在接入前和报告中醒目说明官方服务请求无法走通，并给出“临时验证改为官方 Demo 身份”或“保留现有身份并配置客户服务器、匹配 License 和服务白名单”两条路径。
 - Demo License 只能用于精确匹配的官方 Demo 身份；自定义身份必须使用匹配的真实 License。
 - 脚本只生成项目代码、项目本地 SDK、配置交接和报告，不自动安装依赖或控制设备。
+
+## Demo 启动页硬性要求
+
+- 当前任务新建或临时 Demo 工程时，把生成的 `MeisheShortVideoDemo` 接入实际启动链路，检查 `App.tsx`/`App.jsx`/`App.js` 的根组件或导航器的初始路由；不得把 Welcome、New App Screen、Hello World 或其他 React Native 默认模板保留为启动主页。
+- 已有业务项目默认保留原导航结构；只有用户明确要求创建 Demo 或替换主页时，才把美摄首页设为根组件或初始路由。
+- 交付前检查实际入口组件，而不只确认 `src/MeisheShortVideoDemo.*` 文件存在。未完成主页接线时不得宣称接入完成，也不得只在报告中留下“加入导航”的提示。
 
 ## 配置查询与修改
 

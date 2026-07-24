@@ -23,6 +23,7 @@ description: Independently integrate, configure, validate, and troubleshoot the 
 - 目标必须是现有原生 Android Studio 工程，根目录或 `android/` 包含 `settings.gradle[.kts]`，且不是 Flutter 或 React Native 工程。没有工程时停止并要求用户先创建，不伪造 Gradle 工程。
 - 美摄短视频 Demo 必须连接并运行在真实 Android 设备上；Android Emulator 和其他虚拟设备不受支持，不能用于运行或验收。
 - 唯一 SDK 输入是官方原生 Android `NvShortVideoCore.aar`。不得使用 Flutter AAR、React Native 包或 iOS Pod 替代。
+- 缺少官方包时，在任何项目写入前停止，并在当前轮次最终可见回复中完整说明：打开 `https://www.meishesdk.com/developers`，依次进入「开发者中心」->「产品及DEMO下载」->「移动端」->「短视频Demo」，下载「iOS&Android」原生 Demo 包，取得 `native/android/ShortVideo/app/libs/NvShortVideoCore.aar`。明确告诉用户可将 AAR 复制到目标项目并提供项目内路径，也可保留在其他本地位置并直接提供绝对 `--aar-path`；不得只写“请提供 AAR 或路径”或只引用说明文件。
 - 自动发现只搜索 `--target-root`。AAR 无效、应用 module 不明确、Gradle 结构不支持时，在任何目标写入前失败。
 - 外部 AAR 只作为复制源，最终依赖必须指向应用 module 的 `libs/NvShortVideoCore.aar`。完成后检查 Gradle 和配置中不存在 Downloads、父目录或其他外部绝对路径。
 - 读取 `references/native-android.md`、`references/native-android-feature-configuration.md`、`references/packages/native-android.md`、`references/verified/native-android.md`；AAR 获取读取 `references/aar-acquisition.md`，遇到问题再读取 `references/native-android-troubleshooting.md`。
@@ -38,6 +39,12 @@ python scripts/integrate_native_android.py \
 - 可选参数：`--license-path`、`--package-name`、`--demo-launcher`、`--dry-run`。固定入口拒绝 `--platform`。
 - `--demo-launcher` 仅用于新建临时 Demo；已有产品工程默认不替换 launcher。
 - 脚本生成 Java/Kotlin 接入、Demo 首页、功能配置、Manifest/Gradle 修改、项目本地 AAR、配置交接和报告，不自动执行 Gradle Sync、构建或设备操作。
+
+## Demo 启动页硬性要求
+
+- 当前任务新建或临时 Demo 工程时，运行接入命令时传入 `--demo-launcher`，并检查最终 `AndroidManifest.xml` 只有 `.meishe.MeisheShortVideoDemoActivity` 持有 `MAIN`/`LAUNCHER`；不得让原 `MainActivity`、Hello World、Compose Greeting 或其他 Android 模板继续作为启动主页。
+- 已有业务项目默认保留原 launcher 和导航；只有用户明确要求创建 Demo 或替换主页时，才提升美摄 Demo Activity 为 launcher。
+- 交付前检查合并后的实际 Manifest，而不只确认 Demo Activity 文件存在。未完成主页接线时不得宣称接入完成，也不得只在报告中留下“从业务页面打开 Demo”的提示。
 
 ## 配置查询与修改
 

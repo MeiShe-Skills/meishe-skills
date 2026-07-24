@@ -16,10 +16,11 @@ IOS_NATIVE_PACKAGE_HELP = """缺少 native iOS 接入必需的 Pods-NvShortVideo
 3. 找到「移动端」->「短视频Demo」。
 4. 点击「iOS App vX.x.x」或「iOS&Android vX.x.x」下载 native Demo 包和文档。
 5. 解压后在压缩包内找到 native/ios/Pods-NvShortVideoEdit。
-6. 重新运行时提供包含 native/ios/Pods-NvShortVideoEdit 的解压根目录，或直接提供 Pods-NvShortVideoEdit 目录：
-   --plugin-path <extracted-package-root-or-Pods-NvShortVideoEdit-folder>
+6. 以下方式任选其一：
+   - 将解压包根目录或 Pods-NvShortVideoEdit 目录复制到 --target-root 目标项目内，并告知项目内路径；
+   - 保留在其他本地位置，直接提供绝对路径：
+     --plugin-path <absolute-extracted-package-root-or-Pods-NvShortVideoEdit-folder>
 
-脚本会把 Pods-NvShortVideoEdit 复制到目标项目 vendor/meishe/Pods-NvShortVideoEdit，
+脚本会验证输入，并把 Pods-NvShortVideoEdit 复制到目标项目 vendor/meishe/Pods-NvShortVideoEdit，
 Podfile 会使用项目内相对路径 ./vendor/meishe/Pods-NvShortVideoEdit，不会引用外部下载/解压目录。
 """
-

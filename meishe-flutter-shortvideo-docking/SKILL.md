@@ -23,6 +23,7 @@ description: Independently integrate, configure, validate, and troubleshoot the 
 - 目标根目录必须有 `pubspec.yaml`；至少存在 `android/` 或 `ios/`。两个目录都存在时执行双端路线，单端项目不运行、不报告另一端。
 - 美摄短视频 Demo 必须连接并运行在真实 Android/iOS 设备上；Android Emulator、iOS Simulator 和其他虚拟设备不受支持，不能用于运行或验收。
 - 唯一 SDK 主输入是官方 `flutter/nvshortvideo`，其 `pubspec.yaml` 必须声明 `name: nvshortvideo`。不得使用 React Native 包或原生 Pod/AAR 作为主输入。
+- 缺少官方包时，在任何项目写入前停止，并在当前轮次最终可见回复中完整说明：打开 `https://www.meishesdk.com/developers`，依次进入「开发者中心」->「产品及DEMO下载」->「移动端」->「短视频Demo」，下载「Flutter工程」，取得 `flutter/nvshortvideo`。明确告诉用户可将解压包或 `nvshortvideo` 复制到目标项目并提供项目内路径，也可保留在其他本地位置并直接提供绝对 `--plugin-path`；不得只写“请提供包或路径”或只引用说明文件。
 - Flutter Android 仅在官方插件 AAR 被验证缺少核心引擎 `.so` 时，允许通过 `--aar-path` 补充原生 AAR；这不是正常主输入，也不得跨路线推导其他补丁。
 - 自动发现只搜索 `--target-root`。输入缺失、结构无效或目标平台缺失时，在任何目标写入前失败。
 - 外部包只作为复制源，最终依赖必须指向 `vendor/meishe/nvshortvideo`。完成后检查配置和锁文件中不存在 Downloads、父目录或其他外部绝对路径。
@@ -42,6 +43,12 @@ python scripts/integrate_flutter.py \
 - 用户已有项目未显式要求改身份时，先读取 App Target 的现有 Bundle Identifier 并保持不变；若不是 `com.meishe.duanshipindemo`，必须在接入前和报告中醒目说明官方服务请求无法走通，并给出“临时验证改为官方 Demo 身份”或“保留现有身份并配置客户服务器、匹配 License 和服务白名单”两条路径。
 - 正式 License 必须匹配各平台最终身份。
 - 脚本只生成项目代码、项目本地 SDK、配置交接和报告，不自动安装依赖或控制设备。
+
+## Demo 启动页硬性要求
+
+- 当前任务新建或临时 Demo 工程时，把生成的 `MeisheShortVideoDemoPage` 接入实际启动链路，检查 `lib/main.dart` 的 `runApp` 与 `MaterialApp.home`；不得把 Hello World、Counter、Welcome 或其他 Flutter 默认模板保留为启动主页。
+- 已有业务项目默认保留原导航结构；只有用户明确要求创建 Demo 或替换主页时，才把美摄首页设为启动主页。
+- 交付前检查实际入口文件，而不只确认 Demo 页面文件存在。未完成主页接线时不得宣称接入完成，也不得只在报告中留下“加入导航或设为首页”的提示。
 
 ## 配置查询与修改
 

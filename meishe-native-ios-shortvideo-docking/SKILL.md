@@ -23,6 +23,7 @@ description: Independently integrate, configure, validate, and troubleshoot the 
 - 目标必须是原生 iOS 工程，包含根级 `Podfile` 或 `*.xcodeproj`，且不是 Flutter 或 React Native 工程。
 - 美摄短视频 Demo 必须连接并运行在真实 iPhone 或 iPad 上；iOS Simulator 和其他虚拟设备不受支持，不能用于运行或验收。
 - 唯一 SDK 输入是官方原生 iOS 包，必须包含 `Pods-NvShortVideoEdit/NvShortVideoEdit.podspec`。不得使用 Flutter 插件、React Native 包或 Android AAR 替代。
+- 缺少官方包时，在任何项目写入前停止，并在当前轮次最终可见回复中完整说明：打开 `https://www.meishesdk.com/developers`，依次进入「开发者中心」->「产品及DEMO下载」->「移动端」->「短视频Demo」，下载「iOS App」或「iOS&Android」原生 Demo 包，取得 `native/ios/Pods-NvShortVideoEdit/NvShortVideoEdit.podspec`。明确告诉用户可将解压包或 `Pods-NvShortVideoEdit` 复制到目标项目并提供项目内路径，也可保留在其他本地位置并直接提供绝对 `--plugin-path`；不得只写“请提供包或路径”或只引用说明文件。
 - 自动发现只搜索 `--target-root`。Project、应用 Target、共享 Scheme 和 Workspace 分别识别；不得用 `.xcodeproj` 文件名代替 Target。存在多个候选且无法唯一映射、或 Pod 结构无效时，在任何目标写入前失败。
 - 外部包只作为复制源，最终 Podfile 必须引用 `vendor/meishe/Pods-NvShortVideoEdit`。完成后检查配置和锁文件中不存在 Downloads、父目录或其他外部绝对路径。
 - 读取 `references/native-ios.md`、`references/native-ios-feature-configuration.md`、`references/packages/native-ios.md`、`references/verified/native-ios.md`；遇到问题再读取 `references/native-ios-troubleshooting.md`。
@@ -39,6 +40,12 @@ python scripts/integrate_native_ios.py \
 - 当前任务新建的原生 iOS 项目，接入命令必须默认追加 `--ios-bundle-identifier com.meishe.duanshipindemo`。脚本只修改已确认 App Target 的构建配置，不修改测试 Target 或 Extension。
 - 用户已有项目未显式要求改身份时不静默修改 Bundle Identifier；先读取 App Target 的现有值。若不是 `com.meishe.duanshipindemo`，必须在接入前和报告中醒目说明官方 Demo 服务请求无法走通，并给出“临时验证改为官方 Demo 身份”或“保留现有身份并配置客户服务器、匹配 License 和服务白名单”两条路径。
 - 脚本生成 Swift 首页、功能配置、Podfile/Info.plist 修改、项目本地 SDK、自检交接和报告，不自动执行 `pod install`、签名或设备操作。
+
+## Demo 启动页硬性要求
+
+- 当前任务新建或临时 Demo 工程时，把 `MeisheShortVideoHomeViewController` 设为 App 实际根页面：检查 `AppDelegate`/`SceneDelegate` 的 `rootViewController`、生成 Swift/资源的 Target Membership，以及共享 Scheme 的 Run executable；不得让默认 Storyboard、空白控制器、Hello World 或仅构建不启动的空 Run 动作成为交付结果。
+- 已有业务项目默认保留原根控制器和导航；只有用户明确要求创建 Demo 或替换主页时，才把美摄首页设为根页面。
+- 交付前检查实际启动代码和 Scheme，而不只确认 ViewController 文件存在。未完成主页接线时不得宣称接入完成，也不得只在报告中留下“present/push 到首页”的提示。
 
 ## 配置查询与修改
 
